@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>mywebsite</title>
+    <link rel="stylesheet" href="{% static 'css/Home_style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo_main.jpg' %}">
+            <p>Webmart</p>
+        </div>
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Update location</p>
+        </div>
+        <div class="searchbar">
+            <form class="search">
+                <input type="text" placeholder="Search Webmart.in">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="rightnav">
+            <div class="lang">
+                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
+                <p>EN</p>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="sign">
+                <p style="position: relative;top:5px;">Hello, sign in</p>
+                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
+                <i class="fa-solid fa-caret-down"></i>
+                <ul class="drop">
+                    <li><a href="{% url 'login' %}">
+                        <button type="submit" href="{% url 'login' %}">Sign in</button>
+                    </a></li>
+                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;right:15px;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
+                </ul>
+            </div>
+            <div class="return">
+                <p style="position: relative;top:5px;">Returns</p>
+                <p style="position: relative; bottom:4px;">& orders</p>
+            </div>
+            <div class="cart">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <p>Cart</p>
+            </div>
+        </div>
+    </div>
+    <div class="subhead">
+        <p style="margin-left:10px;">&gt;&gt;</p>
+        <a href="{% url 'menFashion' %}">Men's fashion</a>
+        <a href="{% url 'womenFashion' %}">Women's fashion</a>
+        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
+        <a href="{% url 'beauty' %}">Beauty & face care</a>
+        <a href="{% url 'decor' %}">Home styles</a>
+        <a href="{% url 'electronics' %}">Electronics</a>
+        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
+    </div>
+    <div class="slide_main">
+        <button type="submit" class="lbtn">&lt;</button>
+        <div class="slider">
+            <a href="{% url 'menFashion' %}">
+                <img src="https://graphicgoogle.com/wp-content/uploads/2018/01/Men-Women-Apparel-Facebook-Ad-Banner-Template-1200x627.jpg" class="slide" style="object-fit:cover; height: auto;">
+            </a>
+            <a href="{% url 'menFashion' %}">
+                <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/d717051d-51c6-4105-a4fd-11f439c64fa2.__CR0,0,1464,600_PT0_SX1464_V1___.jpg" class="slide">
+            </a>
+            <a href="{% url 'decor' %}">
+                <img src="https://images-na.ssl-images-amazon.com/images/G/01/img17/home/vertical-store/1075198_us_183_shopbyroom_homedecorcandles_desktophero_2677x963._CB514125295_.jpg" class="slide">
+            </a>
+            <a href="{% url 'beauty' %}">
+                <img src="https://www.lakmeindia.com/cdn/shop/collections/sun_protection_page_banner.jpg?v=1679313979" class="slide">
+            </a>
+        </div>
+        <button type="submit" class="rbtn">&gt;</button>
+    </div>
+    <div class="cont">
+        <div class="box" id="box1">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Customers' Most-Loved Products for you</p>
+            <div class="content1">
+                <a href="{% url 'decor'%}">
+                    <img src="https://m.media-amazon.com/images/I/816w14ZwCBL._AC_SY170_.jpg">
+                </a>
+                <a href="{% url 'decor'%}">
+                    <img src="https://m.media-amazon.com/images/I/51PvPL26drS._AC_SY170_.jpg">
+                </a>
+                <a href="{% url 'decor'%}">
+                    <img src="https://m.media-amazon.com/images/I/51ByfTtt+KL._AC_SY170_.jpg">
+                </a>
+                <a href="{% url 'decor'%}">
+                    <img src="https://m.media-amazon.com/images/I/51bY3pKII8L._AC_SY170_.jpg">
+                </a>
+            </div>
+        </div>
+        <div class="box" id="box2">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Explore more from Small Businesses</p>
+            <div class="content2">
+                <div class="home_decor">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC-PFF/PFF-1-186-116._SY116_CB636055991_.jpg">
+                    </a>
+                    <p>Clothing</p>
+                </div>
+                <div class="home_decor">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Img24/SMB/GW/December/Desktop_QC_Decor_1x._SY116_CB540581077_.jpg">
+                    </a>
+                    <p>Decor</p>
+                </div>
+                <div class="home_decor">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Img24/SMB/GW/December/Desktop_QC_Fashion_Accessories_1x._SY116_CB540581077_.jpg">
+                    </a>
+                    <p>Fashion Accessories</p>
+                </div>
+                <div class="home_decor">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Img24/SMB/GW/December/Desktop_QC_Glasses_1x._SY116_CB540581077_.jpg">
+                    </a>
+                    <p>Glassware & Drinks</p>
+                </div>
+                <a href="{% url 'decor' %}" style="margin-top:30px;position: relative;right:30px; color: rgb(38,134,151);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Explore more</a>
+            </div>
+        </div>
+        <div class="box" id="box3">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Revamp your home in style</p>
+            <div class="content2">
+                <div class="home_style">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_furnishings_2._SY116_CB555624324_.jpg">
+                    </a>
+                    <p>Cushion covers,Bedsheet & more</p>
+                </div>
+                <div class="home_style">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_decor_1._SY116_CB555624324_.jpg">
+                    </a>
+                    <p>Figurines,Vashels & more</p>
+                </div>
+                <div class="home_style">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_storage_1._SY116_CB555624324_.jpg">
+                    </a>
+                    <p>Home storage</p>
+                </div>
+                <div class="home_style">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_lighting_2._SY116_CB555624324_.jpg">
+                    </a>
+                    <p>Lighting solution</p>
+                </div>
+                <a href="{% url 'decor' %}" style="margin-top:30px;position: relative;right:45px; color: rgb(38,134,151);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Explore all</a>
+            </div>
+        </div>
+        <div class="box" id="box4">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Starting ₹199 | Webmart Brands & more</p>
+            <div class="content2">
+                <div class="home_needs">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_2._SY116_CB567468236_.jpg">
+                    </a>
+                    <p>Starting &#8377;199 | Bedsheets</p>
+                </div>
+                <div class="home_needs">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_3._SY116_CB567468236_.jpg">
+                    </a>
+                    <p>Starting &#8377;199 | Curtains</p>
+                </div>
+                <div class="home_needs">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_4._SY116_CB567468236_.jpg">
+                    </a>
+                    <p>Minimum 50% off</p>
+                </div>
+                <div class="home_needs">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_1._SY116_CB567468236_.jpg">
+                    </a>
+                    <p>Upto 50% off | Home decor</p>
+                </div>
+                <a href="{% url 'decor' %}" style="margin-top:10px;position: relative;right:45px; color: rgb(38,134,151);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">See more</a>
+            </div>
+        </div>
+        <div class="box" id="box5">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Great deals with face care products</p>
+            <div class="content2">
+                <div class="skin_care">
+                    <a href="{% url 'beauty' %}">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2XA8Mrln3SCu_StuNS_ao454ZcDEnVQY8Bw&s">
+                    </a>
+                    <p>Upto 40% off on face creams</p>
+                </div>
+                <div class="skin_care">
+                    <a href="{% url 'beauty' %}">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS51_Ghrfi-TPvyN5HB3hcr3iX0f0EFIP6SgQ&s">
+                    </a>
+                    <p>For glowing skin</p>
+                </div>
+                <div class="skin_care">
+                    <a href="{% url 'beauty' %}">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPxqTHi3xRnfabV4tNxb1g7HNpx1yluHJ2SA&s">
+                    </a>
+                    <p>Upto 60 % off on moisturisers</p>
+                </div>
+                <div class="skin_care">
+                    <a href="{% url 'beauty' %}">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzojrAXawf4JEg4nmlx-Hi6CetbmPhuYOe-g&s">
+                    </a>
+                    <p>Best discounts on combo packs</p>
+                </div>
+                <a href="{% url 'beauty' %}" style="position: relative;right:45px; color: rgb(38,134,151);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">See more</a>
+            </div>
+        </div>
+        <div class="box" id="box6">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Appliances for your home | Upto 40% off</p>
+            <div class="content2">
+                <div class="appliances">
+                    <a href="{% url 'electronics' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg">
+                    </a>
+                    <p>Air conditioners</p>
+                </div>
+                <div class="appliances">
+                    <a href="{% url 'electronics' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg">
+                    </a>
+                    <p>Washing machine</p>
+                </div>
+                <div class="appliances">
+                    <a href="{% url 'electronics' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg">
+                    </a>
+                    <p>Micro waves</p>
+                </div>
+                <div class="appliances">
+                    <a href="{% url 'electronics' %}">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg">
+                    </a>
+                    <p>Refrigerators</p>
+                </div>
+                <a href="{% url 'electronics' %}" style="margin-top:31px;position:relative;right:45px; color: rgb(38,134,151);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">See more</a>
+            </div>
+        </div>
+        <div class="box" id="box7">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Starting &#8377;299 | Women's fashion</p>
+            <div class="content2">
+                <div class="womenfashion">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://i.pinimg.com/originals/d7/a3/26/d7a3261bfb846cc0b78a26bbc116a355.jpg" style=" width:140px;height:120px">
+                    </a>
+                    <p>Starting &#8377;299</p>
+                </div>
+                <div class="womenfashion">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://i.pinimg.com/originals/07/3e/b4/073eb4fd041470056d1be4a133d1aae5.jpg" style=" width:140px;height:120px">
+                    </a>
+                    <p>Starting &#8377;399</p>
+                </div>
+                <div class="womenfashion">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://i.pinimg.com/originals/01/f5/5a/01f55a5d7d9d97cb8514975ff7165ab0.jpg" style=" width:140px;height:120px">
+                    </a>
+                    <p>Starting &#8377;449</p>
+                </div>
+                <div class="womenfashion">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://thefrisky.com/wp-content/uploads/2020/04/dupatta-730x973.jpg" style=" width:140px;height:120px">
+                    </a>
+                    <p>Starting &#8377;499</p>
+                </div>
+                <a href="{% url 'womenFashion' %}" style="margin-top:1px;position: relative;right:35px; color: rgb(38,134,151);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">See all</a>
+            </div>
+        </div>
+        <div class="box" id="box8" style="gap:5px;">
+            <p style="color:black;font-size:20px;font-weight: bold;font-family: Georgia, 'Times New Roman', Times, serif;">Best deals on brands</p>
+            <div class="content2">
+                <div class="brands">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://d3uxdg7queknzi.cloudfront.net/assets/img/misc-images/DHM_Composite_Color.png">
+                    </a>
+                    <p>Upto 40% off</p>
+                </div>
+                <div class="brands">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Ch7605HjDL55WQY8Dg9cBqTYIrTptJ3obw&s">
+                    </a>
+                    <p>Upto 50% off</p>
+                </div>
+                <div class="brands">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://media.designrush.com/inspiration_images/731069/conversions/LEVI'S-LOGO-DESIGN-SVG-mobile.jpg">
+                    </a>
+                    <p>Upto 55% off</p>
+                </div>
+                <div class="brands">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXz1SEc5emOSBCeX-vANgYabbd-pT7RUgofA&s">
+                    </a>
+                    <p>Upto 35% off</p>
+                </div>
+                <a href="{% url 'menFashion' %}" style="margin-top:20px;position:relative;right:35px; color: rgb(38,134,151);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">See all</a>
+            </div>
+        </div>
+    </div>
+    <div class="cont1">
+        <p >Upto 50% off | Home decors</p>
+        <div class="cont1Btn">
+            <button class="lbtn1">&lt;</button>
+            <div class="scroller">
+                <div id="scroll_image1" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image2" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/71-SERAI+kL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image3" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/61-I7qdZo8L._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image4" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/71bwKqpEGTL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image5" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/715xOX3FaSL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image6" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/81ahG7JlPOL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image7" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/813-+b+ffdL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image8" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/61GMAN80IVL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image9" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/51CqgiO0OuL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+                <div id="scroll_image10" class="h_scroll">
+                    <a href="{% url 'decor' %}">
+                        <img src="https://m.media-amazon.com/images/I/71VX8IgFMmL._AC_SY200_.jpg" class="h_scroll_img">
+                    </a>
+                </div>
+            </div>
+            <button class="rbtn1">&gt;</button>
+        </div>
+    </div>
+    <div class="cont2">
+        <p>Best sellers in clothing & Accessories</p>
+        <div class="cont2Btn">
+            <button class="lbtn2">&lt;</button>
+            <div class="scroller1">
+                <div id="scroll_image1" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image2" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/41KeNECL1aL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image3" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/71PgXiVK43L._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image4" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/91hIyGIagmL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image5" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/41RhUMXSaxL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image6" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/71G-VJLjPaL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image7" class="h_scroll1">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/71ZxN4i3-oL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image8" class="h_scroll1">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/610InQb9rTL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image9" class="h_scroll1">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/61SgADmAyDL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image10" class="h_scroll1">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/61t965dJIiL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image11" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/51NSC2qvOxL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image12" class="h_scroll1">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/81EAZMsZiaL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image13" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/71EvhiUJs-L._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image14" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/51xOEh5DKYL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image15" class="h_scroll1">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/71eUwDk8z+L._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+                <div id="scroll_image16" class="h_scroll1">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/I/61uTW6uzpCL._AC_SY200_.jpg" class="h_scroll1_img">
+                    </a>
+                </div>
+            </div>
+            <button class="rbtn2">&gt;</button>
+        </div>
+    </div>
+    <div class="cont3">
+        <div class="cont3_box" style="width:35%">
+            <P style="height:5%;">Your Daily Dose of Beauty Care | Starts Here</P>
+            <div style="padding:56.25% 0 0 0;position:relative; margin-top: 20px;"><iframe src="https://player.vimeo.com/video/395646858?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="3 product full face makeup challenge"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <div class="cont3_box">
+            <p>Starting ₹199 | Start your Beauty journey</p>
+            <a href="{% url 'beauty' %}">
+                <img src="https://m.media-amazon.com/images/I/41DsJN2tH8L._SX522_.jpg">
+            </a>
+        </div>
+        <div class="cont3_box">
+            <p>Up to 75% off | Wall arts, painting, decor & more </p>
+            <a href="{% url 'decor' %}">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Img24/SMB/GW/December/Desktop_CC_Decor_1x._SY304_CB540581077_.jpg">
+            </a>
+        </div>
+        <div class="cont3_box">
+            <p>Up to 75% off | Party dresses</p>
+            <a href="{% url 'womenFashion' %}">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Img24/SMB/GW/December/Desktop_CC_Clothing_1x._SY304_CB540581077_.jpg">
+            </a>
+        </div>
+    </div>
+    <div class="cont4" style="padding:10px;background-color: rgb(202, 237, 254);">
+        <p style="display: inline;color: black;">Upto 50% off | Fashionable & Trendy clothes</p>
+        <div class="cont4Btn">
+            <button class="lbtn4">&lt;</button>
+            <div class="scroller2">
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Winterbrands/Variant_6_978x1420._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Winterbrands/Variant_10_978x1420._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Truecore/Peter_England_978x1587._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0Brands/Mostloved/W_for_women_564x940._SX564_QL85_.jpg" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Rangita_564x940._SY530_QL85_.jpg" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Gocolors_564x940._SY530_QL85_.jpg" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Winterbrands/Variant_7_978x1420._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Winterbrands/Variant_8_978x1420._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0Brands/Mostloved/Akhilam_564x940._SX564_QL85_.jpg" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/Jupiter/Gocolors_564x940._SX564_QL85_.jpg" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'womenFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0Brands/Mostloved/Indya_564x940._SX564_QL85_.jpg" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Truecore/Symbol_Premium_978x1587._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/PREMIUMBRANDS/REV/Variant_16_1205x1677._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/INDIEGEMS/Variant_3_564x922._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+                <div class="cont4_box">
+                    <a href="{% url 'menFashion' %}">
+                        <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/INDIEGEMS/Variant_2_564x922._SY530_QL85_FMpng_.png" class="h_scroll2_img">
+                    </a>
+                </div>
+            </div>
+            <button class="rbtn4">&gt;</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="fcontainer">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">FAQs</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Support</a>
+        </div>
+        <hr style="width: 80%; border:1px solid gray;">
+        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
+      </div>
+</body>
+<script src="{% static 'js/Home_script.js' %}"></script>
+</html>

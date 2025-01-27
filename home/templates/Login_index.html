@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/Login_style.css' %}">
+</head>
+<body>
+    <div class="logo">
+        <img src="{% static 'images/logo4.jpg' %}">
+        <p>Webmart</p>
+    </div>
+    <div class="container">
+        <div class="main">
+            <form>
+            <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Sign in</p>
+            <p>Email or mobile phone number</p>
+            <input type="text">
+            <button type="submit">Continue</button>
+            </form>
+            <p style="margin-top:20px;font-size:14px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">By continuing, you agree to Webmart's<span> <a href="#">Conditions&nbsp;of&nbsp; Use</a></span> and <span><a href="#">Privacy Notice</a></span></p>
+            <div class="help">
+                <i class="fa-solid fa-caret-right"></i>
+                <a href="#" style="font-size:14px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Need help?</a>
+            </div>
+            <hr style="margin-top: 20px;color:rgb(213, 217, 217);">
+            <p style="margin-top:10px;margin-bottom: 10px;">Buying for work?</p>
+            <a href="#" style="text-decoration: none;">Shop on Webmart Business</a>
+        </div>
+        <div class="submain">
+            <p>New to Webmart</p>
+            <a href="{% url 'register' %}">
+                <button type="submit">Create a Webmart account</button>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="support">
+            <a href="#">Conditions of Use</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Help</a><br>
+        </div>
+        <p style="position: relative; bottom:7px;right:5px;">© 2024-2025, Webmart.com, Inc. or its affiliates</p>
+    </div>
+</body>
+</html>

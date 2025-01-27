@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Mobile & Accessories</title>
+    <link rel="stylesheet" href="{% static 'css/Mobile_style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo_main.jpg' %}">
+            <p>Webmart</p>
+        </div>
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Update location</p>
+        </div>
+        <div class="searchbar">
+            <form class="search">
+                <input type="text" placeholder="Search Webmart.in">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="rightnav">
+            <div class="lang">
+                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
+                <p>EN</p>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="sign">
+                <p style="position: relative;top:5px;">Hello, sign in</p>
+                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
+                <i class="fa-solid fa-caret-down"></i>
+                <ul class="drop">
+                    <li><a href="{% url 'login' %}">
+                        <button type="submit" href="{% url 'login' %}">Sign in</button>
+                    </a></li>
+                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
+                </ul>
+            </div>
+            <div class="return">
+                <p style="position: relative;top:5px;">Returns</p>
+                <p style="position: relative; bottom:4px;">& orders</p>
+            </div>
+            <div class="cart">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <p>Cart</p>
+            </div>
+        </div>
+    </div>
+    <div class="subhead">
+        <p style="margin-left:10px;">&gt;&gt;</p>
+        <a href="{% url 'menFashion' %}">Men's fashion</a>
+        <a href="{% url 'womenFashion' %}">Women's fashion</a>
+        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
+        <a href="{% url 'beauty' %}">Beauty & face care</a>
+        <a href="{% url 'decor' %}">Home styles</a>
+        <a href="{% url 'electronics' %}">Electronics</a>
+        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
+    </div>
+    <div class="slide_main">
+        <div class="slider">
+            <a href="#">
+                <img src="https://static.digit.in/18977_Samsung_Series-banners_1280X720.jpg" class="slide">
+            </a>
+            <a href="#">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ca6cd7150863355.63021c4cc4737.jpg" class="slide" style="object-fit:fill;">
+            </a>
+            <a href="#">
+                <img src="https://images.hothardware.com/contentimages/newsitem/63369/content/small_oneplus-12-launch-banner.jpg" class="slide">
+            </a>
+            <a href="#">
+                <img src="https://i.ytimg.com/vi/5VNA05STfPw/maxresdefault.jpg" class="slide" style="object-fit:fill;">
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div id="box1" class="cont">
+            <a href="https://www.amazon.in/Samsung-Storage-Display-Charging-Security/dp/B0DFY3XCB6/ref=lp_1389401031_1_9?pf_rd_p=9e034799-55e2-4ab2-b0d0-eb42f95b2d05&pf_rd_r=DDJE1YSENC7E09B427M8&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81T3olLXpUL._SX679_.jpg">
+                <p>Samsung Galaxy M05 (Mint Green, 4GB RAM, 64 GB Storage) | 50MP Dual Camera | Bigger 6.7" HD+ Display | 5000mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade & 4 Year Security Update | Without Charger</p>
+                MRP: <span>&#8377;9,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;6,999 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 17% off)</span></p>
+            </a>
+        </div>
+        <div id="box2" class="cont">
+            <a href="https://www.amazon.in/realme-Storage-Display-Dimensity-Charger/dp/B0CZS3B3PY/ref=sr_1_1?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-1" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41anBMMZLHL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>realme NARZO 70x 5G (Ice Blue, 6GB RAM,128GB Storage)|120Hz Ultra Smooth Display|Dimensity 6100+ 6nm 5G|50MP AI Camera|45W Charger in The Box</p>
+                MRP: <span>&#8377;17,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;10,749 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 40% off)</span></p>
+            </a>
+        </div>
+        <div id="box3" class="cont">
+            <a href="https://www.amazon.in/Redmi-Sparkle-Storage-Segment-Charging/dp/B0DLW44CGS/ref=sr_1_5?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-5" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41if1Z4yK4L._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Redmi A4 5G (Sparkle Purple, 4GB RAM, 128GB Storage) | Global Debut SD 4s Gen 2 | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging</p>
+                MRP: <span>&#8377;11,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;9,499 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 21% off)</span></p>
+            </a>
+        </div>
+        <div id="box4" class="cont">
+            <a href="hhttps://www.amazon.in/iQOO-Tornado-Storage-Snapdragon-FlashCharge/dp/B07WHQHNZC/ref=sr_1_6?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-6" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61wHkeTOhWL._SX679_.jpg">
+                <p>iQOO Z9x 5G (Tornado Green, 6GB RAM, 128GB Storage) | Snapdragon 6 Gen 1 with 560k+ AnTuTu Score | 6000mAh Battery with 7.99mm Slim Design | 44W FlashCharge</p>
+                MRP: <span>&#8377;18,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;13,499 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 29% off)</span></p>
+            </a>
+        </div>
+        <div id="box5" class="cont">
+            <a href="https://www.amazon.in/iQOO-Titanium-Ultra-Thin-Dimesity-Processor/dp/B07WHS99FG/ref=sr_1_7?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-7" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61BxKJrnbdL._SX679_.jpg">
+                <p>iQOO Z9s 5G (Titanium Matte, 8GB RAM, 128GB Storage) | 120 Hz 3D Curved AMOLED Display | 5500 mAh Ultra-Thin Battery | Dimesity 7300 5G Processor | Sony IMX882 OIS Camera with Aura Light</p>
+                MRP: <span>&#8377;25,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;19,999 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 23% off)</span></p>
+            </a>
+        </div>
+        <div id="box6" class="cont">
+            <a href="https://www.amazon.in/iQOO-Storage-Ultra-Thin-Dimesity-Processor/dp/B07WFPL9PB/ref=sr_1_8?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-8" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61nO5YRaAxL._SX679_.jpg">
+                <p>iQOO Z9s 5G (Onyx Green, 8GB RAM, 128GB Storage) | 120 Hz 3D Curved AMOLED Display | 5500 mAh Ultra-Thin Battery | Dimesity 7300 5G Processor | Sony IMX882 OIS Camera with Aura Light</p>
+                MRP: <span>&#8377;25,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;19,998 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 23% off)</span></p>
+            </a>
+        </div>
+        <div id="box7" class="cont">
+            <a href="https://www.amazon.in/OnePlus-Super-Silver-128GB-Storage/dp/B0D5YCYS1G/ref=sr_1_14?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-14" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61Io5-ojWUL._SX679_.jpg">
+                <p>OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)</p>
+                MRP: <span>&#8377;20,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;17,999 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 14% off)</span></p>
+            </a>
+        </div>
+        <div id="box8" class="cont">
+            <a href="https://www.amazon.in/Redmi-Storage-Segment-Largest-Charging/dp/B0DLW4QD72/ref=sr_1_15?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-15" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71qblDCyONL._SX679_.jpg">
+                <p>Redmi A4 5G (Starry Black, 4GB RAM, 128GB Storage) | Global Debut SD 4s Gen 2 | Segment Largest 6.88in 120Hz | 50MP Dual Camera | 18W Fast Charging</p>
+                MRP: <span>&#8377;11,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;9,499 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 21% off)</span></p>
+            </a>
+        </div>
+        <div id="box9" class="cont">
+            <a href="https://www.amazon.in/Redmi-Starlight-Storage-MediaTek-Dimensity/dp/B0CNX89QR8/ref=sr_1_19?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-19" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81nMsYgIHdL._SX679_.jpg">
+                <p>Redmi 13C 5G (Starlight Black, 4GB RAM, 128GB Storage) | MediaTek Dimensity 6100+ 5G | 90Hz Display</p>
+                MRP: <span>&#8377;13,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;9,099 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 35% off)</span></p>
+            </a>
+        </div>
+        <div id="box10" class="cont">
+            <a href="https://www.amazon.in/iQOO-Storage-Snapdragon-Processor-Brightness/dp/B07WHRXTJV/ref=sr_1_22?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-22" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41yHj1h1+gL._SY300_SX300_.jpg">
+                <p>iQOO Z9S Pro 5G (Luxe Marble, 8Gb Ram, 256Gb Storage) | Snapdragon 7 Gen 3 Processor | 120 Hz Curved Amoled Display with 4500 Nits Local Peak Brightness | 5500 Mah Battery | Ai Erase, White</p>
+                MRP: <span>&#8377;31,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;26,999 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 16% off)</span></p>
+            </a>
+        </div>
+        <div id="box11" class="cont">
+            <a href="https://www.amazon.in/dp/B0D6VJ6FYG/?_encoding=UTF8&ref_=cct_cg_Budget_4c1&pf_rd_p=dd702a44-69b8-4ead-bad7-419fc505abcb&pf_rd_r=9DYKB366FRR8TM8Y9HS6" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41q42maJzVL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>HONOR 200 5G (Black, 8GB + 256GB) | 6.7-inch AMOLED Quad-Curved Display | Dual OIS 50MP + 50MP + 12MP Camera | 50MP Selfie Camera | AI-Powered MagicOS 8.0 | Without Charger</p>
+                MRP: <span>&#8377;39,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;23,998 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 40% off)</span></p>
+            </a>
+        </div>
+        <div id="box12" class="cont">
+            <a href="https://www.amazon.in/OnePlus-Nord-Chromatic-128GB-Storage/dp/B0BY8MCQ9S/ref=sr_1_24?dib=eyJ2IjoiMSJ9.hcddngWmLyKBDdG55TwEBXF0S37TVVzKUErUaXxNZBiInX7_OhSyYS6Ox7x0i5tFA9wcQG2Gbp21_PKpy3cjRzf-CmK-0vjMhB8hUg9TpjB4DYckey0kdZB6JyRH0u_qq3QaGsO7Vu1XMN0Bsn-2SSdcGGEyGTxWhF3hSVn4oBBdipw46k3TyWzj8_WISRbuk7a8kOXKp1Ss0DsjV5vnoQCTXvVj7Ei1mQvmuupYe9GTYpBHuxTzdJH5-FkUwFZgeUUGEEfwtIaljFUtODqZsyh5WV8YlI8ldy-oNXjIsrJD6WkjCEUiJGSdY9GPQd9fYo71zIhg75TzIwVeGP2i9LQE4d6pnGc3oX_CseHpKsc.xwwmypxmRKcc8b_91-oL1yuY6_Vr6KCg-7csTtN-lDQ&dib_tag=se&qid=1735911469&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-24" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61LB+d0vheL._SX679_.jpg">
+                <p>OnePlus Nord CE 3 Lite 5G (Chromatic Gray, 8GB RAM, 128GB Storage)</p>
+                MRP: <span>&#8377;19,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;15,048 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 25% off)</span></p>
+            </a>
+        </div>
+        <div id="box13" class="cont">
+            <a href="https://www.amazon.in/iQOO-Storage-Dimensity-Camera-Charger/dp/B07WHQS4LB/ref=sr_1_29?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCEREmSrIrGdimkT70dptaJoA.1_T2kDOWw2_Bl1tRtKtjHbnSRjMhUdreG9-mYUVdqq4&dib_tag=se&qid=1735914358&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-29&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/619VJYWIbXL._SX679_.jpg">
+                <p>iQOO Z9 Lite 5G (Mocha Brown, 6GB RAM, 128GB Storage) | Dimensity 6300 5G | 50MP Sony AI Camera | Charger in The Box</p>
+                MRP: <span>&#8377;15,499</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;11,498 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 26% off)</span></p>
+            </a>
+        </div>
+        <div id="box14" class="cont">
+            <a href="https://www.amazon.in/Samsung-Daybreak-Storage-Corning-Gorilla/dp/B0D8123CLN/ref=sr_1_30?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCERdy7wtrNDMNaBioeThjIJ6BBiXBstlvn856pbeh56z7NnTQ0hwbHdTC9NeKTnDyhfXPcsHysOpvOcT08aa1gzlqMNtQoTxL-qUOLg-aL0J7u8MSwGDNkeJ6qZA3J6-KHzCH6M3ulLLt3yxSPSVXyItO4zCG9_RA2bbhu3h4V-LwvVsyisHoij08CK6rkHpfOp--IktQKWDA1wTvRHOCKuSyElIKMfDc56FR_2wpXu8E.lTagmVsYFw3y3A-bT6FuEZVRwbjF4BMXoQektc9N0bw&dib_tag=se&qid=1735914372&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-30&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81nJiu51M+L._SX679_.jpg">
+                <p>Samsung Galaxy M35 5G (Daybreak Blue,6GB RAM,128GB Storage)| Corning Gorilla Glass Victus+| AnTuTu Score 595K+ | Vapour Cooling Chamber | 6000mAh Battery | 120Hz Super AMOLED Display| Without Charger</p>
+                MRP: <span>&#8377;24,499</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;16,999 <span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 31% off)</span></p>
+            </a>
+        </div>
+        <div id="box15" class="cont">
+            <a href="https://www.amazon.in/Redmi-Chromatic-Purple-256GB-Storage/dp/B0D6392VSM/ref=sr_1_31?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCERdy7wtrNDMNaBioeThjIJ6BBiXBstlvn856pbeh56z7NnTQ0hwbHdTC9NeKTnDyhfXPcsHysOpvOcT08aa1gzlqMNtQoTxL-qUOLg-aL0J7u8MSwGDNkeJ6qZA3J6-KHzCH6M3ulLLt3yxSPSVXyItO4zCG9_RA2bbhu3h4V-LwvVsyisHoij08CK6rkHpfOp--IktQKWDA1wTvRHOCKuSyElIKMfDc56FR_2wpXu8E.lTagmVsYFw3y3A-bT6FuEZVRwbjF4BMXoQektc9N0bw&dib_tag=se&qid=1735914372&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-31&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41gF1pn3wPL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Redmi Note 13 5G (Chromatic Purple, 8GB RAM, 256GB Storage)</p>
+                MRP: <span>&#8377;22,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;15,130&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 34% off)</span></p>
+            </a>
+        </div>
+        <div id="box16" class="cont">
+            <a href="https://www.amazon.in/OnePlus-Nord-Lite-128GB-Storage/dp/B0D5YFZ946/ref=sr_1_34?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCERdy7wtrNDMNaBioeThjIJ6BBiXBstlvn856pbeh56z7NnTQ0hwbHdTC9NeKTnDyhfXPcsHysOpvOcT08aa1gzlqMNtQoTxL-qUOLg-aL0J7u8MSwGDNkeJ6qZA3J6-KHzCH6M3ulLLt3yxSPSVXyItO4zCG9_RA2bbhu3h4V-LwvVsyisHoij08CK6rkHpfOp--IktQKWDA1wTvRHOCKuSyElIKMfDc56FR_2wpXu8E.lTagmVsYFw3y3A-bT6FuEZVRwbjF4BMXoQektc9N0bw&dib_tag=se&qid=1735914372&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-34&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/5155PFA2N+L._SX679_.jpg">
+                <p>OnePlus Nord CE4 Lite 5G (Mega Blue, 8GB RAM, 128GB Storage)</p>
+                MRP: <span>&#8377;20,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;17,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 14% off)</span></p>
+            </a>
+        </div>
+        <div id="box17" class="cont">
+            <a href="https://www.amazon.in/Samsung-Celestial-MediaTek-Dimensity-Security/dp/B0DGXB4SX1/ref=sr_1_36?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCERdy7wtrNDMNaBioeThjIJ6BBiXBstlvn856pbeh56z7NnTQ0hwbHdTC9NeKTnDyhfXPcsHysOpvOcT08aa1gzlqMNtQoTxL-qUOLg-aL0J7u8MSwGDNkeJ6qZA3J6-KHzCH6M3ulLLt3yxSPSVXyItO4zCG9_RA2bbhu3h4V-LwvVsyisHoij08CK6rkHpfOp--IktQKWDA1wTvRHOCKuSyElIKMfDc56FR_2wpXu8E.lTagmVsYFw3y3A-bT6FuEZVRwbjF4BMXoQektc9N0bw&dib_tag=se&qid=1735914372&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-36&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81LJaRu0cZL._SX679_.jpg">
+                <p>Samsung Galaxy M15 5G Prime Edition (Celestial Blue,6GB RAM,128GB Storage)| Super AMOLED Display| 50MP Triple Cam| 6000mAh Battery| MediaTek Dimensity 6100+| 4 Gen. OS Upgrade & 5 Year Security Update</p>
+                MRP: <span>&#8377;16,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;12,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 24% off)</span></p>
+            </a>
+        </div>
+        <div id="box18" class="cont">
+            <a href="https://www.amazon.in/Samsung-Storage-MediaTek-Dimensity-Security/dp/B0DGX9VVFV/ref=sr_1_37?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCERdy7wtrNDMNaBioeThjIJ6BBiXBstlvn856pbeh56z7NnTQ0hwbHdTC9NeKTnDyhfXPcsHysOpvOcT08aa1gzlqMNtQoTxL-qUOLg-aL0J7u8MSwGDNkeJ6qZA3J6-KHzCH6M3ulLLt3yxSPSVXyItO4zCG9_RA2bbhu3h4V-LwvVsyisHoij08CK6rkHpfOp--IktQKWDA1wTvRHOCKuSyElIKMfDc56FR_2wpXu8E.lTagmVsYFw3y3A-bT6FuEZVRwbjF4BMXoQektc9N0bw&dib_tag=se&qid=1735914372&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-37&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81scQ7qlPuL._SX679_.jpg">
+                <p>Samsung Galaxy M15 5G Prime Edition (Blue Topaz,6GB RAM,128GB Storage) | Super AMOLED Display| 50MP Triple Cam| 6000mAh Battery| MediaTek Dimensity 6100+ | 4 Gen. OS Upgrade & 5 Year Security Update</p>
+                MRP: <span>&#8377;16,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;12,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 24% off)</span></p>
+            </a>
+        </div>
+        <div id="box19" class="cont">
+            <a href="https://www.amazon.in/Apple-iPhone-13-128GB-Blue/dp/B09G9BL5CP/ref=sr_1_40?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCERdy7wtrNDMNaBioeThjIJ6BBiXBstlvn856pbeh56z7NnTQ0hwbHdTC9NeKTnDyhfXPcsHysOpvOcT08aa1gzlqMNtQoTxL-qUOLg-aL0J7u8MSwGDNkeJ6qZA3J6-KHzCH6M3ulLLt3yxSPSVXyItO4zCG9_RA2bbhu3h4V-LwvVsyisHoij08CK6rkHpfOp--IktQKWDA1wTvRHOCKuSyElIKMfDc56FR_2wpXu8E.lTagmVsYFw3y3A-bT6FuEZVRwbjF4BMXoQektc9N0bw&dib_tag=se&qid=1735914372&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-40&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71xb2xkN5qL._SX679_.jpg">
+                <p>Apple iPhone 13 (128GB) - Blue</p>
+                MRP: <span>&#8377;59,600</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;43,499&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 27% off)</span></p>
+            </a>
+        </div>
+        <div id="box20" class="cont">
+            <a href="https://www.amazon.in/dp/B0D78WCNZZ/ref=QAHzEditorial_en_IN_4?pf_rd_r=9DYKB366FRR8TM8Y9HS6&pf_rd_p=2245da3b-01b2-4fa1-b266-94ceda6d0edf&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-27&pf_rd_t=&pf_rd_i=1389401031" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/4108Ig7HKtL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Redmi 13 5G, Hawaiian Blue, 6GB+128GB | India Debut SD 4 Gen 2 AE | 108MP Pro Grade Camera | 6.79in Largest Display in Segment</p>
+                MRP: <span>&#8377;17,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;12,020&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 33% off)</span></p>
+            </a>
+        </div>
+        <div id="box21" class="cont">
+            <a href="https://www.amazon.in/Apple-iPhone-13-128GB-Midnight/dp/B09G9HD6PD/ref=sr_1_45?dib=eyJ2IjoiMSJ9.GnltgpOARH1jXrIWO9crSnGSqC5dfBewqxsyzdvY5M3EpnrjxF52L1U1a_Fv5G31vzOEPJGIr2WuH1gF6j1mtg9OGcI2dy2-ODDFnmrrwg8tT_6OgmWHpSfKZCT0jpCERdy7wtrNDMNaBioeThjIJ6BBiXBstlvn856pbeh56z7NnTQ0hwbHdTC9NeKTnDyhfXPcsHysOpvOcT08aa1gzlqMNtQoTxL-qUOLg-aL0J7u8MSwGDNkeJ6qZA3J6-KHzCH6M3ulLLt3yxSPSVXyItO4zCG9_RA2bbhu3h4V-LwvVsyisHoij08CK6rkHpfOp--IktQKWDA1wTvRHOCKuSyElIKMfDc56FR_2wpXu8E.lTagmVsYFw3y3A-bT6FuEZVRwbjF4BMXoQektc9N0bw&dib_tag=se&qid=1735914372&refinements=p_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=91049095031&s=electronics&sr=1-45&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31tyUh1todL._SY445_SX342_QL70_FMwebp_.jpg">
+                <p>Apple iPhone 13 (128GB) - Midnight</p>
+                MRP: <span>&#8377;59,900</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;43,499&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 27% off)</span></p>
+            </a>
+        </div>
+        <div id="box22" class="cont">
+            <a href="https://www.amazon.in/realme-Snapdragon-Processor-Periscope-RealWorld/dp/B0DMFCPF1W/ref=sr_1_271?dib=eyJ2IjoiMSJ9.fpTQsRROBVx1wVNZYvFwIxNKwOjaBvs-3xrUo1Ys-gNtOSc-jBSoSs3zf3feIycDuv1nxDytq3nDo5BgYXirsUsI7hiUW3hfytDkgpygh3O1kDPx_jJS0PKuDVRlK7Sv8w9ufO8iN8-zw2eMnoZ-sdzbiMP3BY9zZowQoIcBsA6_DXe8dJMX6cLFR-Y_q890NN6VF9Er6iyFaS0Rm68S5h1Aqqxk5pfdK4w7tpi-5zm0vdeHMo-oOfCobR_Q9_lCNUm2csYieBiuTKuQqPJGgabF8cmegJmZxmyuZOX0JLlfSRoxqL_uy5hnGcwjZ_QCRXscFE912INlJ7cPssAq3TRAldPIwN6C8wGHmY4_VAI.5gjSCaAf-_me3xC0F18ygpfQ1wZJwUB10YvkrI6sJZQ&dib_tag=se&qid=1735916788&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-271&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71r6uuqcmIL._SX679_.jpg">
+                <p>realme GT 7 Pro (Galaxy Grey,16GB+512GB) | India's First Snapdragon 8 Elite Processor | 3X Periscope Flagship Camera| RealWorld Eco² OLED Plus Display</p>
+                MRP: <span>&#8377;74,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;65,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 12% off)</span></p>
+            </a>
+        </div>
+        <div id="box23" class="cont">
+            <a href="https://www.amazon.in/OnePlus-Cool-Blue-256GB-Storage/dp/B0CQYN9QDQ/ref=sr_1_25?dib=eyJ2IjoiMSJ9.GvbpWuM2ljzWyU33Yg--kK4h0H9ItcGq3R2sPQPK40geHa5U6La7StemWgW1HKhvVh1Pr615ulvkX2wYk1bbsv5jhLOoCKF052U7bbEhw9pNI9iMPj0xWbjFWhX4mtWBE4O9nO3ybMwULMCgLuU6wwxvLGy1Qrrg-O05pjdjRQAHCkFD6f8D8Z2vRpo9BQz3wNrGGmvO4zTqjSiny4jBzPSXa_b3TUru0CSoHJPmkgtgh6962_d1hBOFvm52K4mnu2TdkParTtSyJCzyWXcJndah5liZrbTr5MtQw7VPddQfac01DQ1mPpY1QgFtyKMpEg26g8PqoUBlgNIuTYW2F_CF6A3ktT2iC5pGTa7hYR4.GvZBZxzqQMtdie9bF5FnDYWEBacavTrwdfo8dJDyD-k&dib_tag=se&qid=1735915634&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-25&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41SbFiUoSOL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>OnePlus 12R (Cool Blue, 16GB RAM, 256GB Storage)</p>
+                MRP: <span>&#8377;50,599</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;45,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 10% off)</span></p>
+            </a>
+        </div>
+        <div id="box24" class="cont">
+            <a href="https://www.amazon.in/iQOO-Snapdragon-processor-Supercomputing-Flagship/dp/B07WJVY42H/ref=sr_1_30?dib=eyJ2IjoiMSJ9.GvbpWuM2ljzWyU33Yg--kK4h0H9ItcGq3R2sPQPK40geHa5U6La7StemWgW1HKhvVh1Pr615ulvkX2wYk1bbsv5jhLOoCKF052U7bbEhw9pNI9iMPj0xWbjFWhX4mtWBE4O9nO3ybMwULMCgLuU6wwxvLGy1Qrrg-O05pjdjRQAHCkFD6f8D8Z2vRpo9BQz3wNrGGmvO4zTqjSiny4jBzPSXa_b3TUru0CSoHJPmkgtgh6962_d1hBOFvm52K4mnu2TdkParTtSyJCzyWXcJndah5liZrbTr5MtQw7VPddQfac01DQ1mPpY1QgFtyKMpEg26g8PqoUBlgNIuTYW2F_CF6A3ktT2iC5pGTa7hYR4.GvZBZxzqQMtdie9bF5FnDYWEBacavTrwdfo8dJDyD-k&dib_tag=se&qid=1735915634&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-30&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41m-C1HHkIL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>iQOO Neo9 Pro 5G (Fiery Red, 12GB RAM, 256GB Storage) | Snapdragon 8 Gen 2 Processor | Supercomputing Chip Q1 | Flagship Level Sony IMX920 Camera</p>
+                MRP: <span>&#8377;44,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;37,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 16% off)</span></p>
+            </a>
+        </div>
+        <div id="box25" class="cont">
+            <a href="https://www.amazon.in/Vivo-Smartphone-Lotus-Purple-Storage/dp/B0DCGNMXDD/ref=sr_1_33?dib=eyJ2IjoiMSJ9.GvbpWuM2ljzWyU33Yg--kK4h0H9ItcGq3R2sPQPK40geHa5U6La7StemWgW1HKhvVh1Pr615ulvkX2wYk1bbsv5jhLOoCKF052U7bbEhw9pNI9iMPj0xWbjFWhX4mtWBE4O9nO3ybMwULMCgLuU6wwxvLGy1Qrrg-O05pjdjRQAHCkFD6f8D8Z2vRpo9BQz3wNrGGmvO4zTqjSiny4jBzPSXa_b3TUru0CSoHJPmkgtgh6962_d1hBOFvm52K4mnu2TdkParTtSyJCzyWXcJndah5liZrbTr5MtQw7VPddQfac01DQ1mPpY1QgFtyKMpEg26g8PqoUBlgNIuTYW2F_CF6A3ktT2iC5pGTa7hYR4.GvZBZxzqQMtdie9bF5FnDYWEBacavTrwdfo8dJDyD-k&dib_tag=se&qid=1735915634&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-33&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61Mr3os9ZQL._SX569_.jpg">
+                <p>Vivo V40 5G Smartphone (Lotus Purple, 8GB RAM, 256GB Storage)</p>
+                MRP: <span>&#8377;42,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;32,090&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 25% off)</span></p>
+            </a>
+        </div>
+        <div id="box26" class="cont">
+            <a href="https://www.amazon.in/iPhone-16-Pro-Max-256/dp/B0DGHYDZR9/ref=sr_1_57?dib=eyJ2IjoiMSJ9.KZL2hvYXgedZvRLVfD4bQL1fLpVnXiiWdhasXkjjDzId6l7Io3g8VYEKkgMwUlHYEPhT747MDR9u0wJElH_x02wkjpd6Xzi113a7ttk1t-1_ncalPk9XmbKrhvynn8D22WW5YziOg-aYv-fhXkWXtfNBMibYDpIU20McRU5E6g7TZ8Ek7dG3tvK1QRFTp2AmaW03pbPqblgjppgDcrzjlOc0_ajfF9OyAtoIqTCH5nD-HbJw1uPLI4Wu1Q6lwOUdg2XFf-GPwYELF_whbt0lmiIq1aPwu7XfjO3fONvxg03gyAga8AqICB_2TRZecyqarTh7SiOOmTXgUVzvXN1-N3Rii84T09dRqp3wJSzchio.ALchr2b6PnsZhjB2yiA3Lm2McAGaTIijE3HDYL92gPI&dib_tag=se&qid=1735915963&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-57&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61giwQtR1qL._SX679_.jpg">
+                <p>iPhone 16 Pro Max 256 GB: 5G Mobile Phone with Camera Control, 4K 120 fps Dolby Vision and a Huge Leap in Battery Life. Works with AirPods; Desert Titanium</p>
+                MRP: <span style="text-decoration:none; color:black; font-weight:bold;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">&#8377;1,44,900</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;1,37,900<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 5% off)</span></p>
+            </a>
+        </div>
+        <div id="box27" class="cont">
+            <a href="https://www.amazon.in/Oneplus-Open-Emerald-512GB-Storage/dp/B0CKTPK4FG/ref=sr_1_73?dib=eyJ2IjoiMSJ9.dQV_NvI6Q4JP6yfsqDpP13yesPo1FX1uLaufnuYAEOOZEfTPO6jXkl33aMtHXl0LZq2sAwTezYvvLMy6qVbXI0D1M84iJVOf9V4cWBcaz22ecKjkmoi4EyPgYK41yavT-eT1SMefFz3KoqaeUJhS8lpDFsvy0m9fNlF-2kcdqSo--EPiHXdPvVQuedQHvvU4kC25xtlIpZ2_6jcwwfnQ2bhx9Fva3nMxTWetMyE9w17BALsP_0A_L8fD6JWRY0wBIuEIrDYCyUs2TkHUNl0mGL5ut5_Lc_A91DfgCD052dtlQFet1s6w12RBRyLSMgbfExUV_T223kw4YwJnVPF7HYBKT6hMf3Xn6XGObAJfQJ8.4uZGZlmrPQRqGiDA5hXIxjFofCu8QS9ItipHaWxBcW0&dib_tag=se&qid=1735916101&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-73&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51LByp9EsxL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Oneplus Open (Emerald Dusk, 16GB RAM, 512GB Storage)</p>
+                MRP: <span>&#8377;1,39,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;99,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 29% off)</span></p>
+            </a>
+        </div>
+        <div id="box28" class="cont">
+            <a href="https://www.amazon.in/iPhone-16-256-GB-Control/dp/B0DGJHBDTS/ref=sr_1_86?dib=eyJ2IjoiMSJ9.dQV_NvI6Q4JP6yfsqDpP13yesPo1FX1uLaufnuYAEOOZEfTPO6jXkl33aMtHXl0LZq2sAwTezYvvLMy6qVbXI0D1M84iJVOf9V4cWBcaz22ecKjkmoi4EyPgYK41yavT-eT1SMefFz3KoqaeUJhS8lpDFsvy0m9fNlF-2kcdqSo--EPiHXdPvVQuedQHvvU4kC25xtlIpZ2_6jcwwfnQ2bhx9Fva3nMxTWetMyE9w17BALsP_0A_L8fD6JWRY0wBIuEIrDYCyUs2TkHUNl0mGL5ut5_Lc_A91DfgCD052dtlQFet1s6w12RBRyLSMgbfExUV_T223kw4YwJnVPF7HYBKT6hMf3Xn6XGObAJfQJ8.4uZGZlmrPQRqGiDA5hXIxjFofCu8QS9ItipHaWxBcW0&dib_tag=se&qid=1735916101&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-86&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71CSc3M2AGL._SX679_.jpg">
+                <p>iPhone 16 256 GB: 5G Mobile Phone with Camera Control, A18 Chip and a Big Boost in Battery Life. Works with AirPods; Teal</p>
+                MRP: <span>&#8377;89,900</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;84900&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 6% off)</span></p>
+            </a>
+        </div>
+        <div id="box29" class="cont">
+            <a href="https://www.amazon.in/Samsung-Galaxy-Smartphone-Titanium-Storage/dp/B0CQYGF1QY/ref=sr_1_148?dib=eyJ2IjoiMSJ9.7VGLBVD-u4Ba_aHICunwrib1O7CXPAWk2JI2L2PyoLi8I2_wGQqJN4Walojo54gsubABKgeoUuMUxmJK2O5GT54WYmCxQV0a0dnCREEawNY5qkMp8JMGd_jkWjPV16-cBWf6A_Cl3K-dKlwLZUBCvNGxwC94iU30Chw78WKTqYDZbo9Hve5ipaUcW2g5JilB1rBUmpWoQWQsrMwk1_gGMG10g576xzl4iTdqjPYluEMrtEUO-dfPXICePRcuA5NiwRnslqjLQSMrot4CmzlPvFl07FGwOXAgQDKpZESYl13KTeQtEj6K3_uvthEcPAGtD5OIntcS4CKol93ZN6KFxhNq4BXyn1FpFQOgYeQAxQE.iDFbvyujQf_MMC45zjg53D9qE9NGYxw8roFhv9Ath5I&dib_tag=se&qid=1735916409&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-148&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41fCDR6pjpL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Samsung Galaxy S24 Ultra 5G AI Smartphone (Titanium Gray, 12GB, 512GB Storage)</p>
+                MRP: <span>&#8377;1,44,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;1,39,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 3% off)</span></p>
+            </a>
+        </div>
+        <div id="box30" class="cont">
+            <a href="https://www.amazon.in/Vivo-Natural-Storage-Additional-Exchange/dp/B07WHRCBX1/ref=sr_1_194?dib=eyJ2IjoiMSJ9.zkAdh0Td0GzXmEpbxUtHy6X6AKiJfxcU79414oGcVNn-wtVZpYMxmkJ9aMHEkNSOBizdzA_j2NUH32F2kWUCbsDu21nfX330nKRtOyB41wsUABL3ZhMf6jJqzgIS0pdcGXLQgJXbMmEW87iJbhpHcdWaIEndGew3kJlGzav6EY7XNVvX_go4v-kRF77BHtNnqvvuXFr3bR_i0q_oQyFC2QCipkjQx33vz_VSs6x-8HQa35yJtak0UTo8zuWGuchCLfcvm-n3MflJpeOUQTPsCQhZZ3_nUfTfL9-9614dLc1To-qr0Nu4s9-MWb0ZAXaBtXJD0rUp4DrjLrSB1mgpFpY9W2a-N7jlPmMnU6jqXKI.7h6tCxSvBfG4m_wlos9b2bRoscNYKfY5JtDhd692Y6Y&dib_tag=se&qid=1735916529&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-194&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71l4M1nvIvL._SX679_.jpg">
+                <p>Vivo X200 5G (Natural Green, 16GB RAM, 512GB Storage) with No Cost EMI/Additional Exchange Offers - Rs. 7200 Off with SBI/HDFC/ICICI Cards</p>
+                MRP: <span>&#8377;80,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;71,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 11% off)</span></p>
+            </a>
+        </div>
+        <div id="box31" class="cont">
+            <a href="https://www.amazon.in/Redmi-Fusion-White-Storage-Without/dp/B0CXXH32PM/ref=sr_1_204?dib=eyJ2IjoiMSJ9.zkAdh0Td0GzXmEpbxUtHy6X6AKiJfxcU79414oGcVNn-wtVZpYMxmkJ9aMHEkNSOBizdzA_j2NUH32F2kWUCbsDu21nfX330nKRtOyB41wsUABL3ZhMf6jJqzgIS0pdcGXLQgJXbMmEW87iJbhpHcdWaIEndGew3kJlGzav6EY7XNVvX_go4v-kRF77BHtNnqvvuXFr3bR_i0q_oQyFC2QCipkjQx33vz_VSs6x-8HQa35yJtak0UTo8zuWGuchCLfcvm-n3MflJpeOUQTPsCQhZZ3_nUfTfL9-9614dLc1To-qr0Nu4s9-MWb0ZAXaBtXJD0rUp4DrjLrSB1mgpFpY9W2a-N7jlPmMnU6jqXKI.7h6tCxSvBfG4m_wlos9b2bRoscNYKfY5JtDhd692Y6Y&dib_tag=se&qid=1735916529&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-204&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31EuoEOmE1L._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Redmi Note 13 Pro+ (Fusion White, 8GB RAM, 256GB Storage) Without Offer</p>
+                MRP: <span>&#8377;32,999</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;23,490&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 29% off)</span></p>
+            </a>
+        </div>
+        <div id="box32" class="cont">
+            <a href="https://www.amazon.in/Oneplus-Open-Storage-Crimson-Shadow/dp/B0D9W7Y3XM/ref=sr_1_274?dib=eyJ2IjoiMSJ9.fpTQsRROBVx1wVNZYvFwIxNKwOjaBvs-3xrUo1Ys-gNtOSc-jBSoSs3zf3feIycDuv1nxDytq3nDo5BgYXirsUsI7hiUW3hfytDkgpygh3O1kDPx_jJS0PKuDVRlK7Sv8w9ufO8iN8-zw2eMnoZ-sdzbiMP3BY9zZowQoIcBsA6_DXe8dJMX6cLFR-Y_q890NN6VF9Er6iyFaS0Rm68S5h1Aqqxk5pfdK4w7tpi-5zm0vdeHMo-oOfCobR_Q9_lCNUm2csYieBiuTKuQqPJGgabF8cmegJmZxmyuZOX0JLlfSRoxqL_uy5hnGcwjZ_QCRXscFE912INlJ7cPssAq3TRAldPIwN6C8wGHmY4_VAI.5gjSCaAf-_me3xC0F18ygpfQ1wZJwUB10YvkrI6sJZQ&dib_tag=se&qid=1735916788&refinements=p_36%3A2110000-%2Cp_123%3A110955%7C13145%7C253649%7C329744%7C339703%7C46655%7C499290%7C568349%7C646111&rnid=1318502031&s=electronics&sr=1-274&xpid=gX8uOMZfrco3R" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81B4UqMfjeL._SX679_.jpg">
+                <p>Oneplus Open (Apex Edition,16GB RAM, 1TB Storage), Crimson Shadow</p>
+                MRP: <span>&#8377;1,57499</span>
+                <p style="text-decoration:none; color: black;font-size:24px;">&#8377;1,49,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 5% off)</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="more">
+        <a href="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles">
+            <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
+        </a>
+    </div>
+    <div class="footer">
+        <div class="fcontainer">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">FAQs</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Support</a>
+        </div>
+        <hr style="width: 80%; border:1px solid gray;">
+        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
+      </div>
+</body>
+<script src="{% static 'js/Mobile_script.js' %}"></script>
+</html>

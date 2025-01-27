@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    text-decoration:none;
+    padding:0px;
+}
+body{
+    width:100%;
+    height:900px;
+}
+
+.logo{
+    width:100%;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width:75px;
+    height:45px;
+    border-radius:100%;
+    object-fit: cover;
+    position: relative;
+    left:10px;
+}
+
+.logo p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing:3px;
+    font-size: 20px;
+    font-weight:500;
+    position:relative;
+    right:20px;
+}
+
+.container{
+    width:20%;
+    height:700px;
+    border-bottom:1px solid gray;
+    margin: auto;
+    padding:26px;
+    box-shadow:0px 0px 2px 0px gray;
+}
+
+form p:nth-child(2){
+    margin-top:15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:14px;
+}
+
+form p:nth-child(4){
+    margin-top:15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:14px;
+}
+
+form input{
+    margin-top:10px;
+    border:1px solid black;
+    width:99%;
+    padding:5px;
+    height:20px;
+    border-radius:2px;
+    border-radius:2px;
+    box-shadow:0px 0px 1px 1px gray;
+    box-shadow:inset 0px 1px 1px gray;
+}
+
+form input:focus{
+    box-shadow:0px 0px 4px 1px aqua ;
+}
+
+form select{
+    width:22%;
+    height:30px;
+    border-radius:5px;
+    position:relative;
+    top:5px;
+    float:left;
+}
+
+form p:nth-child(7){
+    margin-top:13px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:14px;
+}
+form p:nth-child(9){
+    margin-top:13px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:14px;
+}
+
+form button{
+    width:100%;
+    height:30px;
+    background-color:rgb(255, 216, 20);
+    margin-top:20px;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+.main button:hover{
+    background-color:rgb(246, 205, 1);
+}
+
+.container a{
+    color: rgb(2,116,137);
+    text-decoration: underline;
+}
+
+.container a:hover{
+    color:orange !important;
+}
+
+.footer{
+    width:30%;
+    height:80px;
+    margin: auto;
+    margin-top:25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.support{
+    display: flex;
+    gap:20px;
+}
+
+.support a{
+    color:rgb(2,116,137);
+    position: relative;
+    top:8px;
+}
+.support a:hover{
+    color:orange;
+}

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Beauty and facecare</title>
+    <link rel="stylesheet" href="{% static 'css/Beauty_style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo_main.jpg' %}">
+            <p>Webmart</p>
+        </div>
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Update location</p>
+        </div>
+        <div class="searchbar">
+            <form class="search">
+                <input type="text" placeholder="Search Webmart.in">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+        <div class="rightnav">
+            <div class="lang">
+                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
+                <p>EN</p>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="sign">
+                <p style="position: relative;top:5px;">Hello, sign in</p>
+                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
+                <i class="fa-solid fa-caret-down"></i>
+                <ul class="drop">
+                    <li><a href="{% url 'login' %}">
+                        <button type="submit" href="{% url 'login' %}">Sign in</button>
+                    </a></li>
+                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
+                </ul>
+            </div>
+            <div class="return">
+                <p style="position: relative;top:5px;">Returns</p>
+                <p style="position: relative; bottom:4px;">& orders</p>
+            </div>
+            <div class="cart">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <p>Cart</p>
+            </div>
+        </div>
+    </div>
+    <div class="subhead">
+        <p style="margin-left:10px;">&gt;&gt;</p>
+        <a href="{% url 'menFashion' %}">Men's fashion</a>
+        <a href="{% url 'womenFashion' %}">Women's fashion</a>
+        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
+        <a href="{% url 'beauty' %}">Beauty & face care</a>
+        <a href="{% url 'decor' %}">Home styles</a>
+        <a href="{% url 'electronics' %}">Electronics</a>
+        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
+    </div>
+    <div class="slide_main">
+        <button type="submit" class="lbtn">&lt;</button>
+        <div class="slider">
+            <a href="#">
+                <img src="https://b2g-consulting.com/wp-content/uploads/2019/11/Loreal-case-study.jpg" class="slide">
+            </a>
+            <a href="#">
+                <img src="https://www.lakmeindia.com/cdn/shop/collections/sun_protection_page_banner.jpg?v=1679313979" class="slide">
+            </a>
+            <a href="#">
+                <img src="https://images.mamaearth.in/wysiwyg/19-08-22/Desktop.gif" class="slide">
+            </a>
+            <a href="#">
+                <img src="https://assets.gadgets360cdn.com/pricee/assets/category/202006/brand-lotus-1200x628_1591871169.jpg" class="slide">
+            </a>
+        </div>
+        <button type="submit" class="rbtn">&gt;</button>
+    </div>
+    <div class="content">
+        <div id="box1" class="cont">
+            <a href="https://www.amazon.in/sspa/click?ie=UTF8&spc=MToxNTY2OTkyNzcxNTkwNjM2OjE3MzYzMzk2ODc6c3BfYXRmX2Jyb3dzZTozMDAxMzA4NzE1NDgzMzI6OjA6Og&url=%2FDerma-Co-Hyaluronic-Sunscreen-Protection%2Fdp%2FB095CRM8NF%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.21NieZ2uHTJRwxaBmcsLSC7whFfUmtz4kgrZrcAt7sVMBWRATEYjHUDJW3T5xbUftMtJdPisTKRz6laacmEXx7GcICNsZzqpha1zrCC9cMeefjBtkn0M5-CNjhg6FAXt6Y-fiD_2A3QXGj2i02h0NL-Pl_o_HYoASDNBf-TPu0Mk3Dx-WsUoRxgKJ8L9X-uhw6AI70RPlLUQNMSA7AFqdZnojWubgh9-oRwiXCzFQi5bgX9OpKahbZxwHlIrAMKdp23mW8_GYxyLHlklm4lrnV-ppshG8PIJJg-RQGBilRM.z6cvlMf1WR3JdNeCIsv3f4HUjrVZsBecNZHgK8oAAnY%26dib_tag%3Dse%26pf_rd_i%3D1355016031%26pf_rd_m%3DA1VBAL9TL5WCBF%26pf_rd_p%3D2861ce5b-ed02-418c-9e80-43ce2b8a1dcc%26pf_rd_r%3DJG1TABE8EKS2SZF29PWW%26pf_rd_s%3Dmerchandised-search-8%26qid%3D1736339687%26refinements%3Dp_85%253A10440599031%252Cp_36%253A-49900%26rnid%3D1741387031%26rps%3D1%26s%3Dbeauty%26sr%3D1-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGZfYnJvd3Nl%26psc%3D1" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51x3cj+-iUL._SX522_.jpg">
+                <p>The Derma Co 1% Hyaluronic Sunscreen Aqua Gel SPF 50 PA++++ I For Oily, Dry, Acne-prone Skin | Ultra Lightweight Texture I Non-Greasy I No White Cast | Broad Spectrum Protection & Blue Light Protection | For Men & Women | 50 g</p>
+                MRP: <span>&#8377;499</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;448</span></p>
+            </a>
+        </div>
+        <div id="box2" class="cont">
+            <a href="https://www.amazon.in/LOreal-Paris-Extraordinary-Serum-Women/dp/B08FW1GJ4F/ref=sr_1_2?dib=eyJ2IjoiMSJ9.9SJXWnBbhYBAZypjKbHUYyyAWMHFgXxVYVt5baFaR-JXbzb2z1eMSLdIaLuo7WvTABkc4FwZy1ui11fEl_gmfMr2f6TGbOdEIqzM2yEQqC9X-31CpGH3p0f06u-TySbbWDBYqoOB5mn2KxIkFPryAgQniFBFawT_8nwbxShtqsNEcJjOi5WW_-7st0dI0Vn1EDHiHd6gQ_oCFnqFho6zsb3XUBa0a6ggRu5rkEPxOcd_VdaaHyeEI_s9MT6vCV3_LpG3vVIfNdCsOctivzHgY5f64NESyEq0hG9pe8bbkd1O8dS7qegzjFQ8cllzkO1P5Jsdveq0RUCsMaieb9n7vCUxSR9ynXOvkYzefK52ZXNkaaPbl4z4sS33wYJUGtFgPcHASY9PFID_BdEGHsGkStJggLd_53hSYyWsudU5gvBpT0lGCqVWlTQ1QVWRP1wB.p9vhtL7rSShQkQ9XQFzAQZk3FPHlSpmBZEq6mREwBE0&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345153&refinements=p_89%3AL%E2%80%99Or%C3%A9al+Paris&rnid=3837712031&s=beauty&sr=1-2" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61GGg1vs3DL._SX522_.jpg">
+                <p>L'Oreal Paris Serum, Protection and Shine, For Dry, Flyaway & Frizzy Hair, With 6 Rare Flower Oils, Extraordinary Oil, 100ml</p>
+                MRP: <span>&#8377;649</span>
+                <p style="color: red;">-40% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;389</span></p>
+            </a>
+        </div>
+        <div id="box3" class="cont">
+            <a href="https://www.amazon.in/Mamaearth-Rice-Water-Niacinamide-Glass/dp/B09Z65JJ69/ref=sr_1_1?dib=eyJ2IjoiMSJ9.hTD50faD6HCOSuy6IA027zp367Bkq3v3YalbmwLkC_nc8-sMYycj5Tth7HaPgV1F4z2TFwN7OyEu_63do10FqHF5FRQg7VwPqic8AqOnN-ZcFSDl-k7U1t1U5696EcKxCMsi1Sv01HlE4xrnzcOq9MjmIoH9EZLRL19ZfHQkIDg5KZ2SU-P6fFPWaYCiGL7LsH8yeVahdMuY-cWVjPd8jBMWiHKy_laBTNrSZ2fRm2WrJzPcWm-Mjjk19go1q9gUWFSkNxSwT8dXl2VRxfWf41cswhGkSwxbaaXxfuPursNSnRK3Ipg2niyu3TOwrSHOoqTkLpK6GMTi3UAMejL9mMfUjZzm5Pz9PxPO4pg2P8yWzBxwPjZbYaynL0ZAZUxnsOTGiuA5bbhY7eVBhPVji4U_HTBFkfLPilfQj_Y__OVwPVvzKm6hF0bZ__fr4Kle.8HP7vZXICGNKIy1uJb6MXEXR3nhDPFQIPcF4uUWuDig&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345298&refinements=p_89%3AMamaearth&rnid=3837712031&s=beauty&sr=1-1" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31J2lxpu27L._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Mamaearth Rice Face Wash With Rice Water & Niacinamide For Glass Skin - 100 Ml</p>
+                MRP: <span>&#8377;269</span>
+                <p style="color: red;">-13% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;233</span></p>
+            </a>
+        </div>
+        <div id="box4" class="cont">
+            <a href="https://www.amazon.in/Mamaearth-Aloe-Vera-Face-Vitamin/dp/B084WN37XT/ref=sr_1_8?dib=eyJ2IjoiMSJ9.hTD50faD6HCOSuy6IA027zp367Bkq3v3YalbmwLkC_nc8-sMYycj5Tth7HaPgV1F4z2TFwN7OyEu_63do10FqHF5FRQg7VwPqic8AqOnN-ZcFSDl-k7U1t1U5696EcKxCMsi1Sv01HlE4xrnzcOq9MjmIoH9EZLRL19ZfHQkIDg5KZ2SU-P6fFPWaYCiGL7LsH8yeVahdMuY-cWVjPd8jBMWiHKy_laBTNrSZ2fRm2WrJzPcWm-Mjjk19go1q9gUWFSkNxSwT8dXl2VRxfWf41cswhGkSwxbaaXxfuPursNSnRK3Ipg2niyu3TOwrSHOoqTkLpK6GMTi3UAMejL9mMfUjZzm5Pz9PxPO4pg2P8yWzBxwPjZbYaynL0ZAZUxnsOTGiuA5bbhY7eVBhPVji4U_HTBFkfLPilfQj_Y__OVwPVvzKm6hF0bZ__fr4Kle.8HP7vZXICGNKIy1uJb6MXEXR3nhDPFQIPcF4uUWuDig&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345298&refinements=p_89%3AMamaearth&rnid=3837712031&s=beauty&sr=1-8" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31W0zAlas-L._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Mamaearth Aloe Vera Gel - 300ml | For Face, with Pure Aloe Vera & Vitamin E for Skin and Hair | All Skin Type</p>
+                MRP: <span>&#8377;319</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;286</span></p>
+            </a>
+        </div>
+        <div id="box5" class="cont">
+            <a href="https://www.amazon.in/Lakme-Complexion-Care-Cream-Beige/dp/B01BBNF6GM/ref=sr_1_6?dib=eyJ2IjoiMSJ9.C8g2TVtXC68GQDAwvO5W0vrrK2b0x1hKjYI1fCkqk5FoEpy-XqYiJPngA2PFI5rqomJmnVXxsMzs9Ev5ZWZO98ZcapdMQugciMhCHrbMj29wOn0ExuELRiJoiFTALAvEOJGkA0u4pFMv3AmXs0-pRENbF2UkyYSV-02qFlYXSOfGTXRku80ve08jEKF189cY8VPKcXr2yWbDtlyiDfMqhs2xZbVws7Jj8EZPWS76adV_dEvkmd8Gu7-VLUlGh2EPzSEsaHOk1ZmkOqzkVlq3Ws7SYkzLluiB0aYtZ1z-wfjn8Ix-Nf2y4nslsad7xSytxj6mT1ZI3pE14ECW8QNa3sg6nnL88EGnzu6nHnkxSs_GF3-ebROLu1QSjn0A1fAYSkXXE21ae-xxXWiuL8AFmn8r0kQp_lE_0o8REiznyAwMPR0ScoWSoChO3HvN5yIF.Kp4h1tJDfZdHmeQWtDL8uSBl-yhoQl6cLbLc-BBqLeA&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-15&qid=1736345304&refinements=p_89%3ALAKM%C3%89&rnid=3837712031&s=beauty&sr=1-6" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41Adde7gNmL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>LAKMÉ CC Cream with SPF30 PA++ - Beige |Enriched with 3% Niacinamide | Conceals Dark Spots| Brightens Skin |Lightweight Moisturizer + Foundation |30 g</p>
+                MRP: <span>&#8377;299</span>
+                <p style="color: red;">-21% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;236</span></p>
+            </a>
+        </div>
+        <div id="box6" class="cont">
+            <a href="https://www.amazon.in/Derma-Co-Arbutin-Hyaluronic-Pigmented/dp/B0CC5ZFRF9/ref=sr_1_9?dib=eyJ2IjoiMSJ9.g1HAdRzQA1t2MTE_J7vKpsofiIgb9OF41I0zJJBKMJ4GUENRNloJ6EnQj40ubT7BxIJF6P0ENj5rV9m2dHKJzFdGNXOU2TDrq60Q1NgjgaUEITIkHDRrqrgMjnoGQj86IwnKlxuXG7iPKNzuBWFjiEeKkdR5TNRywuikrLFiwldb0B-ywNafurplFjAwDdFx-ZEplhPcLqbKHfijoEmKaRFyF7g0wPZhN4cKFXItTIQyj_qiD48fOv58R6vOAJ8NJ07sQyilDraYgAgcljYqBF-oaXil4Wm5Jq2IHjVCm1d7TuXd3N1YBZ4bqzCxO89m-sgDI97cUlW_2OCVmVHmziKCgGwSaQ-lxlJZz1-W02z3B-puXcUyMVS9pgCYUmxKkAUG_wXE5nqSyzy7NeC5WHpZ8sQpsXCqT6PKLvcIvOwoL0LCWJ9lyO-DeE2038O5.yVO_9AH57vjzghbHd7eQKMLK-yS4YrjXnR1oSvUdxxQ&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736403535&refinements=p_89%3Athe+derma+co&s=beauty&sr=1-9" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/5197lQZPR7L._SX522_.jpg">
+                <p>The Derma Co 1% Kojic Acid Lip Balm I With Alpha Arbutin & Hyaluronic Acid I SPF 30 PA++ I Gives Moisturized Lips | Off White | Travel Friendly | For Dark & Pigmented Lips | 4g</p>
+                MRP: <span>&#8377;329</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;295</span></p>
+            </a>
+        </div>
+        <div id="box7" class="cont">
+            <a href="https://www.amazon.in/Sunscreen-Protection-Natural-Dermatologically-Formula/dp/B085T374WK/ref=sr_1_15?dib=eyJ2IjoiMSJ9.C8g2TVtXC68GQDAwvO5W0vrrK2b0x1hKjYI1fCkqk5FoEpy-XqYiJPngA2PFI5rqomJmnVXxsMzs9Ev5ZWZO98ZcapdMQugciMhCHrbMj29wOn0ExuELRiJoiFTALAvEOJGkA0u4pFMv3AmXs0-pRENbF2UkyYSV-02qFlYXSOfGTXRku80ve08jEKF189cY8VPKcXr2yWbDtlyiDfMqhs2xZbVws7Jj8EZPWS76adV_dEvkmd8Gu7-VLUlGh2EPzSEsaHOk1ZmkOqzkVlq3Ws7SYkzLluiB0aYtZ1z-wfjn8Ix-Nf2y4nslsad7xSytxj6mT1ZI3pE14ECW8QNa3sg6nnL88EGnzu6nHnkxSs_GF3-ebROLu1QSjn0A1fAYSkXXE21ae-xxXWiuL8AFmn8r0kQp_lE_0o8REiznyAwMPR0ScoWSoChO3HvN5yIF.Kp4h1tJDfZdHmeQWtDL8uSBl-yhoQl6cLbLc-BBqLeA&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-15&qid=1736345304&refinements=p_89%3ALAKM%C3%89&rnid=3837712031&s=beauty&sr=1-15" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31XmKBGN-SL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Lakme Sun Expert Tinted Sunscreen 50 SPF PA+++, Natural Tone, With Cucumber, Lightweight, Ultra Matte Finish, Blocks Upto 97% Harmful Sunrays, 100 ml</p>
+                MRP: <span>&#8377;575</span>
+                <p style="color: red;">-40% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;344</span></p>
+            </a>
+        </div>
+        <div id="box8" class="cont">
+            <a href="https://www.amazon.in/Lotus-Professional-Phyto-Renewal-Ageing/dp/B01AJBW33Q/ref=sr_1_6?dib=eyJ2IjoiMSJ9.yyZszXZU6FvnC9ZhrJMA1PaAoBFQbEFOqJY7kgy6W-yV9pP4pOadyA9kKLYT6JeWfXyc6TpjfUTug7V9yJTv1C_5Dea2vvFi2ISz3KqUnG_-wdelBSdTLV2Hb-MzEpTL9Da3HmunjDGA4DCDEIwMsRaXoAm3b5mUUBwzdEAeyBpPWOWgbeynGY3CH69BJdzFCu3eW5DOUwPP6eg4U3hXNBymhrHtei3edbTrSbSlEGCyVN3kW7ANEZi8xq1AdtwXmQTPI9wY2WiJSSarbjhzT0wEenKdEGdXUilmTEpk7I5vksQLdNkGBe-Qxl_uzOFt2N7eOWyxY7CJDyJNExpg1hX21TJrLZoDVZJxmzD-rqFpZoCc0jlrpLaYH6evuVKxJb-u9vvh5Ix3W5lfvqyKsw8CG_Xrnh-CbsUaLohCmScaLFIwiLyC1EGNtPgFifJf.Y16N5UGSJimrQar9LTkOP72jUDMCxdubjyqMXMGPcpg&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345332&refinements=p_89%3Alotus&rnid=3837712031&s=beauty&sr=1-6" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41S5dlOPtCL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Lotus Professional Phyto Rx Skin Renewal Anti Ageing Night Cream, Natural, 50 g</p>
+                MRP: <span>&#8377;985</span>
+                <p style="color: red;">-25% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;738</span></p>
+            </a>
+        </div>
+        <div id="box9" class="cont">
+            <a href="https://www.amazon.in/Lotus-DermaBotanics-Kojic-Multi-Blemish/dp/B0D86Y1Z6X/ref=sr_1_7?dib=eyJ2IjoiMSJ9.yyZszXZU6FvnC9ZhrJMA1PaAoBFQbEFOqJY7kgy6W-yV9pP4pOadyA9kKLYT6JeWfXyc6TpjfUTug7V9yJTv1C_5Dea2vvFi2ISz3KqUnG_-wdelBSdTLV2Hb-MzEpTL9Da3HmunjDGA4DCDEIwMsRaXoAm3b5mUUBwzdEAeyBpPWOWgbeynGY3CH69BJdzFCu3eW5DOUwPP6eg4U3hXNBymhrHtei3edbTrSbSlEGCyVN3kW7ANEZi8xq1AdtwXmQTPI9wY2WiJSSarbjhzT0wEenKdEGdXUilmTEpk7I5vksQLdNkGBe-Qxl_uzOFt2N7eOWyxY7CJDyJNExpg1hX21TJrLZoDVZJxmzD-rqFpZoCc0jlrpLaYH6evuVKxJb-u9vvh5Ix3W5lfvqyKsw8CG_Xrnh-CbsUaLohCmScaLFIwiLyC1EGNtPgFifJf.Y16N5UGSJimrQar9LTkOP72jUDMCxdubjyqMXMGPcpg&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345332&refinements=p_89%3Alotus&rnid=3837712031&s=beauty&sr=1-7" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31SH+f+bkRL._SY300_SX300_.jpg">
+                <p>Lotus DermaBotanics Kojic Acid + Multi Berry Blemish - Free Face Wash | Reduces Pigmentation, Acne & Dark Spots | Made with Dermatologists, pH 5.5 | Non-irritating | Suitable for Sensitive Skin | 100g</p>
+                MRP: <span>&#8377;345</span>
+                <p style="color: red;">-8% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;318</span></p>
+            </a>
+        </div>
+        <div id="box10" class="cont">
+            <a href="https://www.amazon.in/Lotus-Professional-Phyto-Protect-Sunblock/dp/B01AJBW4JY/ref=sr_1_11?dib=eyJ2IjoiMSJ9.yyZszXZU6FvnC9ZhrJMA1PaAoBFQbEFOqJY7kgy6W-yV9pP4pOadyA9kKLYT6JeWfXyc6TpjfUTug7V9yJTv1C_5Dea2vvFi2ISz3KqUnG_-wdelBSdTLV2Hb-MzEpTL9Da3HmunjDGA4DCDEIwMsRaXoAm3b5mUUBwzdEAeyBpPWOWgbeynGY3CH69BJdzFCu3eW5DOUwPP6eg4U3hXNBymhrHtei3edbTrSbSlEGCyVN3kW7ANEZi8xq1AdtwXmQTPI9wY2WiJSSarbjhzT0wEenKdEGdXUilmTEpk7I5vksQLdNkGBe-Qxl_uzOFt2N7eOWyxY7CJDyJNExpg1hX21TJrLZoDVZJxmzD-rqFpZoCc0jlrpLaYH6evuVKxJb-u9vvh5Ix3W5lfvqyKsw8CG_Xrnh-CbsUaLohCmScaLFIwiLyC1EGNtPgFifJf.Y16N5UGSJimrQar9LTkOP72jUDMCxdubjyqMXMGPcpg&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345332&refinements=p_89%3Alotus&rnid=3837712031&s=beauty&sr=1-11" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31szwlxNzmL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Lotus Professional PhytoRx UltraProtect Sunblock | SPF70 | PA+++ | UV protection | Oil Free| Preservative Free | 50g</p>
+                MRP: <span>&#8377;975</span>
+                <p style="color: red;">-25% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;728</span></p>
+            </a>
+        </div>
+        <div id="box11" class="cont">
+            <a href="https://www.amazon.in/Minimalist-Salicylic-Sulphate-Cleanser-Pimples/dp/B096PJMGPL/ref=sr_1_1?dib=eyJ2IjoiMSJ9.LPIqpn1E-lvBGsFD_ESRBO5MGZB11dydoMj2I8Ml-_zqH9qfBzCr-coU-yFnfqQXKTFRiKWSgUHlR_ca_G_c7xZz_VPsPTW0es-hisBB7pp3Xsp3eM5-v1y-_P0-YlMUlWSiyWimkI9liJMZgzk_HwzVjDhJP3587thIQwxVV9O07CV0PCPQA4RJplXx2D0qo_WfZ0DVketfx4jH1kLxmBVOcE5QMvQcn0WKJDlBSvjaN4UhZccQM1JjbtDIpkSWg2ftLUFvi7vp5TVAwrt0xKKB3Cl-fFtpbAvHEzp2rx3xblcE7tLEHrZGvwCB-Dc6eDFxUQMXOYoHZ7ahe0NyOWAvV5Lp_Cg-qqU3Bt_17kvqkK-4YrEs78We_yHwB-Fxo5ZjCX_8U2n1lDukJL34wT0iCihKOC29EVJRA0EGwYlk8qa5ZPtss3ao5r0nTfzh.5WZRVovz1ZO7gyKrlDZzpO_q4NpC6k8wBlLhn6HFUSM&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345359&refinements=p_89%3AMinimalist&rnid=3837712031&s=beauty&sr=1-1" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31VGCmT-KsL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Minimalist 2% Salicylic Acid Face Wash For Oily Skin | Sulphate free, Anti Acne Face Cleanser With LHA & Zinc For Acne or Pimples | For Women & Men | 100 ml</p>
+                MRP: <span>&#8377;329</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;299</span></p>
+            </a>
+        </div>
+        <div id="box12" class="cont">
+            <a href="https://www.amazon.in/Minimalist-Vitamin-Advanced-Brightening-Fullerenes/dp/B09VPNK8VP/ref=sr_1_6?dib=eyJ2IjoiMSJ9.LPIqpn1E-lvBGsFD_ESRBO5MGZB11dydoMj2I8Ml-_zqH9qfBzCr-coU-yFnfqQXKTFRiKWSgUHlR_ca_G_c7xZz_VPsPTW0es-hisBB7pp3Xsp3eM5-v1y-_P0-YlMUlWSiyWimkI9liJMZgzk_HwzVjDhJP3587thIQwxVV9O07CV0PCPQA4RJplXx2D0qo_WfZ0DVketfx4jH1kLxmBVOcE5QMvQcn0WKJDlBSvjaN4UhZccQM1JjbtDIpkSWg2ftLUFvi7vp5TVAwrt0xKKB3Cl-fFtpbAvHEzp2rx3xblcE7tLEHrZGvwCB-Dc6eDFxUQMXOYoHZ7ahe0NyOWAvV5Lp_Cg-qqU3Bt_17kvqkK-4YrEs78We_yHwB-Fxo5ZjCX_8U2n1lDukJL34wT0iCihKOC29EVJRA0EGwYlk8qa5ZPtss3ao5r0nTfzh.5WZRVovz1ZO7gyKrlDZzpO_q4NpC6k8wBlLhn6HFUSM&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=BR34XJDJDBW72NFZV9JK&pf_rd_s=merchandised-search-14&qid=1736345359&refinements=p_89%3AMinimalist&rnid=3837712031&s=beauty&sr=1-6" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31jlA3BOZmL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Minimalist 16% Vitamin C Face Serum (Advanced) With Vit E, & Ferulic Acid For Glowing Skin | Advanced Brightening Formula With Power of Vit C & E, Ferulic Acid & Fullerenes | 20ml</p>
+                MRP: <span>&#8377;659</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;599</span></p>
+            </a>
+        </div>
+        <div id="box13" class="cont">
+            <a href="https://www.amazon.in/Himalaya-Purifying-Neem-Face-Wash/dp/B07XS46Q73/ref=sr_1_1?dib=eyJ2IjoiMSJ9.fw-epOSnuDy4MQcRtc7tITqEhd-OlBTiO1SwgjpLWViWfMkI4BjAzd63Is_mk_agXjHhWpv0UtLfSuMG_MMT0g6MzHtMnGzWxLEWWWPsbdqjdkccQiTkLIdvjAjfWyEm1-NB8eAuUkNUd84oxylTPP_RFpOnPM3CPA73f55iJ01iY89GXsrHgfGQ33Y2QZz9gxNhGl7YZnx05D-MVc74iSOxwgaJpFC7t8DYV0fO_vm7c7jQPzVs_vxzQKsxVxlTZyIf2S2FWWNpxKJvNlswTFR-_c2mv1VuYzjsy6adNqfcES6U5kMK3o2XuRmu5r9VL9ou2gdUXXQVmp0MLnQx0CnUt9x7LD-ilC4HzGYYOzYe0CiW65UncKuWxeyfLYmH2rj355mxrMt6fevlWUvzfCmZDCI3e_92RjP5ANGs96r8_IOXME9B0PPHR4cmju4S.iF8i2p_CxlBGhRzuEU8jC8MNi5ZZAvhWGLXoR4S9p7c&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736403631&refinements=p_89%3Ahimalaya&rnid=3837712031&s=beauty&sr=1-1" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51tXjE2WQQL._SX522_.jpg">
+                <p>Himalaya Purifying Neem Face Wash, 400 ml</p>
+                MRP: <span>&#8377;495</span>
+                <p style="color: red;">-34% <span style="text-decoration:none; color: black; font-size: 19px;">&#8377;326</span></p>
+            </a>
+        </div>
+        <div id="box14" class="cont">
+            <a href="https://www.amazon.in/Himalaya-Brightening-Vitamin-Niacinamide-Brighter/dp/B0DCW1F242/ref=sr_1_8?dib=eyJ2IjoiMSJ9.fw-epOSnuDy4MQcRtc7tITqEhd-OlBTiO1SwgjpLWViWfMkI4BjAzd63Is_mk_agXjHhWpv0UtLfSuMG_MMT0g6MzHtMnGzWxLEWWWPsbdqjdkccQiTkLIdvjAjfWyEm1-NB8eAuUkNUd84oxylTPP_RFpOnPM3CPA73f55iJ01iY89GXsrHgfGQ33Y2QZz9gxNhGl7YZnx05D-MVc74iSOxwgaJpFC7t8DYV0fO_vm7c7jQPzVs_vxzQKsxVxlTZyIf2S2FWWNpxKJvNlswTFR-_c2mv1VuYzjsy6adNqfcES6U5kMK3o2XuRmu5r9VL9ou2gdUXXQVmp0MLnQx0CnUt9x7LD-ilC4HzGYYOzYe0CiW65UncKuWxeyfLYmH2rj355mxrMt6fevlWUvzfCmZDCI3e_92RjP5ANGs96r8_IOXME9B0PPHR4cmju4S.iF8i2p_CxlBGhRzuEU8jC8MNi5ZZAvhWGLXoR4S9p7c&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736403631&refinements=p_89%3Ahimalaya&rnid=3837712031&s=beauty&sr=1-8" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81kn2o6GdFL._SX522_.jpg">
+                <p>Himalaya Brightening Vitamin C Serum I 5X Vitamin C & 10 X Niacinamide I Brighter Skin from Day 3 | 15 ml</p>
+                MRP: <span>&#8377;249</span>
+                <p style="color: red;">-6% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;234</span></p>
+            </a>
+        </div>
+        <div id="box15" class="cont">
+            <a href="https://www.amazon.in/Himalaya-Herbals-Removal-Orange-Peel-off/dp/B01L74QH5O/ref=sr_1_29?dib=eyJ2IjoiMSJ9.fw-epOSnuDy4MQcRtc7tITqEhd-OlBTiO1SwgjpLWViWfMkI4BjAzd63Is_mk_agXjHhWpv0UtLfSuMG_MMT0g6MzHtMnGzWxLEWWWPsbdqjdkccQiTkLIdvjAjfWyEm1-NB8eAuUkNUd84oxylTPP_RFpOnPM3CPA73f55iJ01iY89GXsrHgfGQ33Y2QZz9gxNhGl7YZnx05D-MVc74iSOxwgaJpFC7t8DYV0fO_vm7c7jQPzVs_vxzQKsxVxlTZyIf2S2FWWNpxKJvNlswTFR-_c2mv1VuYzjsy6adNqfcES6U5kMK3o2XuRmu5r9VL9ou2gdUXXQVmp0MLnQx0CnUt9x7LD-ilC4HzGYYOzYe0CiW65UncKuWxeyfLYmH2rj355mxrMt6fevlWUvzfCmZDCI3e_92RjP5ANGs96r8_IOXME9B0PPHR4cmju4S.iF8i2p_CxlBGhRzuEU8jC8MNi5ZZAvhWGLXoR4S9p7c&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736403631&refinements=p_89%3Ahimalaya&rnid=3837712031&s=beauty&sr=1-29" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71tAwIHgV1L._SX522_.jpg">
+                <p>Himalaya Herbals Tan Removal Orange Peel-off Mask, 100g</p>
+                MRP: <span>&#8377;135</span>
+                <p style="color: red;">-13% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;117</span></p>
+            </a>
+        </div>
+        <div id="box16" class="cont">
+            <a href="https://www.amazon.in/Mamaearth-Moisturizing-Hyaluronic-Moisturization-Moisturizer/dp/B0DKNPFLH6/ref=sr_1_18?dib=eyJ2IjoiMSJ9.hTD50faD6HCOSuy6IA027zp367Bkq3v3YalbmwLkC_nFagiq-49UAC3kCmvrAr27-mh6cx5427K7XpRpoQRyzcM-QpImpF5FhNuaO0RxLHZ15aRhkPFvnNwUxVrVlTnEYbJDerp4REWo_BW-i27Ci3La0dbk_bN0L23JtMTrPY85KZ2SU-P6fFPWaYCiGL7LsH8yeVahdMuY-cWVjPd8jEIf3XDl2uSfl950cm5fPrqxfVl2xYXt9-_AzOS4PLBGVBUMCehEzaVYDUo0J8Ead_eMBLlAhbJgaPI8cGnq88ZJK7C88WoJwcbIOqo2qZD26IZMS-YYEy4yC3wnsp_-SRnjD9Gjpf_4LwKvi3c4SIjuA6FzTYeM5s_ixkUdxy4roewoTns4n_fX7cfnQ253QP1yR_jcKQV4FOeC2fMP6cNOLdNzG7roouawBMXBhpn8.imWEzwlCvoEKvdEupoEfkb4tH_GbFR3oQH7fTIU9cIQ&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736404098&refinements=p_89%3AMamaearth&rnid=3837712031&s=beauty&sr=1-18" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51Oay67AldL._SX522_.jpg">
+                <p>Mamaearth Beetroot Hydraful Light Moisturizing Cream with Beetroot & Hyaluronic Acid | For Hydrated Pink Glow | For Face, Hand & Body | 24H Moisturization | Quick Absorbing | Non-Greasy | Soft Moisturizer | 200 g</p>
+                MRP: <span>&#8377;399</span>
+                <p style="color: red;">-12% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;350</span></p>
+            </a>
+        </div>
+        <div id="box17" class="cont">
+            <a href="https://www.amazon.in/Mamaearth-Vitamin-Daily-Turmeric-Illumination/dp/B0B9SXGGQQ/ref=sr_1_19?dib=eyJ2IjoiMSJ9.hTD50faD6HCOSuy6IA027zp367Bkq3v3YalbmwLkC_nFagiq-49UAC3kCmvrAr27-mh6cx5427K7XpRpoQRyzcM-QpImpF5FhNuaO0RxLHZ15aRhkPFvnNwUxVrVlTnEYbJDerp4REWo_BW-i27Ci3La0dbk_bN0L23JtMTrPY85KZ2SU-P6fFPWaYCiGL7LsH8yeVahdMuY-cWVjPd8jEIf3XDl2uSfl950cm5fPrqxfVl2xYXt9-_AzOS4PLBGVBUMCehEzaVYDUo0J8Ead_eMBLlAhbJgaPI8cGnq88ZJK7C88WoJwcbIOqo2qZD26IZMS-YYEy4yC3wnsp_-SRnjD9Gjpf_4LwKvi3c4SIjuA6FzTYeM5s_ixkUdxy4roewoTns4n_fX7cfnQ253QP1yR_jcKQV4FOeC2fMP6cNOLdNzG7roouawBMXBhpn8.imWEzwlCvoEKvdEupoEfkb4tH_GbFR3oQH7fTIU9cIQ&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736404098&refinements=p_89%3AMamaearth&rnid=3837712031&s=beauty&sr=1-19" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51H1dx3ULHL._SX679_.jpg">
+                <p>Mamaearth Vitamin C Daily Glow Face Cream With Vitamin C & Turmeric For Skin Illumination - 80 G</p>
+                MRP: <span>&#8377;249</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;224</span></p>
+            </a>
+        </div>
+        <div id="box18" class="cont">
+            <a href="https://www.amazon.in/Mamaearth-Multani-Mitti-Bulgarian-Control/dp/B0C1BHWF1S/ref=sr_1_26?dib=eyJ2IjoiMSJ9.hTD50faD6HCOSuy6IA027zp367Bkq3v3YalbmwLkC_nFagiq-49UAC3kCmvrAr27-mh6cx5427K7XpRpoQRyzcM-QpImpF5FhNuaO0RxLHZ15aRhkPFvnNwUxVrVlTnEYbJDerp4REWo_BW-i27Ci3La0dbk_bN0L23JtMTrPY85KZ2SU-P6fFPWaYCiGL7LsH8yeVahdMuY-cWVjPd8jEIf3XDl2uSfl950cm5fPrqxfVl2xYXt9-_AzOS4PLBGVBUMCehEzaVYDUo0J8Ead_eMBLlAhbJgaPI8cGnq88ZJK7C88WoJwcbIOqo2qZD26IZMS-YYEy4yC3wnsp_-SRnjD9Gjpf_4LwKvi3c4SIjuA6FzTYeM5s_ixkUdxy4roewoTns4n_fX7cfnQ253QP1yR_jcKQV4FOeC2fMP6cNOLdNzG7roouawBMXBhpn8.imWEzwlCvoEKvdEupoEfkb4tH_GbFR3oQH7fTIU9cIQ&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736404098&refinements=p_89%3AMamaearth&rnid=3837712031&s=beauty&sr=1-26" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51ndgvTppbL._SX522_.jpg">
+                <p>Mamaearth Multani Mitti Face Wash with Multani Mitti & Bulgarian Rose For Oil Control & Acne - 100 ml | Suits All Skin Types | Hydrating & Gentle | Paraben-Free | No Silicones | Sulphate-Free</p>
+                MRP: <span>&#8377;250</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;233</span></p>
+            </a>
+        </div>
+        <div id="box19" class="cont">
+            <a href="https://www.amazon.in/Derma-Co-Niacinamide-Cleanser-Sensitive/dp/B0CD1RRT75/ref=sr_1_13?dib=eyJ2IjoiMSJ9.g1HAdRzQA1t2MTE_J7vKpsofiIgb9OF41I0zJJBKMJ4GUENRNloJ6EnQj40ubT7BxIJF6P0ENj5rV9m2dHKJzFdGNXOU2TDrq60Q1NgjgaUEITIkHDRrqrgMjnoGQj86IwnKlxuXG7iPKNzuBWFjiEeKkdR5TNRywuikrLFiwldb0B-ywNafurplFjAwDdFx-ZEplhPcLqbKHfijoEmKaRFyF7g0wPZhN4cKFXItTIQyj_qiD48fOv58R6vOAJ8NJ07sQyilDraYgAgcljYqBF-oaXil4Wm5Jq2IHjVCm1d7TuXd3N1YBZ4bqzCxO89m-sgDI97cUlW_2OCVmVHmziKCgGwSaQ-lxlJZz1-W02z3B-puXcUyMVS9pgCYUmxKkAUG_wXE5nqSyzy7NeC5WHpZ8sQpsXCqT6PKLvcIvOwoL0LCWJ9lyO-DeE2038O5.yVO_9AH57vjzghbHd7eQKMLK-yS4YrjXnR1oSvUdxxQ&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736403535&refinements=p_89%3Athe+derma+co&s=beauty&sr=1-13" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31whfHxs1HL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>The Derma Co 2% Niacinamide Gentle Skin Cleanser for Sensitive, Dry, Normal Skin - 125 ml Non-Irritant | 100% Soap-Free | Non-Oil Stripping | Gently Cleanses Makeup</p>
+                MRP: <span>&#8377;299</span>
+                <p style="color: red;">-13% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;260</span></p>
+            </a>
+        </div>
+        <div id="box20" class="cont">
+            <a href="https://www.amazon.in/Derma-Co-Salicylic-Oil-Free-Moisturizer/dp/B0989V1DQC/ref=sr_1_14?dib=eyJ2IjoiMSJ9.g1HAdRzQA1t2MTE_J7vKpsofiIgb9OF41I0zJJBKMJ4GUENRNloJ6EnQj40ubT7BxIJF6P0ENj5rV9m2dHKJzFdGNXOU2TDrq60Q1NgjgaUEITIkHDRrqrgMjnoGQj86IwnKlxuXG7iPKNzuBWFjiEeKkdR5TNRywuikrLFiwldb0B-ywNafurplFjAwDdFx-ZEplhPcLqbKHfijoEmKaRFyF7g0wPZhN4cKFXItTIQyj_qiD48fOv58R6vOAJ8NJ07sQyilDraYgAgcljYqBF-oaXil4Wm5Jq2IHjVCm1d7TuXd3N1YBZ4bqzCxO89m-sgDI97cUlW_2OCVmVHmziKCgGwSaQ-lxlJZz1-W02z3B-puXcUyMVS9pgCYUmxKkAUG_wXE5nqSyzy7NeC5WHpZ8sQpsXCqT6PKLvcIvOwoL0LCWJ9lyO-DeE2038O5.yVO_9AH57vjzghbHd7eQKMLK-yS4YrjXnR1oSvUdxxQ&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9a09591f-3a4d-4309-aa34-6641ad7340ae&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-14&qid=1736403535&refinements=p_89%3Athe+derma+co&s=beauty&sr=1-14" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41sWyLOS3gL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>The Derma Co 1% Salicylic Acid Oil-Free Moisturizer For Face with Oat Extract | Fights Active Acne | Deeply Moisturizes | 50g</p>
+                MRP: <span>&#8377;349</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;313</span></p>
+            </a>
+        </div>
+        <div id="box21" class="cont">
+            <a href="https://www.amazon.in/Lakme-Rose-Face-Powder-Soft/dp/B0079Z1H92/ref=sr_1_18?dib=eyJ2IjoiMSJ9.OMzQfirV23BSYagcwV9MVdFaFjIgKD1PhI3eiPIRoDxPGaVNtnMeM1gySr4skUe3omJmnVXxsMzs9Ev5ZWZO98ZcapdMQugciMhCHrbMj29wOn0ExuELRiJoiFTALAvEuDxi011hOjO8eMcTKipBiOtAMWjdSUbMvoeXsSGYETGUnTmqBFiSEdIJrxCbtXT6e0iMmJeNjM5fyD332PA6dK65AS95vlg7swP-pVbi45XDCgsEEMd1af0iwhk0g1ppTmd8ZFHqMeWdya7pSZQw77Tqi5IILHN-7OFlPIDnyUv1_iNC9ACgUg12RA5ld1cByDt3OwFxJOyZLjtQ5A5BhEqEwTKXFVMHNE_WnXERbtSk9aWEbsWGzNXbVWJBsdyZ3Xd31HYg-2-y3PFjHlFbKoR1hp-orbkf5MNeEU6szrIDAATsqDyM_m4dI86QK-rB.ccsKefm79h6c7Maf4zaV9v3Tn37rRnW7j0QNQuNzH6s&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736403500&refinements=p_89%3ALAKM%C3%89&rnid=3837712031&s=beauty&sr=1-18" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41uneObYeSL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>LAKMÉ Rose Face Powder, Oily, Natural, Soft Pink, 40G</p>
+                MRP: <span>&#8377;185</span>
+                <p style="color: red;">-11% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;165</span></p>
+            </a>
+        </div>
+        <div id="box22" class="cont">
+            <a href="https://www.amazon.in/LAKM%C3%89-Coverage-Foundation-Lightweight-Water-Resist/dp/B006LXBFRM/ref=sr_1_28?dib=eyJ2IjoiMSJ9.OMzQfirV23BSYagcwV9MVdFaFjIgKD1PhI3eiPIRoDxPGaVNtnMeM1gySr4skUe3omJmnVXxsMzs9Ev5ZWZO98ZcapdMQugciMhCHrbMj29wOn0ExuELRiJoiFTALAvEuDxi011hOjO8eMcTKipBiOtAMWjdSUbMvoeXsSGYETGUnTmqBFiSEdIJrxCbtXT6e0iMmJeNjM5fyD332PA6dK65AS95vlg7swP-pVbi45XDCgsEEMd1af0iwhk0g1ppTmd8ZFHqMeWdya7pSZQw77Tqi5IILHN-7OFlPIDnyUv1_iNC9ACgUg12RA5ld1cByDt3OwFxJOyZLjtQ5A5BhEqEwTKXFVMHNE_WnXERbtSk9aWEbsWGzNXbVWJBsdyZ3Xd31HYg-2-y3PFjHlFbKoR1hp-orbkf5MNeEU6szrIDAATsqDyM_m4dI86QK-rB.ccsKefm79h6c7Maf4zaV9v3Tn37rRnW7j0QNQuNzH6s&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736403500&refinements=p_89%3ALAKM%C3%89&rnid=3837712031&s=beauty&sr=1-28" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41lxB1R1yAL._SX522_.jpg">
+                <p>LAKMÉ Forever Matte Radiant Liquid Full Coverage Foundation For Superior For All Skin Coverage, Vit E, Lightweight & Water-Resist Marble, 27Ml, 1 Count</p>
+                MRP: <span>&#8377;190</span>
+                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;171</span></p>
+            </a>
+        </div>
+        <div id="box23" class="cont">
+            <a href="https://www.amazon.in/Lakme-Forever-Matte-Liquid-Colour/dp/B0828VWMNY/ref=sr_1_29?dib=eyJ2IjoiMSJ9.OMzQfirV23BSYagcwV9MVdFaFjIgKD1PhI3eiPIRoDxPGaVNtnMeM1gySr4skUe3omJmnVXxsMzs9Ev5ZWZO98ZcapdMQugciMhCHrbMj29wOn0ExuELRiJoiFTALAvEuDxi011hOjO8eMcTKipBiOtAMWjdSUbMvoeXsSGYETGUnTmqBFiSEdIJrxCbtXT6e0iMmJeNjM5fyD332PA6dK65AS95vlg7swP-pVbi45XDCgsEEMd1af0iwhk0g1ppTmd8ZFHqMeWdya7pSZQw77Tqi5IILHN-7OFlPIDnyUv1_iNC9ACgUg12RA5ld1cByDt3OwFxJOyZLjtQ5A5BhEqEwTKXFVMHNE_WnXERbtSk9aWEbsWGzNXbVWJBsdyZ3Xd31HYg-2-y3PFjHlFbKoR1hp-orbkf5MNeEU6szrIDAATsqDyM_m4dI86QK-rB.ccsKefm79h6c7Maf4zaV9v3Tn37rRnW7j0QNQuNzH6s&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736403500&refinements=p_89%3ALAKM%C3%89&rnid=3837712031&s=beauty&sr=1-29" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41dVUy59lwL._SX522_.jpg">
+                <p>Lakmé Forever Matte Liquid Lip Colour, Nude Twist, 5.6 ml</p>
+                MRP: <span>&#8377;349</span>
+                <p style="color: red;">-8% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;321</span></p>
+            </a>
+        </div>
+        <div id="box24" class="cont">
+            <a href="https://www.amazon.in/Maybelline-Hypercurl-Mascara-Waterproof-Black/dp/B0079Z0AMM/ref=sr_1_3?dib=eyJ2IjoiMSJ9.xbhv_u7XNvldzHkX_CTk4mi3sCv8rHVKpkptiZrFM9QZi8XqYkY0YeNwV4dvdKPXynugoQSEcEGTMGVjHTdYbE4eGByPROvnavGl2FOPLNgIk8AiSjmrT3cCqLRlLOBTfxx7KT1DNyJQYJTCjOkBuJ1I54vSiFAqz9PPdZi8WR2tpkpRmp1Avbbtnd_xdGq64hHROAw41uVbsFvlOg1gvfFz4ivxWjVMMwD8kHUadfRUSGP6oXtG-KYCag5EZ4tMZxleCh4F1Xf_h-3lkLrfWIqOUN79a35bYY0WUhrosARQ_NeASAIdK-hfg8rMnnUypKqAJFXAQZOqy5MKJVLqT1KC1zLx0xcWiVntMFAiTOHZFCVXWdDqU1Ywz_06wukJ6doPuDRd5hlGQXTWIji7LEBfegQa4xsO_OO2UptsJAC93GJsyVx433Hvww_kp4JO.VUx87gBm04LhAYFd9D2vneFKu9fsHdzdk76o_bCTFgA&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736403645&refinements=p_89%3Amaybelline&rnid=3837712031&s=beauty&sr=1-3" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51Y2UGLW+bL._SX522_.jpg">
+                <p>Maybelline New York Mascara, Curls Lashes, Highly Pigmented Colour, Long-lasting, Waterproof, Hypercurl , Black, 9.2ml</p>
+                MRP: <span>&#8377;429</span>
+                <p style="color: red;">-33% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;286</span></p>
+            </a>
+        </div>
+        <div id="box25" class="cont">
+            <a href="https://www.amazon.in/Maybelline-Color-Sensational-Creamy-Nuance/dp/B00YJJWBUA/ref=sr_1_7?dib=eyJ2IjoiMSJ9.xbhv_u7XNvldzHkX_CTk4mi3sCv8rHVKpkptiZrFM9QZi8XqYkY0YeNwV4dvdKPXynugoQSEcEGTMGVjHTdYbE4eGByPROvnavGl2FOPLNgIk8AiSjmrT3cCqLRlLOBTfxx7KT1DNyJQYJTCjOkBuJ1I54vSiFAqz9PPdZi8WR2tpkpRmp1Avbbtnd_xdGq64hHROAw41uVbsFvlOg1gvfFz4ivxWjVMMwD8kHUadfRUSGP6oXtG-KYCag5EZ4tMZxleCh4F1Xf_h-3lkLrfWIqOUN79a35bYY0WUhrosARQ_NeASAIdK-hfg8rMnnUypKqAJFXAQZOqy5MKJVLqT1KC1zLx0xcWiVntMFAiTOHZFCVXWdDqU1Ywz_06wukJ6doPuDRd5hlGQXTWIji7LEBfegQa4xsO_OO2UptsJAC93GJsyVx433Hvww_kp4JO.VUx87gBm04LhAYFd9D2vneFKu9fsHdzdk76o_bCTFgA&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736403645&refinements=p_89%3Amaybelline&rnid=3837712031&s=beauty&sr=1-7" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/31v3aw3N5vL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Maybelline New York Matte Lipstick, Intense Colour, Keeps Lips Moisturised, 657 Nude Nuance, Color Sensational Creamy Matte Lipstick, 3.9g</p>
+                MRP: <span>&#8377;299</span>
+                <p style="color: red;">-27% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;217</span></p>
+            </a>
+        </div>
+        <div id="box26" class="cont">
+            <a href="https://www.amazon.in/Maybelline-Matte-Poreless-Liquid-Foundation/dp/B07L3R68G2/ref=sr_1_6?dib=eyJ2IjoiMSJ9.xbhv_u7XNvldzHkX_CTk4mi3sCv8rHVKpkptiZrFM9QZi8XqYkY0YeNwV4dvdKPXynugoQSEcEGTMGVjHTdYbE4eGByPROvnavGl2FOPLNgIk8AiSjmrT3cCqLRlLOBTfxx7KT1DNyJQYJTCjOkBuJ1I54vSiFAqz9PPdZi8WR2tpkpRmp1Avbbtnd_xdGq64hHROAw41uVbsFvlOg1gvfFz4ivxWjVMMwD8kHUadfRUSGP6oXtG-KYCag5EZ4tMZxleCh4F1Xf_h-3lkLrfWIqOUN79a35bYY0WUhrosARQ_NeASAIdK-hfg8rMnnUypKqAJFXAQZOqy5MKJVLqT1KC1zLx0xcWiVntMFAiTOHZFCVXWdDqU1Ywz_06wukJ6doPuDRd5hlGQXTWIji7LEBfegQa4xsO_OO2UptsJAC93GJsyVx433Hvww_kp4JO.VUx87gBm04LhAYFd9D2vneFKu9fsHdzdk76o_bCTFgA&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736403645&refinements=p_89%3Amaybelline&rnid=3837712031&s=beauty&sr=1-6" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41DsJN2tH8L._SX522_.jpg">
+                <p>Maybelline New York Liquid Foundation, Matte & Poreless, Full Coverage Blendable Normal to Oily Skin, Fit Me, 128 Warm Nude, 18 ml</p>
+                MRP: <span>&#8377;329</span>
+                <p style="color: red;">-33% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;220</span></p>
+            </a>
+        </div>
+        <div id="box27" class="cont">
+            <a href="https://www.amazon.in/SUGAR-Cosmetics-Smudge-Liquid-Lipstick/dp/B0822KZ799/ref=sr_1_42?dib=eyJ2IjoiMSJ9.IF_JgfBF-Mky-25IQI73WZKARX13fm_yp6qIdBA8V1z6vywOp-3cUKDfU_8IEM35_OZVqqQv_eAeDZxaDHWVTYBPf80EFuIj1ai4qY7Re-_9mzpDE4zXxqhHagSA52vnSriLMotVrIJeS9oQ0rBm0G7CngcyTldEIzXlQGJoVyH12m6Bv6qIPehZ0L73WBTHBw2w3ddfWh35Sr4ZSglxJlCTHTAYA2AsDR-EGJs70Wcp5i18XoOrVSdFutH31fdulzIPID22voX4605V3B6Xo9ycaJtGAryW1n7uJWtsqnzHh6au01PQiVYB4tV5Bmb-37g1WNmkhue9Mbh5QBbNe7yYQJ1Q4Cw6o3fuuKppfXo8vdpNJbOXYQk4O_L3nllFPd2Y39pOH0IFA8d0qb5Ad2SW4oo0j0XWenojuidUiQvu8wfoWlUdfCDLg9UUldV4.azUrDcc5JvaZ6ml9WOsWaqIlog4G32aDRkpWR6Gkq2U&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736405398&refinements=p_89%3ASugar+cosmetics&rnid=3837712031&s=beauty&sr=1-42" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41Pe6YX6evL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>SUGAR Cosmetics Smudge Me Not Mini Matte Liquid Lipstick Sets for Women | Transferproof & Waterproof | Lasts Upto 12+Hours | Pack of 4 - Bold Shades</p>
+                MRP: <span>&#8377;999</span>
+                <p style="color: red;">-20% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;799</span></p>
+            </a>
+        </div>
+        <div id="box28" class="cont">
+            <a href="https://www.amazon.in/Maybelline-Colossal-Kajal-Super-Black/dp/B01B1KQ6N2/ref=sr_1_19?dib=eyJ2IjoiMSJ9.xbhv_u7XNvldzHkX_CTk4mi3sCv8rHVKpkptiZrFM9QZi8XqYkY0YeNwV4dvdKPXynugoQSEcEGTMGVjHTdYbE4eGByPROvnavGl2FOPLNgIk8AiSjmrT3cCqLRlLOBTfxx7KT1DNyJQYJTCjOkBuJ1I54vSiFAqz9PPdZi8WR2tpkpRmp1Avbbtnd_xdGq64hHROAw41uVbsFvlOg1gvfFz4ivxWjVMMwD8kHUadfRUSGP6oXtG-KYCag5EZ4tMZxleCh4F1Xf_h-3lkLrfWIqOUN79a35bYY0WUhrosARQ_NeASAIdK-hfg8rMnnUypKqAJFXAQZOqy5MKJVLqT1KC1zLx0xcWiVntMFAiTOHZFCVXWdDqU1Ywz_06wukJ6doPuDRd5hlGQXTWIji7LEBfegQa4xsO_OO2UptsJAC93GJsyVx433Hvww_kp4JO.VUx87gBm04LhAYFd9D2vneFKu9fsHdzdk76o_bCTFgA&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736403645&refinements=p_89%3Amaybelline&rnid=3837712031&s=beauty&sr=1-19" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/51XM2LWhd7L._SX522_.jpg">
+                <p>Maybelline New York Kajal, Super Black, Intense Colour, Sharp Definition, Long-lasting, Colossal Kajal, 0.35g</p>
+                MRP: <span>&#8377;325</span>
+                <p style="color: red;">-26% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;241</span></p>
+            </a>
+        </div>
+        <div id="box29" class="cont">
+            <a href="https://www.amazon.in/Beauty-Professional-Liquid-Concealer-Shade-01/dp/B07WTNH18L/ref=sr_1_15?dib=eyJ2IjoiMSJ9.iXtmDL8qQ5tDbbam3x1DoxWTwnVfkBSahSUJppvEPkoWpJpTPmagVt2FoUKIZRBmMSlWrkLLC8-iHK-MnhZbtIxtVdgLD2uneK8D6f85zqRBgJ15zFIzCcsav3Jp1-UV0wDPrUsM8qIxSyO0lrOHeXpKQ9EPb46SIDkmp-_Q18i5-wwR1BmJtUHvAlCVD4dZOfs2-t8lEY5eS_VHetXC-VtyyoVBLOKkuzIDBEPAvx-In1J9AHOd5FXkK85widqp8o9EkHe38qFv5bhOT9DAfRdzqJ-QF4s7KyZUBpqZJ4SbL8nXBQg6TxYc8E1G8QGMOHw2WuLjmpZpDBoaWIK7f7eCLsWvLjCpItVK09Bn8pmGQ6cjJ2e8AMY_TE94b1frP1eTWXCNBHmlYVVdfyxpIkjKtxZbi5VyfF0hBWKhrcr9MF7QMz8klGIaSVHWcM-g.v9l9ccx7zu4zBMkSZFgKUa86y59MYcSA8sUqcTnloHI&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736405170&refinements=p_89%3ASwiss+beauty&rnid=3837712031&s=beauty&sr=1-15" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/313kA0MdYyL._SX300_SY300_QL70_FMwebp_.jpg">
+                <p>Swiss Beauty Liquid Light Weight Concealer With Full Coverage |Easily Blendable Concealer For Face Makeup With Matte Finish | Shade- Warm-Sand, 6g</p>
+                MRP: <span>&#8377;249</span>
+                <p style="color: red;">-30% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;174</span></p>
+            </a>
+        </div>
+        <div id="box30" class="cont">
+            <a href="https://www.amazon.in/Beauty-Plump-Up-Lightweight-Glossy-Finish/dp/B0BRKGRZNY/ref=sr_1_33?dib=eyJ2IjoiMSJ9.iXtmDL8qQ5tDbbam3x1DoxWTwnVfkBSahSUJppvEPkoWpJpTPmagVt2FoUKIZRBmMSlWrkLLC8-iHK-MnhZbtIxtVdgLD2uneK8D6f85zqRBgJ15zFIzCcsav3Jp1-UV0wDPrUsM8qIxSyO0lrOHeXpKQ9EPb46SIDkmp-_Q18i5-wwR1BmJtUHvAlCVD4dZOfs2-t8lEY5eS_VHetXC-VtyyoVBLOKkuzIDBEPAvx-In1J9AHOd5FXkK85widqp8o9EkHe38qFv5bhOT9DAfRdzqJ-QF4s7KyZUBpqZJ4SbL8nXBQg6TxYc8E1G8QGMOHw2WuLjmpZpDBoaWIK7f7eCLsWvLjCpItVK09Bn8pmGQ6cjJ2e8AMY_TE94b1frP1eTWXCNBHmlYVVdfyxpIkjKtxZbi5VyfF0hBWKhrcr9MF7QMz8klGIaSVHWcM-g.v9l9ccx7zu4zBMkSZFgKUa86y59MYcSA8sUqcTnloHI&dib_tag=se&pf_rd_i=1355016031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=43f60a93-3950-4623-87fb-4aebe187aa63&pf_rd_r=QRNWX6DB4KSXP5KFQSK2&pf_rd_s=merchandised-search-15&qid=1736405170&refinements=p_89%3ASwiss+beauty&rnid=3837712031&s=beauty&sr=1-33" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41IpTE+62lL._SY300_SX300_.jpg">
+                <p>Swiss Beauty Plump-Up Wet Lightweight Lip Gloss With High Shine Glossy Finish For Fuller And Plump Lips | Shade- Deep Desire, 2Ml|</p>
+                MRP: <span>&#8377;249</span>
+                <p style="color: red;">-22% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;195</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="more">
+        <a href="https://www.amazon.in/gp/browse.html?node=1355016031&ref_=nav_em_sbc_bhg_beauty_all_0_2_13_2">
+            <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
+        </a>
+    </div>
+    <div class="footer">
+        <div class="fcontainer">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">FAQs</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Support</a>
+        </div>
+        <hr style="width: 80%; border:1px solid gray;">
+        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
+      </div>
+</body>
+<script src="{% static 'js/Beauty_script.js' %}"></script>
+</html>

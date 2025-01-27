@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/Register_style.css' %}">
+</head>
+<body>
+    <div class="logo">
+        <img src="{% static 'images/logo4.jpg' %}">
+        <p>Webmart</p>
+    </div>
+    <div class="container">
+        <form class="main">
+            <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Create Account</p>
+            <p>Your name</p>
+            <input type="text" placeholder="First and Last name">
+            <p style="margin-bottom:2px;">Mobile number</p>
+            <select>
+                <option value="default">IN +91</option>
+                <option value="Af">Afganistan+93</option>
+            </select>
+            <input type="text" placeholder="Mobile number" style=" width:70%;position:relative; left:10px;bottom:5px;">
+            <p>Email</p>
+            <input type="email" placeholder="Email">
+            <p>Password</p>
+            <input type="password" placeholder="At leat 6 characteres">
+            <i class="fa-solid fa-circle-exclamation" style="color:rgb(17,150,171);float:left;position: relative;top:7px;"></i>
+            <p style="position: relative;top:6px;left:5px;margin-bottom:20px;">Passsword must be at least 6 characteres.</p>
+            <p>To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.
+            </p>
+            <button type="submit">Verify mobile number</button>
+        </form>
+            <hr style="margin-top: 20px;color:rgb(213, 217, 217);">
+            <p style="margin-top:12px;margin-bottom: 10px;">Buying for work?</p>
+            <a href="#" style="text-decoration:none; position: relative;bottom:5px; color:rgb(2,116,137);">Shop on Webmart Business</a>
+            <hr style="margin-top: 15px;color:rgba(213, 217, 217, 0.244);">
+            <p style="margin-top:25px;">Already have an Account? <a href="#" style="text-decoration:none; color:rgb(2,116,137);">Sign in.</a></p>
+            <p style="margin-top:20px;font-size:14px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">By continuing, you agree to Webmart's<span> <a href="#">Conditions&nbsp;of&nbsp; Use</a></span> and <span><a href="#">Privacy Notice</a></span></p>
+            
+    </div>
+    <div class="footer">
+        <div class="support">
+            <a href="#">Conditions of Use</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Help</a><br>
+        </div>
+        <p style="position: relative; bottom:7px;right:5px;">© 2024-2025, Webmart.com, Inc. or its affiliates</p>
+    </div>
+</body>
+</html>

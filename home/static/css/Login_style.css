@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    text-decoration:none;
+}
+body{
+    width:100%;
+    height:100%;
+}
+
+.logo{
+    width:100%;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width:75px;
+    height:45px;
+    border-radius:100%;
+    object-fit: cover;
+    position: relative;
+    left:10px;
+}
+.logo p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing:3px;
+    font-size: 20px;
+    font-weight:500;
+    position:relative;
+    right:20px;
+}
+.container{
+    width:100%;
+    height:450px;
+    border-bottom:1px solid black;
+}
+.main{
+    width:20%;
+    height:70%;
+    margin: auto;
+    padding:26px;
+    box-shadow:0px 0px 2px 0px gray;
+}
+form p:nth-child(2){
+    margin-top:15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size:13px;
+}
+form input{
+    margin-top:10px;
+    border:1px solid black;
+    width:99%;
+    padding:5px;
+    height:20px;
+    border-radius:2px;
+    box-shadow:0px 0px 1px 1px gray;
+    box-shadow:inset 0px 1px 1px gray;
+}
+form input:focus{
+    box-shadow:0px 0px 4px 1px aqua ;
+}
+form button{
+    width:100%;
+    height:30px;
+    background-color:rgb(255, 216, 20);
+    margin-top:20px;
+    border:none;
+    border-radius:5px;
+    cursor: pointer;
+}
+form button:hover{
+    background-color:rgb(246, 205, 1);
+}
+.main a{
+    color: rgb(2,116,137);
+    text-decoration: underline;
+}
+.main a:hover{
+    color:orange;
+}
+.help{
+    margin-top:15px;
+}
+.help i{
+    font-size:14px;
+}
+.help a{
+    position: relative;
+    left:5px;
+    font-size:14px;
+}
+.submain{
+   width:23%;
+   height:70px;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   margin-top:3px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.submain p{
+    position: relative;
+    bottom:5px;
+    font-size:14px;
+    color: gray;
+}
+.submain button{
+    width:340px;
+    height:27px;
+    margin-top:3px;
+    cursor: pointer;
+}
+.submain button:active{
+    text-decoration: underline;
+    box-shadow:0px 0px 6px 0px gray;
+}
+.footer{
+    width:30%;
+    height:80px;
+    margin: auto;
+    margin-top:25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.support{
+    display: flex;
+    gap:20px;
+}
+.support a{
+    color:rgb(2,116,137);
+    position: relative;
+    top:8px;
+}
+.support a:hover{
+    color:orange;
+}
