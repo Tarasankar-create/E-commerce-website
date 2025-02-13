@@ -1,70 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Beauty and facecare</title>
     <link rel="stylesheet" href="{% static 'css/Beauty_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
         <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
+            {% for bslide in bslide %}
             <a href="#">
+                <img src="{{bslide.slide_url}}" class="slide">
+            </a>
+            {% endfor %}
+            <!-- <a href="#">
                 <img src="https://b2g-consulting.com/wp-content/uploads/2019/11/Loreal-case-study.jpg" class="slide">
             </a>
             <a href="#">
@@ -75,12 +31,24 @@
             </a>
             <a href="#">
                 <img src="https://assets.gadgets360cdn.com/pricee/assets/category/202006/brand-lotus-1200x628_1591871169.jpg" class="slide">
-            </a>
+            </a> -->
         </div>
         <button type="submit" class="rbtn">&gt;</button>
     </div>
-    <div class="content">
-        <div id="box1" class="cont">
+    <div class="content grid grid-cols-5 gap-[5px]">
+        {% for bdata in bdata %}
+        <div class="cont">
+            <a href="{{bdata.main_url}}" target="_blank">
+                <div class="overflow-hidden">
+                    <img src="{{bdata.image_url}}" class="hover:scale-125 duration-1000">
+                </div>
+                <p>{{bdata.b_title}}</p>
+                MRP: <span>&#8377;{{bdata.total}}</span>
+                <p style="color: red;">-{{bdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{bdata.dis_price}}</span></p>
+            </a>
+        </div>
+        {% endfor %}
+        <!-- <div id="box1" class="cont">
             <a href="https://www.amazon.in/sspa/click?ie=UTF8&spc=MToxNTY2OTkyNzcxNTkwNjM2OjE3MzYzMzk2ODc6c3BfYXRmX2Jyb3dzZTozMDAxMzA4NzE1NDgzMzI6OjA6Og&url=%2FDerma-Co-Hyaluronic-Sunscreen-Protection%2Fdp%2FB095CRM8NF%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.21NieZ2uHTJRwxaBmcsLSC7whFfUmtz4kgrZrcAt7sVMBWRATEYjHUDJW3T5xbUftMtJdPisTKRz6laacmEXx7GcICNsZzqpha1zrCC9cMeefjBtkn0M5-CNjhg6FAXt6Y-fiD_2A3QXGj2i02h0NL-Pl_o_HYoASDNBf-TPu0Mk3Dx-WsUoRxgKJ8L9X-uhw6AI70RPlLUQNMSA7AFqdZnojWubgh9-oRwiXCzFQi5bgX9OpKahbZxwHlIrAMKdp23mW8_GYxyLHlklm4lrnV-ppshG8PIJJg-RQGBilRM.z6cvlMf1WR3JdNeCIsv3f4HUjrVZsBecNZHgK8oAAnY%26dib_tag%3Dse%26pf_rd_i%3D1355016031%26pf_rd_m%3DA1VBAL9TL5WCBF%26pf_rd_p%3D2861ce5b-ed02-418c-9e80-43ce2b8a1dcc%26pf_rd_r%3DJG1TABE8EKS2SZF29PWW%26pf_rd_s%3Dmerchandised-search-8%26qid%3D1736339687%26refinements%3Dp_85%253A10440599031%252Cp_36%253A-49900%26rnid%3D1741387031%26rps%3D1%26s%3Dbeauty%26sr%3D1-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGZfYnJvd3Nl%26psc%3D1" target="_blank">
                 <img src="https://m.media-amazon.com/images/I/51x3cj+-iUL._SX522_.jpg">
                 <p>The Derma Co 1% Hyaluronic Sunscreen Aqua Gel SPF 50 PA++++ I For Oily, Dry, Acne-prone Skin | Ultra Lightweight Texture I Non-Greasy I No White Cast | Broad Spectrum Protection & Blue Light Protection | For Men & Women | 50 g</p>
@@ -319,24 +287,14 @@
                 MRP: <span>&#8377;249</span>
                 <p style="color: red;">-22% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;195</span></p>
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="more">
         <a href="https://www.amazon.in/gp/browse.html?node=1355016031&ref_=nav_em_sbc_bhg_beauty_all_0_2_13_2">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Beauty_script.js' %}"></script>
 </html>
+{% endblock %}

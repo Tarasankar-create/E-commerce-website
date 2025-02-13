@@ -1,0 +1,76 @@
+{% load static%}
+<style>
+    .obj a{
+        box-shadow: 0px 4px 6px rgb(184,142,57);
+    }
+    
+</style>
+<div class="header">
+    <div class="logo">
+        <img src="{% static 'images/logo_main.jpg' %}">
+        <p>Webmart</p>
+    </div>
+    <div class="location">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Update location</p>
+    </div>
+    <div class="searchbar">
+        <form class="search">
+            <input type="text" placeholder="Search Webmart.in">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+    <div class="rightnav">
+        <div class="lang">
+            <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
+            <p>EN</p>
+        </div>
+        <div class="sign">
+            <p style="position: relative;top:5px;">Hello, sign in</p>
+            <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
+            <i class="fa-solid fa-caret-down"></i>
+            <ul class="drop">
+                <li><a href="{% url 'login' %}">
+                    <button type="submit" href="{% url 'login' %}">Sign in</button>
+                </a></li>
+                <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
+            </ul>
+        </div>
+        <div class="return">
+            <p style="position: relative;top:5px;">Returns</p>
+            <p style="position: relative; bottom:4px;">& orders</p>
+        </div>
+        <div class="cart">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <p>Cart</p>
+        </div>
+    </div>
+</div>
+<div class="subhead">
+    <p style="margin-left:10px;">&gt;&gt;</p>
+    <span class="{% if request.path == '/menfashion/' %}obj{% endif %}"><a href="{% url 'menFashion' %}">Men's fashion</a></span>
+    <span class="{% if request.path == '/womenfashion/' %}obj{% endif %}"><a href="{% url 'womenFashion' %}">Women's fashion</a></span>
+    <span class="{% if request.path == '/kidfashion/' %}obj{% endif %}"><a href="{% url 'kidFashion' %}">Kids's fashion</a></span>
+    <span class="{% if request.path == '/beauty/' %}obj{% endif %}"><a href="{% url 'beauty' %}">Beauty & face care</a></span>
+    <span class="{% if request.path == '/decor/' %}obj{% endif %}"><a href="{% url 'decor' %}">Home styles</a></span>
+    <span class="{% if request.path == '/electronics/' %}obj{% endif %}"><a href="{% url 'electronics' %}">Electronics</a></span>
+    <span class="{% if request.path == '/mobile/' %}obj{% endif %}"><a href="{% url 'mobile' %}">Mobiles & accessories</a></span>
+</div>
+<script>
+    let logo=document.querySelector('.logo')
+    let cart=document.querySelector('.cart')
+    let loc=document.querySelector('.location')
+    let ret=document.querySelector('.return')
+    logo.addEventListener('click',()=>{
+        window.location.href="{% url 'home' %}";
+    })
+    cart.addEventListener('click',()=>{
+        window.location.href="https://www.amazon.in/gp/cart/view.html?ref_=nav_cart";
+    })
+    loc.addEventListener('click',()=>{
+        window.location.href="{% url 'login' %}";
+    })
+    ret.addEventListener('click',()=>{
+        window.location.href="{% url 'login' %}"
+    })
+</script>

@@ -84,7 +84,7 @@ body{
 }
 .search input{
     width:540px;
-    height:20px;
+    height:30px !important;
     border:none;
     padding:5px;
     border-top-left-radius:2px;
@@ -111,26 +111,22 @@ body{
     width:16%;
     height:40px;
     display:flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     padding:10px;
+    position: relative;
 }
 .lang p{
     font-weight:bold;
     font-size:16px;
     position: relative;
     left:5px;
+    top:10px;
 }
-.lang i{
+.lang img{
     color:rgb(167, 172, 178);
     font-size:11px;
     position: relative;
-    left:10px;
-    top:3px;
-}
-.lang:hover{
-    border: 1px solid #fff;
+    top:12px;
 }
 
 .sign{
@@ -300,14 +296,8 @@ body{
     margin: auto;
     margin-top:15px;
     box-shadow:1px 1px 6px gray;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
 }
 .cont{
-    width:17%;
-    height:400px;
     margin-top:10px;
     background-color:rgb(247,247,247);
     display: flex;

@@ -1,133 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Women's fashion</title>
     <link rel="stylesheet" href="{% static 'css/Women_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
-        <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
+            {% for wslide in wslide %}
             <a href="#">
-                <img src="https://i.pinimg.com/736x/d0/78/70/d078705c172a131d88c67bd19986172d.jpg" class="slide">
+                <img src="{{wslide.slide_url}}" class="slide">
             </a>
-            <a href="#">
-                <img src="https://intphcm.com/data/upload/tieu-de-banner-thoi-trang.jpg" class="slide">
-            </a>
-            <a href="#">
-                <img src="https://marketplace.canva.com/EAFGKRRskMs/1/0/800w/canva-brown-and-beige-minimalist-fashion-banner-B_78un9z_LQ.jpg" class="slide">
-            </a>
-            <a href="#">
-                <img src="https://www.samyakk.com/blog/wp-content/uploads/2019/03/1_kddy5av1wdtOyyu0A5agzQ.jpg" class="slide">
-            </a>
+            {% endfor %}
         </div>
-        <button type="submit" class="rbtn">&gt;</button>
     </div>
-    <div class="content">
-        <div id="box1" class="cont">
-            <a href="https://www.amazon.in/GoSriKi-Straight-Printed-SANGHVI-GREEN-GS_XXL_Green_XX-Large/dp/B0DM1SPRXW/ref=sr_1_1?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/719v8HOT4uL._SY741_.jpg">
-                <p>GoSriKi Women's Cotton Blend Straight Printed Kurta with Pant & Dupatta</p>
-                MRP: <span>&#8377;2599</span>
-                <p style="color: red;">-73% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;699</span></p>
+    <div class="content grid grid-cols-5 gap-[5px]">
+        {% for wdata in wdata %}
+        <div class="cont">
+            <a href="{{wdata.main_url}}" target="_blank">
+                <div class="overflow-hidden">
+                    <img src="{{wdata.image_url}}" class="hover:scale-125 duration-1000">
+                </div>
+                <p>{{wdata.w_title}}</p>
+                MRP: <span>&#8377;{{wdata.total}}</span>
+                <p style="color: red;">-{{wdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{wdata.dis_price}}</span></p>
             </a>
         </div>
-        <div id="box2" class="cont">
-            <a href="https://www.amazon.in/GoSriKi-ALAYA-NAVY-BLUE-GS_XXL_Navy-Blue_XX-Large/dp/B0DD782T4Y/ref=sr_1_7?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-7" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/715o+fBkVsL._SY741_.jpg">
-                <p>GoSriKi Women's Rayon Blend Straight Printed Kurta with Pant & Dupatta</p>
-                MRP: <span>&#8377;2599</span>
-                <p style="color: red;">-68% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;829</span></p>
-            </a>
-        </div>
-        <div id="box3" class="cont">
-            <a href="https://www.amazon.in/GoSriKi-Straight-Printed-Parimat-Red-GS_L_Red_Large/dp/B0DFY1M47M/ref=sr_1_14?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-14" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51A910RtxmL._SX679_.jpg">
-                <p>GoSriKi Women's Rayon Blend Straight Printed Kurta with Pant & Dupatta</p>
-                MRP: <span>&#8377;2599</span>
-                <p style="color: red;">-73% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;699</span></p>
-            </a>
-        </div>
-        <div id="box4" class="cont">
-            <a href="https://www.amazon.in/Indya-Womens-Georgette-Regular-ITN04191_Grey_S/dp/B0BKQ41HRH/ref=sr_1_11?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-11" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51gNG7uoAbL._SY741_.jpg">
-                <p>Indya Women's Georgette Regular Kurta</p>
-                MRP: <span>&#8377;3500</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;1750</span></p>
-            </a>
-        </div>
-        <div id="box5" class="cont">
-            <a href="https://www.amazon.in/W-Woman-Green-Printed-Kurta_20AUW14656-116416_XL/dp/B08SWP2486/ref=sr_1_16?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-16" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71Jn5nT+S5L._SY741_.jpg">
-                <p>W for Woman Cotton Printed Keyhole Neck Straight Kurta for Women</p>
-                MRP: <span>&#8377;1399</span>
-                <p style="color: red;">-52% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;678</span></p>
-            </a>
-        </div>
-        <div id="box6" class="cont">
-            <a href="https://www.amazon.in/Janasya-Womens-Palazzo-Dupatta-J0244-SKD-XXL/dp/B0925VFL3L/ref=sr_1_17?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-17" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71VHS2HqxUL._SY879_.jpg">
-                <p>Janasya Women's Silk Geometric Regular Kurta Set</p>
-                MRP: <span>&#8377;4398</span>
-                <p style="color: red;">-64% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;1589</span></p>
-            </a>
-        </div>
+        {% endfor %}
+        <!-- 
         <div id="box7" class="cont">
             <a href="https://www.amazon.in/Janasya-Georgette-Printed-Palazzo-SET815-KR-PP/dp/B0CJ9HV4F8/ref=sr_1_41?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-41" target="_blank">
                 <img src="https://m.media-amazon.com/images/I/71oIRxhQTKL._SY741_.jpg">
@@ -319,24 +226,14 @@
                 MRP: <span>&#8377;1799</span>
                 <p style="color: red;">-49% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;919</span></p>
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="more">
         <a href="https://www.amazon.in/b/ref=AF_WIN_bub_w_cml_t_2?pf_rd_r=EGTG9YBAQ8VWEX3B8B4S&pf_rd_p=9a0cb6fd-b7aa-4cdb-a3c8-8599f759d050&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=6648217031&node=1953602031">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Women_script.js' %}"></script>
 </html>
+{% endblock %}

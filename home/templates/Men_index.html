@@ -1,341 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Men's fashion</title>
     <link rel="stylesheet" href="{% static 'css/Men_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
         <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
+            {% for slide in menSlider %}
             <a href="#">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7bb49d2a-8588-41e7-9081-342339bfb37d/ddl95sj-4f2dc038-52f4-4369-8ce2-977c63d427eb.jpg/v1/fill/w_1024,h_284,q_75,strp/men_s_fashion__banner_by_asimcarnage_ddl95sj-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdiYjQ5ZDJhLTg1ODgtNDFlNy05MDgxLTM0MjMzOWJmYjM3ZFwvZGRsOTVzai00ZjJkYzAzOC01MmY0LTQzNjktOGNlMi05NzdjNjNkNDI3ZWIuanBnIiwiaGVpZ2h0IjoiPD0yODQiLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC83YmI0OWQyYS04NTg4LTQxZTctOTA4MS0zNDIzMzliZmIzN2RcL2FzaW1jYXJuYWdlLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.ktKYKsraKd0YmHxi2mHLJfVcWFbkYW687jM82VjT2sU" class="slide">
+                <img src="{{slide.slide_url}}" class="slide">
             </a>
-            <a href="#">
-                <img src="https://tipsmake.com/data/images/collection-of-the-most-beautiful-fashion-banners-picture-32-8h2n0YQtr.jpg" class="slide">
-            </a>
-            <a href="#">
-                <img src="https://i.pinimg.com/originals/69/6d/64/696d64ddc9a95153feec89eae2be5606.jpg" class="slide">
-            </a>
-            <a href="#">
-                <img src="https://i.pinimg.com/736x/19/ed/18/19ed18ec6b05b176493cedff7746d747--street-fashion-banners.jpg" class="slide">
-            </a>
+            {% endfor %}
         </div>
         <button type="submit" class="rbtn">&gt;</button>
     </div>
-    <div class="content">
-        <div id="box1" class="cont">
-            <a href="https://www.amazon.in/U-S-POLO-ASSN-Regular-USSHTR0035_Navy_M/dp/B0B7SCFMX9?ref=dlx_19680_dg_dcl_B0B7SCFMX9_dt_mese30_c6&pf_rd_r=ZPPHM7EBCE4XDZRE43DT&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61FbUBuxLJL._SX679_.jpg">
-                <p>U.S. POLO ASSN. Men's Casual Regular Fit Shirts</p>
-                MRP: <span>&#8377;2499</span>
-                <p style="color: red;">-45% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1309</span></p>
+    <div class="content grid grid-cols-5 gap-[5px] w-[20%]">
+        {% for data in mendata %}
+        <div class="cont">
+            <a href="{{data.main_url}}" target="_blank">
+                <div class="overflow-hidden">
+                    <img src="{{data.image_url}}" class="hover:scale-125 duration-1000">
+                </div>
+                <p>{{data.men_title}}</p>
+                MRP: <span>&#8377;{{data.total}}</span>
+                <p style="color: red;">-{{data.discount}}% <span style="text-decoration:none; color: black; font-size:19px">&#8377;{{data.dis_price}}</span></p>
             </a>
         </div>
-        <div id="box2" class="cont">
-            <a href="https://www.amazon.in/U-S-POLO-ASSN-Regular-USSHTR0005_DK/dp/B0B9Y1L697?ref=dlx_19680_dg_dcl_B0B9Y1L697_dt_mese30_c6&pf_rd_r=9FMWQQEZGXFBASRMXQ44&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61+3vh3huxL._SX569_.jpg">
-                <p>U.S. POLO ASSN. Men's Casual Regular Fit Shirts</p>
-                MRP: <span>&#8377;2499</span>
-                <p style="color: red;">-45% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1209</span></p>
-            </a>
-        </div>
-        <div id="box3" class="cont">
-            <a href="https://www.amazon.in/Van-Heusen-Athleisure-60033_Deep-Sea_Medium/dp/B07R8VB4TL?ref=dlx_19680_dg_dcl_B07R8VB4TL_dt_mese30_c6&pf_rd_r=9FMWQQEZGXFBASRMXQ44&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71af25JeJ1L._SY879_.jpg">
-                <p>Van Heusen Men Athleisure Ultra Soft Polo T-Shirt - Short Sleeve, Textured</p>
-                MRP: <span>&#8377;1049</span>
-                <p style="color: red;">-7% <span style="text-decoration:none; color: black; font-size:19px">&#8377;972</span></p>
-            </a>
-        </div>
-        <div id="box4" class="cont">
-            <a href="https://www.amazon.in/Lux-Cozi-Regular-Sleeve-T-Shirt/dp/B0C96WQQDP?ref=dlx_19680_dg_dcl_B0C96WQQDP_dt_mese30_c6&pf_rd_r=9FMWQQEZGXFBASRMXQ44&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51p5JfXQL2L._SY879_.jpg">
-                <p>Lux Cozi Men's Regular Fit Polo Neck Half Sleeve Solid Casual T-Shirt | Polo T-Shirt for Men</p>
-                MRP: <span>&#8377;380</span>
-                <p style="color: red;">-8% <span style="text-decoration:none; color: black; font-size:19px">&#8377;349</span></p>
-            </a>
-        </div>
-        <div id="box5" class="cont">
-            <a href="https://www.amazon.in/U-S-Polo-Assn-Striped-USOEN1SH27_White/dp/B0C4NY3PCB?ref=dlx_19680_dg_dcl_B0C4NY3PCB_dt_mese30_c6&pf_rd_r=9FMWQQEZGXFBASRMXQ44&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61V+ewme5OL._SX679_.jpg">
-                <p>U.S. POLO ASSN. Men's Regular Fit Shirt</p>
-                MRP: <span>&#8377;2599</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1299</span></p>
-            </a>
-        </div>
-        <div id="box6" class="cont">
-            <a href="https://www.amazon.in/U-S-POLO-ASSN-Cotton-T-Shirt/dp/B08R9XT4T5?ref=dlx_19680_dg_dcl_B08R9XT4T5_dt_mese30_c6&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51738+njsML._SX679_.jpg">
-                <p>U.S. POLO ASSN. Men Pure Cotton Long Sleeve Solid I693 Regular Fit T-Shirt - Pack of 1</p>
-                MRP: <span>&#8377;949</span>
-                <p style="color: red;">-15% <span style="text-decoration:none; color: black; font-size:19px">&#8377;806</span></p>
-            </a>
-        </div>
-        <div id="box7" class="cont">
-            <a href="https://www.amazon.in/DaMENSCH-Stretch-Cotton-Tapered-Oatmeal/dp/B09YLPTX2K?ref=dlx_19680_dg_dcl_B09YLPTX2K_dt_mese30_c6&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61R4Z1yshRL._SX569_.jpg">
-                <p>DAMENSCH Regular Fit Cotton Blend Woven Casual Style Dual Pockets Stretchable Soft Comfortable Pyjama For Men</p>
-                MRP: <span>&#8377;1290</span>
-                <p style="color: red;">-39% <span style="text-decoration:none; color: black; font-size:19px">&#8377;786</span></p>
-            </a>
-        </div>
-        <div id="box8" class="cont">
-            <a href="https://www.amazon.in/Adidas-Polyester-CLASSIC-Sports-T-Shirts/dp/B07XL2VLGJ?ref=dlx_19680_dg_dcl_B07XL2VLGJ_dt_mese30_c6&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81RWZjGCixL._SX569_.jpg">
-                <p>adidas Men's Striped Fitted T-Shirt</p>
-                MRP: <span>&#8377;1299</span>
-                <p style="color: red;">-45% <span style="text-decoration:none; color: black; font-size:19px">&#8377;709</span></p>
-            </a>
-        </div>
-        <div id="box9" class="cont">
-            <a href="https://www.amazon.in/Bewakoof-Printed-Sleeves-Regular-T-Shirt/dp/B08XXT1JLC?ref=dlx_19680_dg_dcl_B08XXT1JLC_dt_mese30_c6&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61G2O2XLr8L._SY741_.jpg">
-                <p>Bewakoof Official DC Merchandise Men's Printed Regular Fit Full Sleeve Round Neck Cotton T-Shirt</p>
-                MRP: <span>&#8377;599</span>
-                <p style="color: red;">-34% <span style="text-decoration:none; color: black; font-size:19px">&#8377;398</span></p>
-            </a>
-        </div>
-        <div id="box10" class="cont">
-            <a href="https://www.amazon.in/Puma-Regular-T-Shirt-677794_Medium-Heather/dp/B0CD7JZV86?ref=dlx_19680_dg_dcl_B0CD7JZV86_dt_mese30_c6&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_p=5b3572cc-619f-440a-8e85-3df703a139c6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61PgVSirSdL._SX679_.jpg">
-                <p>Puma Men's Regular Fit T-Shirt</p>
-                MRP: <span>&#8377;999</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black; font-size:19px">&#8377;499</span></p>
-            </a>
-        </div>
-        <div id="box11" class="cont">
-            <a href="https://www.amazon.in/Pant-Project-Polyester-Formal-Pant_01-Olive-40_Black_34/dp/B0B46P1CN8/ref=sr_1_1?dib=eyJ2IjoiMSJ9.0A4W1aasHiB4Mwm8XyM-fokvvwvDyZ1m-SyhDL3DjecPxriPbhwmwvyRBWz0Y7af6peYPbTASFXso7M-LRJ7xili_K6BLjKjYGmq73ZCaYc.cN1cohHX6ak9wBxaEFcMJ7pQ48aWdiM9OW-3_dU2AIs&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=76891314-1728-49d5-bdbf-1d44b0327274&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_s=merchandised-search-21&qid=1735744259&refinements=p_123%3A1446980%2Cp_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665402031&rnid=2665398031&rps=1&s=apparel&sr=1-1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/615JuAzXy7L._SY741_.jpg">
-                <p>The Pant Project Luxury PV Lycra Stretchable Formal Pants for Men </p>
-                MRP: <span>&#8377;2990</span>
-                <p style="color: red;">-34% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1943</span></p>
-            </a>
-        </div>
-        <div id="box12" class="cont">
-            <a href="https://www.amazon.in/Snitch-Regular-Polyester-Puffer-Jacket/dp/B0CZ492BFV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.1S5SaE6bTPdFKW4vIhPX7DZhNV6TQhUK4VCnQ92XVoc3_CeedA1jZNZQHdJIHI0dDKRkI4WX7CFHe4iJDcqRZ0XhBhlf6kpjmuT5_JwGVvFKdf6sINFPzpZSGuGZ65kb8yNvlzngs6K1YjITZazog5tiuOOOS2re4KdwIh6JdtnjJA0-W8Fr_wUTN1kLJVbN6q2uYILZjj9P6e8vtGM6Oj8oxlE3WLA9faMInKqLrzXqioq3qH_AxwRtnb-yY4Nm-ACLtxJU-3BWThec1hDNE2K_8g5HtN46FO5ts-mOyWo.WfUpWo9QLygKIBhtH89M39FKW6T9qZsCPi5FDnpjgIU&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=1420b23c-36be-4ba8-afa5-66dd6c7f7327&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735744465&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665402031&rnid=2665398031&rps=1&s=apparel&sr=1-1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61OjJJRzvZL._SX679_.jpg">
-                <p>TBlack Solid Regular Fit Polyester Puffer Jacket</p>
-                MRP: <span>&#8377;3598</span>
-                <p style="color: red;">-75% <span style="text-decoration:none; color: black; font-size:19px">&#8377;900</span></p>
-            </a>
-        </div>
-        <div id="box13" class="cont">
-            <a href="https://www.amazon.in/SNITCH-Lining-Shirt-Men-Black/dp/B0CJTSG8SY/ref=sr_1_2?dib=eyJ2IjoiMSJ9.1S5SaE6bTPdFKW4vIhPX7DZhNV6TQhUK4VCnQ92XVoc3_CeedA1jZNZQHdJIHI0dDKRkI4WX7CFHe4iJDcqRZ0XhBhlf6kpjmuT5_JwGVvFKdf6sINFPzpZSGuGZ65kb8yNvlzngs6K1YjITZazog5tiuOOOS2re4KdwIh6JdtnjJA0-W8Fr_wUTN1kLJVbN6q2uYILZjj9P6e8vtGM6Oj8oxlE3WLA9faMInKqLrzXqioq3qH_AxwRtnb-yY4Nm-ACLtxJU-3BWThec1hDNE2K_8g5HtN46FO5ts-mOyWo.WfUpWo9QLygKIBhtH89M39FKW6T9qZsCPi5FDnpjgIU&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=1420b23c-36be-4ba8-afa5-66dd6c7f7327&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735744465&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665402031&rnid=2665398031&rps=1&s=apparel&sr=1-2" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51WUkPsZw6L.jpg">
-                <p>SNITCH Lining Shirt for Men</p>
-                MRP: <span>&#8377;1998</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black; font-size:19px">&#8377;999</span></p>
-            </a>
-        </div>
-        <div id="box14" class="cont">
-            <a href="https://www.amazon.in/SNITCH-Jet-Jeans-Men-Black/dp/B0CJTRLT31/ref=sr_1_3?dib=eyJ2IjoiMSJ9.1S5SaE6bTPdFKW4vIhPX7DZhNV6TQhUK4VCnQ92XVoc3_CeedA1jZNZQHdJIHI0dDKRkI4WX7CFHe4iJDcqRZ0XhBhlf6kpjmuT5_JwGVvFKdf6sINFPzpZSGuGZ65kb8yNvlzngs6K1YjITZazog5tiuOOOS2re4KdwIh6JdtnjJA0-W8Fr_wUTN1kLJVbN6q2uYILZjj9P6e8vtGM6Oj8oxlE3WLA9faMInKqLrzXqioq3qH_AxwRtnb-yY4Nm-ACLtxJU-3BWThec1hDNE2K_8g5HtN46FO5ts-mOyWo.WfUpWo9QLygKIBhtH89M39FKW6T9qZsCPi5FDnpjgIU&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=1420b23c-36be-4ba8-afa5-66dd6c7f7327&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735744465&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665402031&rnid=2665398031&rps=1&s=apparel&sr=1-3" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/41sARVgRMbL.jpg">
-                <p>SNITCH Jet Jeans for Men</p>
-                MRP: <span>&#8377;3398</span>
-                <p style="color: red;">-65% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1189</span></p>
-            </a>
-        </div>
-        <div id="box15" class="cont">
-            <a href="https://www.amazon.in/Snitch-Regular-Fit-Light-Cotton-Cargo/dp/B0CZ455GK7/ref=sr_1_4?dib=eyJ2IjoiMSJ9.1S5SaE6bTPdFKW4vIhPX7DZhNV6TQhUK4VCnQ92XVoc3_CeedA1jZNZQHdJIHI0dDKRkI4WX7CFHe4iJDcqRZ0XhBhlf6kpjmuT5_JwGVvFKdf6sINFPzpZSGuGZ65kb8yNvlzngs6K1YjITZazog5tiuOOOS2re4KdwIh6JdtnjJA0-W8Fr_wUTN1kLJVbN6q2uYILZjj9P6e8vtGM6Oj8oxlE3WLA9faMInKqLrzXqioq3qH_AxwRtnb-yY4Nm-ACLtxJU-3BWThec1hDNE2K_8g5HtN46FO5ts-mOyWo.WfUpWo9QLygKIBhtH89M39FKW6T9qZsCPi5FDnpjgIU&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=1420b23c-36be-4ba8-afa5-66dd6c7f7327&pf_rd_r=0AMDHFBD6QDKX3C8HRYV&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735744465&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665402031&rnid=2665398031&rps=1&s=apparel&sr=1-4" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71rStJo1j0L._SX679_.jpg">
-                <p>Snitch Regular-Fit Light Blue Cotton Cargo Jeans</p>
-                MRP: <span>&#8377;3398</span>
-                <p style="color: red;">-60% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1359</span></p>
-            </a>
-        </div>
-        <div id="box16" class="cont">
-            <a href="https://www.amazon.in/VASTRAMAY-Jacquard-Embroidery-Traditions-Kurta_VASMK278PU_36/dp/B0D5HZF1TZ/ref=sr_1_6?dib=eyJ2IjoiMSJ9.sf_Vmkfork1XuJKGOb6vMflUcIqAedbpnH0Ka3_7nQ91l0mIg8y1PknqWVY_6XbeadP3svL71LduOHaD6_BqCo9du5MYo8268KX49bYxNrnVsXvvUWemVAazuuBo2gY442tN7q3Pj36M-ptDsiqS_VeERaDk8kjez4BL1n9c4X7oufUJ5LOS_RkMOKkcOi2-c7uleoyCoqLBiCD3cRF-324PsnM2CW0ClBVwbxszmlCqwirFPQVmkSa7Dgx09Jjh51ol1NqytWMJiXkx59TfGOO41vtk_XFs6-3t-KQpJaUW9EUdCbkA3DZhLf56iUVLE8W_N1eZTSktDOr4A9w2b3XmLFGB5emWcG-_MWds2x0i_H-Wgw1UJnv5V87EXFk7bcFvqoLBGfIRA59uH5yGk1_5kEri5MY9W-qWBdx4wC4WsWpwHKhAq9FCDAhtxduf.g0h6FhMFqJfTT_AIGwemmjkNeRXk-O8Z5KKOvj0EVq8&dib_tag=se&pf_rd_i=1968248031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9c86222e-fa8e-4c1a-b0ad-ec88cb928b15&pf_rd_r=4Z28XQ7KBJDCQ016E2XW&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735821110&refinements=p_85%3A10440599031%2Cp_123%3A316766%2Cp_n_pct-off-with-tax%3A27060456031&rnid=2665398031&rps=1&s=apparel&sr=1-6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61VWa3KGJmL._SY741_.jpg">
-                <p>VASTRAMAY Men's Cream Silk Blend Kurta | Fastive Party Wedding Traditions Kurta</p>
-                MRP: <span>&#8377;2499</span>
-                <p style="color: red;">-76% <span style="text-decoration:none; color: black; font-size:19px">&#8377;600</span></p>
-            </a>
-        </div>
-        <div id="box17" class="cont">
-            <a href="https://www.amazon.in/VASTRAMAY-Weave-Fabric-Jacket-Zipper/dp/B0DGXGBLJG/ref=sr_1_4?dib=eyJ2IjoiMSJ9.sf_Vmkfork1XuJKGOb6vMflUcIqAedbpnH0Ka3_7nQ91l0mIg8y1PknqWVY_6XbeadP3svL71LduOHaD6_BqCo9du5MYo8268KX49bYxNrnVsXvvUWemVAazuuBo2gY442tN7q3Pj36M-ptDsiqS_VeERaDk8kjez4BL1n9c4X7oufUJ5LOS_RkMOKkcOi2-c7uleoyCoqLBiCD3cRF-324PsnM2CW0ClBVwbxszmlCqwirFPQVmkSa7Dgx09Jjh51ol1NqytWMJiXkx59TfGOO41vtk_XFs6-3t-KQpJaUW9EUdCbkA3DZhLf56iUVLE8W_N1eZTSktDOr4A9w2b3XmLFGB5emWcG-_MWds2x0i_H-Wgw1UJnv5V87EXFk7bcFvqoLBGfIRA59uH5yGk1_5kEri5MY9W-qWBdx4wC4WsWpwHKhAq9FCDAhtxduf.g0h6FhMFqJfTT_AIGwemmjkNeRXk-O8Z5KKOvj0EVq8&dib_tag=se&pf_rd_i=1968248031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9c86222e-fa8e-4c1a-b0ad-ec88cb928b15&pf_rd_r=4Z28XQ7KBJDCQ016E2XW&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735821110&refinements=p_85%3A10440599031%2Cp_123%3A316766%2Cp_n_pct-off-with-tax%3A27060456031&rnid=2665398031&rps=1&s=apparel&sr=1-4" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71v-dC+SiOL._SY879_.jpg">
-                <p>VASTRAMAY Men's Weave Fabric Nehru Jacket | Jute Woven Zipper Nehru Jacket</p>
-                MRP: <span>&#8377;4999</span>
-                <p style="color: red;">-60% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1980</span></p>
-            </a>
-        </div>
-        <div id="box18" class="cont">
-            <a href="https://www.amazon.in/Uri-MacKenzie-Pajama-Designer-Ethnic/dp/B0C6L5C87T/ref=sr_1_6?dib=eyJ2IjoiMSJ9.RG5vFyiMMZQXjjqTcxJPM8fjLFnKN50jo-mgIb0INvf-3pEChiNP9heZppWBGTOewo8hX-Iwd-BmG2hFXWoQA8VBdTZJMbDseIx3u4-2aLdhFSxTKIBkvrQronIbgXXatWvQoABVGCVXhfx7qZghHT5FSsxId28RFvBmTJr2eLx7zxYl99DSq6SoFVUnMm_CJFx-JoEckodcwLXiomIz-9qvd01S1B06oop2cbzMZMTSVBprMGu3-qfaZNA65qUSq9ksN_vMQEAd4_t79lNEyxg-3rv6GxoMPef81Bn4rdy3KPOAx8z1Qd7ZVHgHatVWo6lJJNi4v5X-Jciov39uXrVhuddRM45to7_JOXPzLQeRw8QxQd7GO_dWl1Tuz8v8rCPKlFwM0LT51RuWFF2B5aQa43xjLPGWXIKMyDrORRHg0C8ift0EToxnzbKy1TqH.OIkjQ1imdyN-EZX_vbU36eBHITA0hken0YtpNH1jeIs&dib_tag=se&pf_rd_i=1968248031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9c86222e-fa8e-4c1a-b0ad-ec88cb928b15&pf_rd_r=4Z28XQ7KBJDCQ016E2XW&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735821569&refinements=p_85%3A10440599031%2Cp_123%3A389267%2Cp_n_pct-off-with-tax%3A27060456031&rnid=2665398031&rps=1&s=apparel&sr=1-6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61P7IPM0bzL._SY879_.jpg">
-                <p>Uri and MacKenzie Men's Silk Blend Kurta Pajama with Designer Ethnic Nehru Jacket/Modi Jacket</p>
-                MRP: <span>&#8377;6499</span>
-                <p style="color: red;">-62% <span style="text-decoration:none; color: black; font-size:19px">&#8377;2499</span></p>
-            </a>
-        </div>
-        <div id="box19" class="cont">
-            <a href="https://www.amazon.in/Manyavar-Mens-Blended-Kurta-Pyjama/dp/B072MH1FFW/ref=sr_1_8?dib=eyJ2IjoiMSJ9.kprJkKfMdCWEscM8SW8Wsbd6Ylg7PtgoJsvEI3IQDPi6StduvjeZPwy8ozFavqu5K-rdI0RTmOViWTGWpvZouf17w17XUGcoZ8Bi0YSJQ2SLpVnrp7BSpE90nqfQ_VfW3gSUBPRSdSKRFkgUXxHz7Pd2hZ2UrW6HKaVDOQSQNt83b5ae7_acxfam-zppKJVe0TYktFQZ5QRIuZpr3pDIWK1XQSAj6c07TXB-EAHl-Brp21O4z4fvnDiH002GNeZ-xFaYwlAOySAAYvX2pKWkvXGUhwLVCaOrdM3tr5EQh0-Ymo7HvZ6_sKkWHPqFgZp2DowFYtiKyEq_Go51CClQFAnmSe4FCOmwSdsyAjIq5HN3vxH2tkAFxEeV-NNhRS7mE_Lha86OpNjw0znhzfwRDTcLAp5R0YL8hMNei1Dy_eevHyKm-ImK6yGQqw9aU1PI.DWjKhcn6O26c4PR6ET5zm-fdCNSnPVYNDGfZpsnG0Qg&dib_tag=se&pf_rd_i=1968248031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9c86222e-fa8e-4c1a-b0ad-ec88cb928b15&pf_rd_r=1HVSK5SAF5A010F9PMJF&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735821993&refinements=p_85%3A10440599031%2Cp_123%3A309537&rnid=4595083031&rps=1&s=apparel&sr=1-8" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61e7PiBomxL._SX679_.jpg">
-                <p>Manyavar Men's Kurta & Pyjama Set</p>
-                MRP: <span>&#8377;3999</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1999</span></p>
-            </a>
-        </div>
-        <div id="box20" class="cont">
-            <a href="https://www.amazon.in/Manyavar-Self-Design-Sleeves-Kurta-Churidar/dp/B08F7ZZNP1/ref=sr_1_85?dib=eyJ2IjoiMSJ9.b3krP5Xl85reJ2afNRXQglt-WvsC2iZJ6hT2qwTiwbOYWapf9mvXhSfIaNYqHnUKu7vVXS5qaCyPguEHI7zbVtzLhh4hDoe_PId4JK0wFoCCm8i76umb5G7GXrhkfSHrRxDQ4oNWPuFNXPZDdGjernDjgK8gt_QhIeHXUfvolRIfJNCii6GlAbPLVhQ6YmidphE1_7Nm1wBp9XOdlJTMXpHXcOpiFRbis0NhDiQoU3GGps67DYzh2JNeFo5VSYoNYSazlUOVlZtUPZ-1de-En7Y0yhYRpHlC3wsguDIlWsMePUeERjLJGgR_WVscVfpXcS-qbZHyi8bdOtppuuWACq4wVSQ3rhM2Ho4DkG-Wn_hhy_uUv267jAiSlJMoWrs79l1UI7eh-zzDtVZ6p82_eMDN1tN0fkANDGhauNcDbSAdZ2v9HC6bxSNuy6Y_NG9F.olI2bz4cf-mvuCbWZnU97tqoX7v6Tri7Zvcv9M08eJM&dib_tag=se&pf_rd_i=1968248031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=9c86222e-fa8e-4c1a-b0ad-ec88cb928b15&pf_rd_r=1HVSK5SAF5A010F9PMJF&pf_rd_s=merchandised-search-21&pf_rd_t=30901&qid=1735822166&refinements=p_85%3A10440599031%2Cp_123%3A309537&rnid=4595083031&rps=1&s=apparel&sr=1-85" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81ozl01ReAL._SY879_.jpg">
-                <p>Manyavar Self Design Kurta and Churidar Set for Men</p>
-                MRP: <span>&#8377;4999</span>
-                <p style="color: red;">-40% <span style="text-decoration:none; color: black; font-size:19px">&#8377;2999</span></p>
-            </a>
-        </div>
-        <div id="box21" class="cont">
-            <a href="https://www.amazon.in/Van-Heusen-Regular-Shirt-VHSFBCUBP96968_Blue/dp/B0BMQGHMBX/ref=sr_1_17?dib=eyJ2IjoiMSJ9.GKKkDokijty5tF4wRALpLET2amtH0vcs7tx8xxoBG3AaJ5EZl7qd5Wu-jZ-dqa_7-mGF2_MTIxENldUw6HfbG1nWk7vtcww5nXACd5f43bqGLEYd_4iYA4coQWZ3Io_Wz9lYC5f1qfCjyVW1_IUz4q1GmVI9DpvWIQUkm9woZSYCa6eZUkIFnCW6V12MThJkkTJqgFZF4nhOBuFBPO-7588av-zKgL-BNKxG5jEr0DobwCIhYn8ztiP8L9jm7QCBe8nEkt5PD0Qy4IBuBVYwLiy30p4i8kdq6E1MmgRELSNXtdarfP2pTNsnScyM4dyUwpYV-FXQ1uFKiD_4FJx0bkV8D-I8k-t47RqDZ8Vr8xwTPyapqDki7gwaXljtYfyiqzQQbkP8fce29T68m5mvQI6C4GxHmzBlmTloxD6wYIfUsQ0b5PgUfcSfDolMJNQG.iKCxsc43ENjZuCWHv46i4HWCCiCkUp-9g8TDV9tw7-g&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=7aec54e5-0aa2-4b6a-8aff-a0c6dbd42b2d&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-13&qid=1735822666&refinements=p_123%3A232761%2Cp_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-17" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51cMCJ7oOeL._SY741_.jpg">
-                <p>Van Heusen Men's Regular Fit Shirt</p>
-                MRP: <span>&#8377;1999</span>
-                <p style="color: red;">-10% <span style="text-decoration:none; color: black;">&#8377;1799</span></p>
-            </a>
-        </div>
-        <div id="box22" class="cont">
-            <a href="https://www.amazon.in/Van-Heusen-Regular-Shirt-VHSFMCUB664779_Blue/dp/B0CPFSBSHR/ref=sr_1_21?dib=eyJ2IjoiMSJ9.GKKkDokijty5tF4wRALpLET2amtH0vcs7tx8xxoBG3AaJ5EZl7qd5Wu-jZ-dqa_7-mGF2_MTIxENldUw6HfbG1nWk7vtcww5nXACd5f43bqGLEYd_4iYA4coQWZ3Io_Wz9lYC5f1qfCjyVW1_IUz4q1GmVI9DpvWIQUkm9woZSYCa6eZUkIFnCW6V12MThJkkTJqgFZF4nhOBuFBPO-7588av-zKgL-BNKxG5jEr0DobwCIhYn8ztiP8L9jm7QCBe8nEkt5PD0Qy4IBuBVYwLiy30p4i8kdq6E1MmgRELSNXtdarfP2pTNsnScyM4dyUwpYV-FXQ1uFKiD_4FJx0bkV8D-I8k-t47RqDZ8Vr8xwTPyapqDki7gwaXljtYfyiqzQQbkP8fce29T68m5mvQI6C4GxHmzBlmTloxD6wYIfUsQ0b5PgUfcSfDolMJNQG.iKCxsc43ENjZuCWHv46i4HWCCiCkUp-9g8TDV9tw7-g&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=7aec54e5-0aa2-4b6a-8aff-a0c6dbd42b2d&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-13&qid=1735822666&refinements=p_123%3A232761%2Cp_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-21" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71xQ5vnkxEL._SY741_.jpg">
-                <p>Van Heusen Men's Regular Fit Shirt</p>
-                MRP: <span>&#8377;2799</span>
-                <p style="color: red;">-18% <span style="text-decoration:none; color: black; font-size:19px">&#8377;2309</span></p>
-            </a>
-        </div>
-        <div id="box23" class="cont">
-            <a href="https://www.amazon.in/Van-Heusen-Regular-Shirt-VHSHBCUBN43820_Purple/dp/B0BF599417/ref=sr_1_29?dib=eyJ2IjoiMSJ9.GKKkDokijty5tF4wRALpLET2amtH0vcs7tx8xxoBG3AaJ5EZl7qd5Wu-jZ-dqa_7-mGF2_MTIxENldUw6HfbG1nWk7vtcww5nXACd5f43bqGLEYd_4iYA4coQWZ3Io_Wz9lYC5f1qfCjyVW1_IUz4q1GmVI9DpvWIQUkm9woZSYCa6eZUkIFnCW6V12MThJkkTJqgFZF4nhOBuFBPO-7588av-zKgL-BNKxG5jEr0DobwCIhYn8ztiP8L9jm7QCBe8nEkt5PD0Qy4IBuBVYwLiy30p4i8kdq6E1MmgRELSNXtdarfP2pTNsnScyM4dyUwpYV-FXQ1uFKiD_4FJx0bkV8D-I8k-t47RqDZ8Vr8xwTPyapqDki7gwaXljtYfyiqzQQbkP8fce29T68m5mvQI6C4GxHmzBlmTloxD6wYIfUsQ0b5PgUfcSfDolMJNQG.iKCxsc43ENjZuCWHv46i4HWCCiCkUp-9g8TDV9tw7-g&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=7aec54e5-0aa2-4b6a-8aff-a0c6dbd42b2d&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-13&qid=1735822666&refinements=p_123%3A232761%2Cp_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-29" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51igIbmcMdL._SY741_.jpg">
-                <p>Van Heusen Men's Solid Regular Fit Shirt</p>
-                MRP: <span>&#8377;1999</span>
-                <p style="color: red;">-34% <span style="text-decoration:none; color: black; font-size:19px">&#8377;2999</span></p>
-            </a>
-        </div>
-        <div id="box24" class="cont">
-            <a href="https://www.amazon.in/Van-Heusen-Regular-Formal-VHSF1M76831_Purple_48/dp/B0792T5N5H/ref=sr_1_51?dib=eyJ2IjoiMSJ9.K52G1zQERb7dpwYkO3DJJEHjmYV0D91XlHCbvxenEayznAgFEgEXMC-Dfuw7mIyk9DMMJ8aSafxyh7j44Zmi7HwOQSimUcZEaXjKOpTthtq5uj5hRXHUMbxYRpswWbzGhCXbQG_ts6GQjOLA_Q1F2h7AndG_XGLpR8zSsUa4OtpU41XQ9cKIlYui37DY78X1c3eb1iDrn5iypZynV1DTjtMPsXkNiRNlyyGeyEGmq3cMV8CtHjGOXWHpSQ9BukwiplfIhd4aQBviGYPZonQuwHQ0uz6tQfPe57DZWCxrfyP2D6GMOKRK6_Zr26rqx-a0I7x_Hk3K5ThGPNcteAXAw6QZ7tFqsDomZvFdb4xwdkfqn4GVs0W3XYog-Yuc_u5tQ077Y-5lzwtbKuYspHluXg7tGbgAXNqyZfKS28qHVqNSXRe3HADrLS0PV6Et9x1u.gCrMK1ZJWrLbH7K97sMTDW8wJa-mlei9XEU1uMDRVi0&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=7aec54e5-0aa2-4b6a-8aff-a0c6dbd42b2d&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-13&qid=1735823092&refinements=p_123%3A232761%2Cp_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-51" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61tS6lPH0eL._SY879_.jpg">
-                <p>Van Heusen Men's Solid Regular Fit Formal Shirt</p>
-                MRP: <span>&#8377;2399</span>
-                <p style="color: red;">-10% <span style="text-decoration:none; color: black; font-size:19px">&#8377;2159</span></p>
-            </a>
-        </div>
-        <div id="box25" class="cont">
-            <a href="https://www.amazon.in/Van-Heusen-Mens-Shirt-VHSFBSLB084861_Pink/dp/B0BHZJ7QN6/ref=sr_1_62?dib=eyJ2IjoiMSJ9.K52G1zQERb7dpwYkO3DJJEHjmYV0D91XlHCbvxenEayznAgFEgEXMC-Dfuw7mIyk9DMMJ8aSafxyh7j44Zmi7HwOQSimUcZEaXjKOpTthtq5uj5hRXHUMbxYRpswWbzGhCXbQG_ts6GQjOLA_Q1F2h7AndG_XGLpR8zSsUa4OtpU41XQ9cKIlYui37DY78X1c3eb1iDrn5iypZynV1DTjtMPsXkNiRNlyyGeyEGmq3cMV8CtHjGOXWHpSQ9BukwiplfIhd4aQBviGYPZonQuwHQ0uz6tQfPe57DZWCxrfyP2D6GMOKRK6_Zr26rqx-a0I7x_Hk3K5ThGPNcteAXAw6QZ7tFqsDomZvFdb4xwdkfqn4GVs0W3XYog-Yuc_u5tQ077Y-5lzwtbKuYspHluXg7tGbgAXNqyZfKS28qHVqNSXRe3HADrLS0PV6Et9x1u.gCrMK1ZJWrLbH7K97sMTDW8wJa-mlei9XEU1uMDRVi0&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=7aec54e5-0aa2-4b6a-8aff-a0c6dbd42b2d&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-13&qid=1735823092&refinements=p_123%3A232761%2Cp_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-62" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61hnjqSzaTL._SY879_.jpg">
-                <p>Van Heusen Men Regular Fit Shirt</p>
-                MRP: <span>&#8377;1999</span>
-                <p style="color: red;">-18% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1649</span></p>
-            </a>
-        </div>
-        <div id="box26" class="cont">
-            <a href="https://www.amazon.in/Andamen-Casual-Mens-Black-Hoodie/dp/B0DP31QHW9/ref=sr_1_22?crid=3SI8LEJWONBM4&dib=eyJ2IjoiMSJ9.TeRywb1E1bwfnaEcFFdxmYQdRcNJfWEYFuDjvAlreM-qHk3BCkQoaEyMIbQ_02O2RBugbC-FIf54AlX5ULN3mdZurA54wWdH20CaPNSHoMtSG1Hcmio9UTtQ8xMdF6I12Z56q-QGLltYfXkp9Ea61OMXmX2E1zXq9ivRMSf6rA5b7EKc0c6McP_1XQk7jcnby1c9CBiC83xp36trSKnE3qQhznew71JodfOOsxfxeJx5sglIOE8ok5xOC7OShIDw9pULJrPaWqa6t41kgbuDcycQNl5BFDuPFL5syGzJQlr1vOWCbgEAGnmrJzAWPhcz1_Rq7R4_9aJM2dYAAlLnBx1G-LbQgeTpxn3GOttIU4sFu5BreRf6XUoJ4ommT-_rQHiwkBVUzKeIJhglqiSolAeXWevBIMe96PIv2HIHygRIaW5iC2LtXPZBn_nsfFCO.OBrsKrJ5JQEePcXCxcPA_B_44OqctJINxphMDyrm4Wk&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=7bd6c97e-5afd-422d-afbb-9fdba0bb8ba3&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-14&qid=1735823339&refinements=p_123%3A2588161%2Cp_85%3A10440599031&rnid=7459781031&rps=1&s=apparel&sprefix=andame%2Cfashion%2C196&sr=1-22" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/513g-z25u+L._SY741_.jpg">
-                <p>Andamen Casual Men's Black Hoodie</p>
-                MRP: <span style="text-decoration:none; color:black; font-weight:bold;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size:19px">&#8377;5590</span>
-            </a>
-        </div>
-        <div id="box27" class="cont">
-            <a href="https://www.amazon.in/Allen-Solly-Regular-Shirt-ALSFVCUFR32393_Navy_42/dp/B0CW3KVLTD/ref=sr_1_10?dib=eyJ2IjoiMSJ9.1jAxndmHHowyfhVraIBURIjb7ch2swpp3bnyW9MyR6kBjxvKHmDJQVrvbqCFpAqpIwIEuGdQR_bnntkjvouyGI2ChgiXmg6dXBhRmh17wgrhJdwIRwy1sP55AQ4t46mId6z5mmbV8x7uZLeqo76FKhReMdJOpTzofTta0y7xAdW6T9mmM5Q-8Jg_b6tWdXjzZlzlWGqaUPIPFhTQvrmPmDefA-GCPxUve9Eunkm-OL3Wo5BTZ0uCadI6yaA9KGjdrKy623pb2ZwNRZBmHpYBkgsEiVuq5Q8640a_4-_-X9gTgIj4RtYDRPIp5j4Dmr14eYk29yjhn9MzPIwLAlP6tB8Br3f7VOoaL4DzQNPKwVhr7JZ3xCNA9MwvhWYuyg4aEyGkxsCT959Yc3xrfI5XNR1LoRveJVPL9KYvGwgN_UxzpzxO2cGM_FMP1H_O6XP1.XQFv_YjKHXBcG3Tix4AK9Gg3H2MFQaGREbyyMaVYD6o&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=263740cd-6f79-4f17-a34c-f3e9ef763b37&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-16&qid=1735823536&refinements=p_89%3AAllen+Solly%2Cp_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665402031%2Cp_36%3A92900-&rps=1&s=apparel&sr=1-10" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61aqjQX681L._SY879_.jpg">
-                <p>Allen Solly Men's Regular Fit Shirt</p>
-                MRP: <span>&#8377;2299</span>
-                <p style="color: red;">-40% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1379</span></p>
-            </a>
-        </div>
-        <div id="box28" class="cont">
-            <a href="https://www.amazon.in/Puma-Cotton-Sweatshirt-680590_Medium-Heather/dp/B0CCVVVGSX/ref=sr_1_2?dib=eyJ2IjoiMSJ9.KqClEJX_Qv5mMkCpPMc2JfpgxsbH1vx8j1LoNccIMhxCbJYM4_S69gjsrYMcjdq0KDCxgj-g5vMVX6RLocOHEL5XBBAduz2ADKY5nMGeYej4Zec2oE3iyuCbYH0aPJQyhMmMmL-qTPyYrfwYyIabMQGGKYcMFVG-pwNB1gjbaC-GURxh56QYMw_7BzcbACVOVYMPHdeScMtnTlYUBN-H4k7g7lPn5E8k3TOQfWjlg6zYOr2mON7J1hXEbN-lu4-2x5lyO3K4wdGJzMdOYeQQWVm0Aj_csAqOYWX2eoYYoS6Gi9SMDrzibQmzXLDR6aVlkP3nRYY_P6xhk_Qdt9v2-9CKf8yx_HObUVsNrAu21Fos2XZxiBsRDFXDcTbEqLKqC8v6iRyyzLvHTEnJ-xpZN8mpUlIjJXg_0WCU9wlKgEQcSZrcQn1q29KlxblyP75p.pQ1Q1Vi06asjug2WnY8fHbkTrhYFsZ7g0MZacd7HFYo&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=4c16985f-36ea-4d4f-ab65-6a9397b386ef&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-12&qid=1735823919&refinements=p_85%3A10440599031%2Cp_123%3A256097%2Cp_n_pct-off-with-tax%3A2665401031&rnid=2665398031&rps=1&s=apparel&sr=1-2" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61jtaHQJ0UL._SX679_.jpg">
-                <p>Puma Men Cotton Crew Neck Sweatshirt</p>
-                MRP: <span>&#8377;2799</span>
-                <p style="color: red;">-55% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1259</span></p>
-            </a>
-        </div>
-        <div id="box29" class="cont">
-            <a href="https://www.amazon.in/Bewakoof-Official-Graphic-Oversized-Sweatshirt_624069_Black_2XL/dp/B0CPSVK3MC/ref=sr_1_19?dib=eyJ2IjoiMSJ9.70cVreWt_ILdozZ5ay6GMSSbXtZ79GQt0iap4vOvydnGadskQEeTk6eymj4ByKwbMyUfHoM5CktWg1clqkgtxz3WIFNbYK2-nJ74SPuX5EU0Duz1PGg1nNpETjEYrWcjy4bzxFp56arnwQPGkrMrwydOMQHi5xQqvc2OgAkjhvR1ZHsaELM9BFESfnUeC3J1vKSRfjk65nw_7J7b7ZydjxgcrPQ2iZ52hH_VtlgeNkV_-8hlb2B31yWsu8WETR2uuG2p3asWoz8M4ngh8qAJLXh7-6JX_uNocNyqUoJgAVF-8Liiczc4zDOUE5Vxhi5X0kUSBCK_lcsAiIzaDGiiy0rHmCos1KkgoCXAhfYY4Ka8QKYf-U0v-UTPuHgqtO42uIHKYo-GCORt1Tb8XBmChWANq6kNHMAOmlh0HSu29WvbAp8NE5bDwPFLu91M2UlG.nXGS4_mE1UABQqdYCeSHUtpLRxqZx-VvnTihocPrseI&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=4c16985f-36ea-4d4f-ab65-6a9397b386ef&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-12&qid=1735824071&refinements=p_85%3A10440599031%2Cp_123%3A156780%2Cp_n_pct-off-with-tax%3A2665401031&rnid=2665398031&rps=1&s=apparel&sr=1-19" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61K3-CCaPeL._SY741_.jpg">
-                <p>Bewakoof Men Sweatshirt</p>
-                MRP: <span>&#8377;2299</span>
-                <p style="color: red;">-69% <span style="text-decoration:none; color: black; font-size:19px">&#8377;717</span></p>
-            </a>
-        </div>
-        <div id="box30" class="cont">
-            <a href="https://www.amazon.in/Allen-Solly-Mens-Shirt-ASSFQSPP970886_Green/dp/B0DNSTXDW8/ref=sr_1_7?dib=eyJ2IjoiMSJ9.1jAxndmHHowyfhVraIBURIjb7ch2swpp3bnyW9MyR6kBjxvKHmDJQVrvbqCFpAqpIwIEuGdQR_bnntkjvouyGI2ChgiXmg6dXBhRmh17wgrhJdwIRwy1sP55AQ4t46mId6z5mmbV8x7uZLeqo76FKhReMdJOpTzofTta0y7xAdW6T9mmM5Q-8Jg_b6tWdXjzZlzlWGqaUPIPFhTQvrmPmDefA-GCPxUve9Eunkm-OL3Wo5BTZ0uCadI6yaA9KGjdrKy623pb2ZwNRZBmHpYBkgsEiVuq5Q8640a_4-_-X9gTgIj4RtYDRPIp5j4Dmr14eYk29yjhn9MzPIwLAlP6tB8Br3f7VOoaL4DzQNPKwVhr7JZ3xCNA9MwvhWYuyg4aEyGkxsCT959Yc3xrfI5XNR1LoRveJVPL9KYvGwgN_UxzpzxO2cGM_FMP1H_O6XP1.XQFv_YjKHXBcG3Tix4AK9Gg3H2MFQaGREbyyMaVYD6o&dib_tag=se&pf_rd_i=1968024031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=263740cd-6f79-4f17-a34c-f3e9ef763b37&pf_rd_r=CZ7EHND7SHH0BJB6VGST&pf_rd_s=merchandised-search-16&qid=1735823536&refinements=p_89%3AAllen+Solly%2Cp_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665402031%2Cp_36%3A92900-&rps=1&s=apparel&sr=1-7" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61THZsUhvUL._SY879_.jpg">
-                <p>Allen Solly Men's Slim Fit Shirt</p>
-                MRP: <span>&#8377;1999</span>
-                <p style="color: red;">-40% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1199</span></p>
-            </a>
-        </div>
+        {% endfor %}
     </div>
     <div class="more">
         <a href="https://www.amazon.in/b/ref=AF_WIN_bub_w_cml_t_1?pf_rd_r=181Q686F7FDZ2J7T0ZV8&pf_rd_p=a0040a42-9e10-4896-b86c-bfc9227153c5&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=6648217031&node=1968024031">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Men_script.js' %}"></script>
 </html>
+{% endblock %}

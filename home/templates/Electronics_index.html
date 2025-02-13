@@ -1,86 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Electronics</title>
     <link rel="stylesheet" href="{% static 'css/Electronics_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
-        <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
+            {% for eslide in eslide %}
             <a href="#">
-                <img src="https://m.media-amazon.com/images/G/31/img24/Augart/intel/gaming/Amazon-Aug-ARTBAU-Gaming1--1500x300._CB568322412_.jpg" class="slide">
+                <img src="{{eslide.slide_url}}" class="slide">
+            </a>
+            <!-- <a href="#">
+                <img src="https://www.pcinq.com/wp-content/uploads/2022/10/Intel-13th-gen-Giveaway.webp" class="slide">
             </a>
             <a href="#">
-                <img src="https://cdnb.artstation.com/p/assets/videos/images/061/281/511/large/darshit-paliwal-maxresdefault.jpg?1680434460" class="slide">
+                <img src="https://eyesafe.com/wp-content/uploads/2021/08/gigabyte-eyesafe-certified-low-blue-light-gaming.jpg" class="slide">
             </a>
             <a href="#">
-                <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/400bc479-eb70-46a1-b26f-cbce7ca4d03a.__CR0,0,1464,600_PT0_SX1464_V1___.png" class="slide">
+                <img src="https://img.global.news.samsung.com/in/wp-content/uploads/2023/05/Feature-Banner_728x410.jpg" class="slide">
             </a>
             <a href="#">
-                <img src="https://i.ytimg.com/vi/jEh6MvMwem0/maxresdefault.jpg" class="slide">
+                <img src="https://cdn.godrej.com/img/Category/GAPP0111LeakproofACWebBanner2ndCTCd_16104606.jpg" class="slide">
+            </a> -->
+        </div>
+    </div>
+    <div class="prev">
+        <div class="adv">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HmsWvHT3uzw?autoplay=1" frameborder="0" allowfullscreen allow="autoplay fullscreen" style="width:100%; height:500px;"></iframe>    
+        </div>
+    </div>
+    <div class="content grid grid-cols-5 gap-[5px]">
+        {% for edata in edata %}
+        <div class="cont">
+            <a href="{{edata.main_url}}" target="_blank">
+                <div class="overflow-hidden">
+                    <img src="{{edata.image_url}}" class="hover:scale-125 duration-1000">
+                </div>
+                <p>{{edata.e_title}}</p>
+                MRP: <span>&#8377;{{edata.total}}</span>
+                <p style="color: red;">-{{edata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{edata.dis_price}}</span></p>
             </a>
         </div>
-        <button type="submit" class="rbtn">&gt;</button>
-    </div>
-    <div class="content">
-        <div id="box1" class="cont">
+        {% endfor %}
+        <!-- <div id="box1" class="cont">
             <a href="https://www.amazon.in/HP-i5-1334U-Anti-glare-15-6-inch-Graphics/dp/B0D4LWYWF9/ref=lp_1375424031_1_4?pf_rd_p=9e034799-55e2-4ab2-b0d0-eb42f95b2d05&pf_rd_r=BDNDHWX4RXSRTDZ8XCM9&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D" target="_blank">
                 <img src="https://m.media-amazon.com/images/I/41RxCO8x3-L._SX300_SY300_QL70_FMwebp_.jpg">
                 <p>HP 15, 13th Gen Intel Core i5-1334U, 16GB DDR4, 512GB SSD, (Win 11, Office 21, Silver, 1.59kg), Anti-Glare, 15.6-inch(39.6cm) FHD Laptop, Iris Xe Graphics, FHD Camera, Backlit KB, fd0316TU/fd0315TU</p>
@@ -273,70 +243,60 @@
             </a>
         </div>
         <div id="box25" class="cont">
-            <a href="https://www.amazon.in/CPENSUS-Acrylic-Writing-Message-rewritable/dp/B0C38LLL2F/ref=sr_1_23?dib=eyJ2IjoiMSJ9.hQNWopyWwLuAjntXtqQSO3b-nq3Bw2mGfcXqxJJbZVsogbtsnU5SaKjoByR6u_DaMoyhvvKSCiX_Ce3Fsa8a6bBnhXEozeAi4EVoUeYcgIZMfeCZn7W1A0oeFJZyt_jfbKJRcYsRQBUWT019_6CtHLLnslWU2NhOoZnFcFcTa5KsEL6v5qf9gZ3xK_NQvcdFg0rudZ8jA8lQj-fRu2GTNQzeBHsdZBk0PLo-QK7xnWcS4aOM6j5zJJ1Gof8Z_XDNJcxjWHOEgcomNdm9hCx-i0FQd16v_2f7J5WIX5i2vpvuAX7jq8mdPj67u5SJ0BRRj9t5B-A0yKo1dHr1nbrRuX2O_ztG2J8mmRRiHiNNnNI.jxlobWmGx7fo9pZlexRo52X5f20jes4hAzHZEQMv9JU&dib_tag=se&qid=1737124071&s=kitchen&sr=1-23" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51akjqW8Z6L._SX522_.jpg">
-                <p>DIY 3D Acrylic Writing pad with Pen Message Board rewritable Table lamp for Study LED Light Office Home Decor Gift</p>
-                MRP: <span>&#8377;1299</span>
-                <p style="color: red;">-64% <span style="text-decoration:none; color: black; font-size:19px">&#8377;474</span></p>
+            <a href="https://www.amazon.in/IFB-Automatic-DIVA-GXN-6010/dp/B0DFLT2Q9W/ref=sr_1_19?dib=eyJ2IjoiMSJ9.i598hpMonk2vyjPlFyFQ_fK-Yzlus2h2s6kj0xv6_AnpO_hsyTtx7UHcX6MJ6KjXwfywl_EPEpA77cPQgruP7YzJRuNTZ6Muz4-3GSYoOMbWe1tZpnVK4jXQqdN_eAadyMU-vTnpN6H89dR4p4183sEIX2Yh6Zotvv7v3FlQdZk4JuoeAWbH_xMXMKZ0AR9usZYzU5BDyzLRj4-Lqo32ekgN38aLNSRzhuTYdmvlOACfrEFkO8ke0sWmQUM6IuTwlgtcXpnxh_moJ1_Kra4GSNKTKZIsByxaY8oP9a49fj3blQhwEarCDUDXjEn06REBs0Z3q-CtIhq9Sg3eeJLWw6W6NPJKC2bTjFg6Jnh0mkg.pXBwesjTI0BuR8KaEp8Q8mV87vHlH636g_Htpr7sYKE&dib_tag=se&qid=1737969314&s=kitchen&sr=1-19" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41o68Rum87L._SY445_SX342_QL70_FMwebp_.jpg">
+                <p>IFB 6 Kg 5 Star Powered by AI with 9 Swirl Wash, Fully Automatic Front Load Washing Machine (DIVA GXN 6010, Steam Refresh Program with Eco Inverter, Grey)</p>
+                MRP: <span>&#8377;34,490</span>
+                <p style="color: red;">-30% <span style="text-decoration:none; color: black; font-size:19px">&#8377;23,990</span></p>
             </a>
         </div>
         <div id="box26" class="cont">
-            <a href="https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo1MzUyNTI4ODIxOTI5ODkxOjE3MzcxMjQyMjY6c3BfYnRmX2Jyb3dzZTozMDAxNDA0Mzc0MjUxMzI6OjA6Og&url=%2FLuxurious-Down-Shockproof-Alluminium-Gold%2Fdp%2FB0CGM14LKV%2Fref%3Dsr_1_40_sspa%3Fdib%3DeyJ2IjoiMSJ9.QeZbP7yYNxOqtRqNt6Zd8AHNwGsl1mAf34OjPMrG3wQ1FwfZr1DEQAF2AYeDAW1ew6in6TokMF1Cq8hHtcfHHBzQSPP52Ry8ZvXV8GXWi5eEshpPPaOndgvetMHfL6VlmRlAzC89kOp4Ob9lGcsjNv2GP6WamQLJmVFm1n0j0q4LXpJUYerwP1QyDBWKOnzdbtwUX2gmEaEI_LyMJqpw5Q.mYNTltWkmeHedZhpst35gZng4HHxMXvtq4srmiRXA2s%26dib_tag%3Dse%26qid%3D1737124226%26s%3Dkitchen%26sr%3D1-40-spons%26xpid%3DGNSTOcKPUmHJK%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGZfYnJvd3Nl%26psc%3D1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61ynLG+1PFL._SX425_.jpg">
-                <p>FILLISKA® LED Luxurious Indoor UP/Down Wall Light Warm White, Shockproof & Rustproof Alluminium Body (3 Up & 3 Down Luxurious Gold)</p>
-                MRP: <span>&#8377;5750</span>
-                <p style="color: red;">-68% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1814</span></p>
+            <a href="https://www.amazon.in/Haier-Solo-Microwave-HIL1901MBPB-BLACK/dp/B0CT59YVZ3/ref=sr_1_8?dib=eyJ2IjoiMSJ9.rIl1QujNdiUp6JdLZNQHe_ZuaMncCH-yn0T-Ne9mmMYUOFlebeuevFG4dFBUdm8q3SgYlodRSPS-MM3M5CM2wcApv9AkXGJUjMCCZcZiu0pHe4uey_4PVbxMchRNZPTCxHThZlu13iNE4wvSHsCEeilmuDfR9oe4-jrhFOZN31JprVzwkUKAI2M02nASrKdt1qH0LTecg8DqiObcBbUFbrVk1QHfdLzs7FTNE9QtsMTQ2puNDSYoaDlImgfdRRmXEFyzqn9Gb8xMvWlg_p7PXfkcAWO_GA8ECbJMI1_Rp4sC078Xlky0GSHCebtFMizUMTs3i9wRDjvNpGUwTY1c5Ak0yGiZrBNb2aNTIo-71mA.cRrOpWYZd0bA0coTibrLVXjFvfoigYBieS4s0pjyuHw&dib_tag=se&qid=1737970811&s=kitchen&sr=1-8" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41hzO3Z0TvL._SY445_SX342_QL70_FMwebp_.jpg">
+                <p>Haier 19 L Inverter Technology, Light Weight, Defrost, 5 Power Levels Solo Microwave Oven (HIL1901MBPB, Black)</p>
+                MRP: <span>&#8377;8,500</span>
+                <p style="color: red;">-41% <span style="text-decoration:none; color: black; font-size:19px">&#8377;4,990</span></p>
             </a>
         </div>
         <div id="box27" class="cont">
-            <a href="https://www.amazon.in/R-R-LALA-Bohemian-Geometric-Beautiful-Decoration-Macrame/dp/B09GGYMZ2B/ref=sr_1_7?dib=eyJ2IjoiMSJ9.raeYnhQ6cPMT1aMPrPbxAqaOLU7JLQ1CnWTKnGj-O4y6GI76NEUyqTCMMIR3V_fvyhjtYptkikupEObc-9MyzVodmaAnhHM3012OVrxchqKaRNcJRLv9zrtb9B1_5L9vq1rfgJXVv7vO2RU4Nau30heseApgv_buXkUIQm_FnZGSQmuVBr7uXWWyMRvJ4sKaNTFwLMpkFq1ke4jd8DDmQOJYYF9lp8mHzwS7a2eed8UgiSHD0mqAQNH5B8OrBzwVaTL1I8cDTbwyx3FsyZO_xs10K24kWI032C1TJNKmJjkrp1n4yAAiKMGOiZPPxzbjiKfglpjEVEEexa9Pe71_lkV1isYiVxlrwZdwOgkI9GE.2qKQ3vog6TRvHJF6V6SnWQIlURgU4cfVNL3qOjnfs7Y&dib_tag=se&keywords=Bohemian+furnishings&nsdOptOutParam=true&pf_rd_i=1380442031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=88bdd31e-821b-49b6-a8f9-73ff228c5098&pf_rd_r=1WHJ9MDWWRHCNNXSGC4M&pf_rd_s=merchandised-search-7&qid=1737124415&s=kitchen&sr=1-7" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/713QYz0rxxL._SY879_.jpg">
-                <p>R.R.LALA Cotton Macrame Rod Pocket Semi Sheer Curtain Bohemian Home Geometric Art Decor Beautiful Room Decoration-Macrame Wedding Backdrop Size W 40" X L 80" Color Off White</p>
-                MRP: <span>&#8377;2499</span>
-                <p style="color: red;">-63% <span style="text-decoration:none; color: black; font-size:19px">&#8377;919</span></p>
+            <a href="https://www.amazon.in/Panasonic-Microwave-NN-ST26JMFDG-Silver-Menus/dp/B08CL8XF75/ref=lp_1380072031_1_4?pf_rd_p=9e034799-55e2-4ab2-b0d0-eb42f95b2d05&pf_rd_r=DHKWWW3TRDB7AGCP2E29&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71dzAT5xIqL._SX679_.jpg">
+                <p>Panasonic 20 L Solo Microwave Oven (NN-ST26JMFDG, Silver, Stainless steel cavity with 51 Auto cook Menus)</p>
+                MRP: <span>&#8377;7,490</span>
+                <p style="color: red;">-16% <span style="text-decoration:none; color: black; font-size:19px">&#8377;6,290</span></p>
             </a>
         </div>
         <div id="box28" class="cont">
-            <a href="https://www.amazon.in/ECO-SENSE-Bohemian-Reversible-Farmhouse/dp/B0CX8S94QW/ref=sr_1_10?dib=eyJ2IjoiMSJ9.raeYnhQ6cPMT1aMPrPbxAqaOLU7JLQ1CnWTKnGj-O4y6GI76NEUyqTCMMIR3V_fvyhjtYptkikupEObc-9MyzVodmaAnhHM3012OVrxchqKaRNcJRLv9zrtb9B1_5L9vq1rfgJXVv7vO2RU4Nau30heseApgv_buXkUIQm_FnZGSQmuVBr7uXWWyMRvJ4sKaNTFwLMpkFq1ke4jd8DDmQOJYYF9lp8mHzwS7a2eed8UgiSHD0mqAQNH5B8OrBzwVaTL1I8cDTbwyx3FsyZO_xs10K24kWI032C1TJNKmJjkrp1n4yAAiKMGOiZPPxzbjiKfglpjEVEEexa9Pe71_lkV1isYiVxlrwZdwOgkI9GE.2qKQ3vog6TRvHJF6V6SnWQIlURgU4cfVNL3qOjnfs7Y&dib_tag=se&keywords=Bohemian+furnishings&nsdOptOutParam=true&pf_rd_i=1380442031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=88bdd31e-821b-49b6-a8f9-73ff228c5098&pf_rd_r=1WHJ9MDWWRHCNNXSGC4M&pf_rd_s=merchandised-search-7&qid=1737124415&s=kitchen&sr=1-10" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81pA12UMKpL._SX679_.jpg">
-                <p>ECO SENSE® Jute Braided Round Rugs Bohemian Style, Hand Woven & Reversible for Living Room Kitchen Entryway Rug, Farmhouse (Boho White, 3 x 3)</p>
-                MRP: <span>&#8377;999</span>
-                <p style="color: red;">-15% <span style="text-decoration:none; color: black; font-size:19px">&#8377;849</span></p>
+            <a href="https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo3Mzc1OTk3NDIxNjcyOTE6MTczNzk2OTU2MzpzcF9hcGJfZGVza3RvcF9icm93c2VfaW5saW5lX2J0ZjozMDA0NDQ5MDk1MDI0MzI6OjA6Og&url=%2FHaier-Convection-Microwave-HIL3001CBSH-HAL2WBlack%2Fdp%2FB0861S3BJ1%2Fref%3Dlp_1380072031_1_12_sspa%3Fkeywords%3DMicrowave%2BOvens%26pf_rd_p%3D9e034799-55e2-4ab2-b0d0-eb42f95b2d05%26pf_rd_r%3DDHKWWW3TRDB7AGCP2E29%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hcGJfZGVza3RvcF9icm93c2VfaW5saW5lX2J0Zg%26psc%3D1" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/41-0hItHfVL._SY445_SX342_QL70_FMwebp_.jpg">
+                <p>Haier 30L Convection Microwave Oven (HIL3001CBSH, Black, Crispy Grill)</p>
+                MRP: <span>&#8377;23,999</span>
+                <p style="color: red;">-42% <span style="text-decoration:none; color: black; font-size:19px">&#8377;13,990</span></p>
             </a>
         </div>
         <div id="box29" class="cont">
-            <a href="https://www.amazon.in/sspa/click?ie=UTF8&spc=MToxNTAzMDY0ODg5NjU2Mzc0OjE3MzcxMjQ0MTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDEzMTM4NDAwMDYzMjo6Mjo6&url=%2FSpaces-Drape-Story-Polyester-Darkening%2Fdp%2FB0BFX69RMJ%2Fref%3Dsxin_15_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.cd33fa60-47cd-49f3-80b8-24b1f0cbef97%253Aamzn1.sym.cd33fa60-47cd-49f3-80b8-24b1f0cbef97%26cv_ct_cx%3DBohemian%2Bfurnishings%26keywords%3DBohemian%2Bfurnishings%26nsdOptOutParam%3Dtrue%26pd_rd_i%3DB0BFX69RMJ%26pd_rd_r%3D271a5023-23ae-4a11-989c-00a3c5c3cc89%26pd_rd_w%3D9qHMC%26pd_rd_wg%3DxITBP%26pf_rd_i%3D1380442031%26pf_rd_m%3DA1VBAL9TL5WCBF%26pf_rd_p%3Dcd33fa60-47cd-49f3-80b8-24b1f0cbef97%26pf_rd_r%3DSM3SVK32F20Q785RTJYT%26pf_rd_s%3Dmerchandised-search-7%26qid%3D1737124415%26s%3Dkitchen%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-3-ced4eeeb-b190-41d6-902a-1ecb3fb8b7c4-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51leW8iTtML._SX300_SY300_QL70_FMwebp_.jpg">
-                <p>SPACES DRAPE STORY Heavy Polyester Fabric Floral Elegant Digital Print 75% Room Darkening Semi Sheer Grommet Curtain Set Of 2 (2.5Ft X 7Ft) Door Curtain, Pink</p>
-                MRP: <span>&#8377;3121</span>
-                <p style="color: red;">-30% <span style="text-decoration:none; color: black; font-size:19px">&#8377;2179</span></p>
+            <a href="https://www.amazon.in/Faber-Functions-Rotisserie-Universal-Comprehensive/dp/B0CD2D4WNM?ref_=Oct_d_obs_d_1380367031_2&pd_rd_w=MH0jo&content-id=amzn1.sym.a0183515-a55a-48ac-a863-406c0a598721&pf_rd_p=a0183515-a55a-48ac-a863-406c0a598721&pf_rd_r=SKVXMAYBA1CV5CM972Q6&pd_rd_wg=PjTCY&pd_rd_r=562281ce-de00-4f82-aedf-30e40faa4226&pd_rd_i=B0CD2D4WNM" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/313LdXCABzL._SY445_SX342_QL70_FMwebp_.jpg">
+                <p>Faber 80L Built-In Black Finish Oven || Push/Pull Knob Control with Digital Display || 8 Cooking Functions with Rotisserie, Grill Rack, Universal Pan|| FBIO 80L 8F BK with 1 Yr Comprehensive Warranty</p>
+                MRP: <span>&#8377;57,990</span>
+                <p style="color: red;">-21% <span style="text-decoration:none; color: black; font-size:19px">&#8377;45,999</span></p>
             </a>
         </div>
         <div id="box30" class="cont">
-            <a href="https://www.amazon.in/sspa/click?ie=UTF8&spc=MToxMTA1NTA1NzUwNDUzOTg6MTczNzEyNDQxNTpzcF9idGY6MzAwMDY1MjgyMTkwNTMyOjowOjo&url=%2FLINENWALAS-Cotton-Curtains-Textured-Elegantly%2Fdp%2FB09FGXJBW9%2Fref%3Dsr_1_31_sspa%3Fdib%3DeyJ2IjoiMSJ9.raeYnhQ6cPMT1aMPrPbxAqaOLU7JLQ1CnWTKnGj-O4y6GI76NEUyqTCMMIR3V_fvyhjtYptkikupEObc-9MyzVodmaAnhHM3012OVrxchqKaRNcJRLv9zrtb9B1_5L9vq1rfgJXVv7vO2RU4Nau30heseApgv_buXkUIQm_FnZGSQmuVBr7uXWWyMRvJ4sKaNTFwLMpkFq1ke4jd8DDmQOJYYF9lp8mHzwS7a2eed8UgiSHD0mqAQNH5B8OrBzwVaTL1I8cDTbwyx3FsyZO_xgAP1nL7lYOl_nyvn3e8BNM.EUTohxQ16_wlVLxCP5sNUt-gwEmZxUlzXPS12piMoKA%26dib_tag%3Dse%26keywords%3DBohemian%2Bfurnishings%26nsdOptOutParam%3Dtrue%26pf_rd_i%3D1380442031%26pf_rd_m%3DA1VBAL9TL5WCBF%26pf_rd_p%3D88bdd31e-821b-49b6-a8f9-73ff228c5098%26pf_rd_r%3D1WHJ9MDWWRHCNNXSGC4M%26pf_rd_s%3Dmerchandised-search-7%26qid%3D1737124415%26s%3Dkitchen%26sr%3D1-31-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51dvW8DmSbL._SX300_SY300_QL70_FMwebp_.jpg">
-                <p>LINENWALAS Cotton Back Tab/ Apron Curtains Curtains For Door Set Of 2, Linen Textured Doors Curtains For Home Decor, Hangs Elegantly With Back Loops (4.5Ft X 7 Ft, Bronze Leaf)</p>
-                MRP: <span>&#8377;2000</span>
-                <p style="color: red;">-45% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1099</span></p>
+            <a href="https://www.amazon.in/Bosch-HBG7341B1-Dirt-Repellent-Self-Cleaning-Automatic/dp/B0CK9GGMTP/ref=sr_1_5?dib=eyJ2IjoiMSJ9.AIBJOXYGkBwBznhzvWm-O2th6E1OIbFR39T0oryiLbC5TOalmOw4P8whvP-JTS-YNFNrGVkyjpKPZmld3K-14A2NjsrEW-bQ8RCqGQXOurviPEy9AEgxgwdydrvs62cE82cqcBIjsQRSYYtuUibgVQ.NpvqUzS4ZK0KFcmk8kWnliu7_8nTAF5tgD70Ueu7vhg&dib_tag=se&qid=1737971582&s=kitchen&sr=1-5" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/61gj5KhCs1L._SX679_.jpg">
+                <p>Bosch HBG7341B1, Series 8 Smart Built-in Oven, 60 x 60 cm,Black, Dirt-Repellent & Self-Cleaning, Air Fry, Bosch Assist Automatic, 3D Hot Air, Colour Touch Screen & Operating Ring</p>
+                MRP: <span>&#8377;1,82,990</span>
+                <p style="color: red;">-29% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1,29,890</span></p>
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="more">
         <a href="https://www.amazon.in/electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Electronics_script.js' %}"></script>
 </html>
+{% endblock %}

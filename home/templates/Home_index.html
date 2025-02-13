@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
@@ -9,58 +11,6 @@
     <link rel="stylesheet" href="{% static 'css/Home_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;right:15px;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
         <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
@@ -294,7 +244,7 @@
                 </div>
                 <div class="brands">
                     <a href="{% url 'menFashion' %}">
-                        <img src="https://media.designrush.com/inspiration_images/731069/conversions/LEVI'S-LOGO-DESIGN-SVG-mobile.jpg">
+                        <img src="https://clipartcraft.com/images/levis-logo-svg-2.png">
                     </a>
                     <p>Upto 55% off</p>
                 </div>
@@ -564,17 +514,7 @@
             <button class="rbtn4">&gt;</button>
         </div>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Home_script.js' %}"></script>
 </html>
+{% endblock %}

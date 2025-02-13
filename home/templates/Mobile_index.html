@@ -1,69 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Mobile & Accessories</title>
     <link rel="stylesheet" href="{% static 'css/Mobile_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
         <div class="slider">
+            {% for mslide in mslide %}
             <a href="#">
+                <img src="{{mslide.slide_url}}" class="slide">
+            </a>
+            {% endfor %}
+            <!-- <a href="#">
                 <img src="https://static.digit.in/18977_Samsung_Series-banners_1280X720.jpg" class="slide">
             </a>
             <a href="#">
@@ -74,11 +30,23 @@
             </a>
             <a href="#">
                 <img src="https://i.ytimg.com/vi/5VNA05STfPw/maxresdefault.jpg" class="slide" style="object-fit:fill;">
-            </a>
+            </a> -->
         </div>
     </div>
-    <div class="content">
-        <div id="box1" class="cont">
+    <div class="content grid grid-cols-4 gap-[5px]">
+        {% for mdata in mdata %}
+        <div class="cont">
+            <a href="{{mdata.main_url}}" target="_blank">
+                <div class="overflow-hidden">
+                    <img src="{{mdata.image_url}}" class="hover:scale-125 duration-1000">
+                </div>
+                <p>{{mdata.m_title}}</p>
+                MRP: <span>&#8377;{{mdata.total}}</span>
+                <p style="color: red;">-{{mdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{mdata.dis_price}}</span></p>
+            </a>
+        </div>
+        {% endfor %}
+        <!-- <div id="box1" class="cont">
             <a href="https://www.amazon.in/Samsung-Storage-Display-Charging-Security/dp/B0DFY3XCB6/ref=lp_1389401031_1_9?pf_rd_p=9e034799-55e2-4ab2-b0d0-eb42f95b2d05&pf_rd_r=DDJE1YSENC7E09B427M8&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D" target="_blank">
                 <img src="https://m.media-amazon.com/images/I/81T3olLXpUL._SX679_.jpg">
                 <p>Samsung Galaxy M05 (Mint Green, 4GB RAM, 64 GB Storage) | 50MP Dual Camera | Bigger 6.7" HD+ Display | 5000mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade & 4 Year Security Update | Without Charger</p>
@@ -333,24 +301,14 @@
                 MRP: <span>&#8377;1,57499</span>
                 <p style="text-decoration:none; color: black;font-size:24px;">&#8377;1,49,999&nbsp;<span style="font-size:14px; color: black; text-decoration:none; position: relative; bottom:5px; color: red;">( 5% off)</span></p>
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="more">
         <a href="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Mobile_script.js' %}"></script>
 </html>
+{% endblock %}

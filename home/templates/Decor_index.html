@@ -1,70 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Home styles</title>
     <link rel="stylesheet" href="{% static 'css/Decor_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
         <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
+            {% for dslide in dslide %}
             <a href="#">
+                <img src="{{dslide.slide_url}}" class="slide">
+            </a>
+            {% endfor %}
+            <!-- <a href="#">
                 <img src="https://images.rawpixel.com/image_social_landscape/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdHAyNDctMTItZmFjZWJvb2tldmVudGNvdmVyLTAyLWt6b3hrbjdxLmpwZw.jpg?s=YcHo0f7R9G2HBB64YCtzW2jC7crwTdqUrX548Ws3zUY" class="slide">
             </a>
             <a href="#">
@@ -75,12 +31,24 @@
             </a>
             <a href="#">
                 <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/2a5b5907-f964-47f2-b9ff-3c9c02c745f5.__CR0,0,970,600_PT0_SX970_V1___.png" class="slide">
-            </a>
+            </a> -->
         </div>
         <button type="submit" class="rbtn">&gt;</button>
     </div>
-    <div class="content">
-        <div id="box1" class="cont">
+    <div class="content grid grid-cols-5 gap-[5px]">
+        {% for ddata in ddata %}
+        <div class="cont">
+            <a href="{{ddata.main_url}}" target="_blank">
+                <div class="overflow-hidden">
+                    <img src="{{ddata.image_url}}" class="hover:scale-125 duration-1000">
+                </div>
+                <p>{{ddata.d_title}}</p>
+                MRP: <span>&#8377;{{ddata.total}}</span>
+                <p style="color: red;">-{{ddata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{ddata.dis_price}}</span></p>
+            </a>
+        </div>
+        {% endfor %}
+        <!-- <div id="box1" class="cont">
             <a href="https://www.amazon.in/Decorian-Premium-Quilted-Velvet-Runner/dp/B0D8WB9KPB/ref=s9_acsd_al_ot_cv2_2_t?_encoding=UTF8&pf_rd_m=A21TJRUUN4KGV&pf_rd_s=merchandised-search-12&pf_rd_r=0S0RZ5YJS354Z1AVNWVT&pf_rd_p=20bce7c2-6f2f-4854-b322-f64486be24ef&pf_rd_t=75092524031&pf_rd_i=86460275031" target="_blank">
                 <img src="https://m.media-amazon.com/images/I/81e2Sj1rQ8L._SX679_.jpg">
                 <p>Decorian Premium Soft Quilted Velvet Sofa Cover Mat, Sofa Seat Runner for Couch (3 Seater, Grey Tree)</p>
@@ -320,24 +288,14 @@
                 MRP: <span>&#8377;2000</span>
                 <p style="color: red;">-45% <span style="text-decoration:none; color: black; font-size:19px">&#8377;1099</span></p>
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="more">
         <a href="https://www.amazon.in/b/ref=ohlr_halo_pc_2?pf_rd_r=8AY1D83S7JY2ZXRNMRMF&pf_rd_p=8ef28f92-0139-43d0-96e0-24447647a25d&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=976442031&ie=UTF8&node=12414705031&ref_=HaloPC_BeddingDecor_t2">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Decor_script.js' %}"></script>
 </html>
+{% endblock %}

@@ -127,9 +127,6 @@ body{
     left:10px;
     top:3px;
 }
-.lang:hover{
-    border: 1px solid #fff;
-}
 
 .sign{
     width:35%;
@@ -160,9 +157,11 @@ body{
     list-style:none;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap:wrap;
     border-radius:5px;
     display: none;
+    padding: 5px;
 }
 .drop button{
     width:100px;
@@ -171,10 +170,10 @@ body{
     border:none;
     border-radius:5px;
     position:relative;
-    left:22px;
+    left:45px;
     z-index:1000;
     cursor: pointer;
-    margin-top:5px;
+    margin:5px 0px;
 }
 .drop a:hover{
     color: orange;

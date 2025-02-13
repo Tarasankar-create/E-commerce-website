@@ -1,70 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%  extends 'layout/base.html' %}
     {% load static %}
+    {% block homeblock %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Kid's fashion</title>
     <link rel="stylesheet" href="{% static 'css/Kid_style.css' %}">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_main.jpg' %}">
-            <p>Webmart</p>
-        </div>
-        <div class="location">
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
-        </div>
-        <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </div>
-        <div class="rightnav">
-            <div class="lang">
-                <img src="{% static 'images/flag.png' %}" width="23px" height="23px">
-                <p>EN</p>
-                <i class="fa-solid fa-caret-down"></i>
-            </div>
-            <div class="sign">
-                <p style="position: relative;top:5px;">Hello, sign in</p>
-                <p style="font-weight: bold;font-size:17px; position: relative;bottom:3px;">Account & Lists</p>
-                <i class="fa-solid fa-caret-down"></i>
-                <ul class="drop">
-                    <li><a href="{% url 'login' %}">
-                        <button type="submit" href="{% url 'login' %}">Sign in</button>
-                    </a></li>
-                    <span style="font-size:14px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;position: relative;left:10px; color: black;">New customer start here?<a href="#" style="text-decoration: underline;">Start here</a></span>
-                </ul>
-            </div>
-            <div class="return">
-                <p style="position: relative;top:5px;">Returns</p>
-                <p style="position: relative; bottom:4px;">& orders</p>
-            </div>
-            <div class="cart">
-                <i class="fa-solid fa-cart-arrow-down"></i>
-                <p>Cart</p>
-            </div>
-        </div>
-    </div>
-    <div class="subhead">
-        <p style="margin-left:10px;">&gt;&gt;</p>
-        <a href="{% url 'menFashion' %}">Men's fashion</a>
-        <a href="{% url 'womenFashion' %}">Women's fashion</a>
-        <a href="{% url 'kidFashion' %}">Kids's fashion</a>
-        <a href="{% url 'beauty' %}">Beauty & face care</a>
-        <a href="{% url 'decor' %}">Home styles</a>
-        <a href="{% url 'electronics' %}">Electronics</a>
-        <a href="{% url 'mobile' %}">Mobiles & accessories</a>
-    </div>
     <div class="slide_main">
-        <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
+            {% for kslide in kslide %}
             <a href="{% url 'kidFashion' %}">
+                <img src="{{kslide.slide_url}}" class="slide">
+            </a>
+            {% endfor %}
+            <!-- <a href="{% url 'kidFashion' %}">
                 <img src="https://i.pinimg.com/originals/3c/41/ab/3c41ab736bc52789af651115e4f0a980.jpg" class="slide">
             </a>
             <a href="{% url 'kidFashion' %}">
@@ -75,12 +30,22 @@
             </a>
             <a href="{% url 'kidFashion' %}">
                 <img src="https://i.pinimg.com/736x/0b/39/14/0b3914ae30b768461468509a81e94d9c.jpg" class="slide">
+            </a> -->
+        </div>
+    </div>
+    <div class="content grid grid-cols-5 gap-[5px]">
+        {% for kdata in kdata %}
+        <div id="box1" class="cont">
+            <a href="{{kdata.main_url}}" target="_blank">
+                <div class="overflow-hidden">
+                    <img src="{{kdata.image_url}}" class="hover:scale-125">
+                </div>
+                <p>{{kdata.k_title}}</p>
+                MRP: <span>&#8377;{{kdata.total}}</span>
+                <p style="color: red;">-{{kdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px">&#8377;{{kdata.dis_price}}</span></p>
             </a>
         </div>
-        <button type="submit" class="rbtn">&gt;</button>
-    </div>
-    <div class="content">
-        <div id="box1" class="cont">
+        <!-- <div id="box1" class="cont">
             <a href="https://www.amazon.in/Allen-Solly-Boys-Shirt-ABSFESPFO94044_Blue/dp/B0CTQWT7T2/ref=sr_1_12?dib=eyJ2IjoiMSJ9.OXMbqBsKMEla_6HDQIc0znmujHetw-WbrptRErsjY_0mJn8w66Vcja8QbfCJ9Ht7U-_9MeVfThkLgcHieyRzchNKlVsh7LIWBZRJWdV3w1I4KN6vbPri5BfzYCp02YKbk6SUl0U_LlDPtbme7aztgmrDSEtwhTMbeORtWt_tQS7B3DHLigSChGZH1WdqSN5xvEqzBmsu1K_uaCObck2cvHNawH_Ci_3EOlFqbdJLUjmybuTMGMvwfNiY9K3GXG4JRU-UQ5HyqP-g_lji-NU2fos1Iae_cUjbfriEHCW62mUwsnl5AGMaGFhj0OSbFTHOSRhaREQwTYtWFV7OUK3wofCbNti6X--hI0IIkL8vfMh3cFhzroN5_GHr54qa-CuTcqe6N-enoOb1WnDtKU9iUEmS-yvOFv3rwZjqC3z2nCRybpxu6VDLBQktBlGcxCpV.dNe2jrXMJUvE5speIpFA9hVjdEJH2933Ubj150IAYJk&dib_tag=se&pf_rd_i=1967851031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b889de9a-3b52-4a97-b2b8-92ca06770881&pf_rd_r=01K8CD50FW670NWGTZW1&pf_rd_s=merchandised-search-9&pf_rd_t=30901&qid=1736177004&refinements=p_85%3A10440599031%2Cp_89%3AAllen+Solly%2Cp_n_pct-off-with-tax%3A2665402031&rnid=2665398031&rps=1&s=apparel&sr=1-12" target="_blank">
                 <img src="https://m.media-amazon.com/images/I/61hqcUwKt1L._SY879_.jpg">
                 <p>Allen Solly Boy's Slim Fit Shirt</p>
@@ -319,24 +284,14 @@
                 MRP: <span>&#8377;1999</span>
                 <p style="color: red;">-54% <span style="text-decoration:none; color: black; font-size:19px">&#8377;925</span></p>
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="more">
         <a href="https://www.amazon.in/b/ref=AF_WIN_bub_w_cml_t_3?pf_rd_r=WRR1EKCBES363N117Q73&pf_rd_p=9a0cb6fd-b7aa-4cdb-a3c8-8599f759d050&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=6648217031&node=9361420031">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
-    <div class="footer">
-        <div class="fcontainer">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">FAQs</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Support</a>
-        </div>
-        <hr style="width: 80%; border:1px solid gray;">
-        <p style="margin:15px 0px 15px 0px;">© 2024 Company, Inc</p>
-      </div>
 </body>
 <script src="{% static 'js/Kid_script.js' %}"></script>
 </html>
+{% endblock %}
