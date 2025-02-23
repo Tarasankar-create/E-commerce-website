@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>Men's fashion</title>
     <link rel="stylesheet" href="{% static 'css/Men_style.css' %}">
 </head>
@@ -23,16 +22,16 @@
         </div>
         <button type="submit" class="rbtn">&gt;</button>
     </div>
-    <div class="content grid grid-cols-5 gap-[5px] w-[20%]">
+    <div class="content">
         {% for data in mendata %}
         <div class="cont">
             <a href="{{data.main_url}}" target="_blank">
-                <div class="overflow-hidden">
-                    <img src="{{data.image_url}}" class="hover:scale-125 duration-1000">
+                <div style="overflow: hidden;">
+                    <img src="{{data.image_url}}">
                 </div>
                 <p>{{data.men_title}}</p>
                 MRP: <span>&#8377;{{data.total}}</span>
-                <p style="color: red;">-{{data.discount}}% <span style="text-decoration:none; color: black; font-size:19px">&#8377;{{data.dis_price}}</span></p>
+                <p style="color: red;">{{data.discount}}% <span style="text-decoration:none; color: black; font-size:19px">&#8377;{{data.dis_price}}</span></p>
             </a>
         </div>
         {% endfor %}

@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>Women's fashion</title>
     <link rel="stylesheet" href="{% static 'css/Women_style.css' %}">
 </head>
@@ -21,212 +20,19 @@
             {% endfor %}
         </div>
     </div>
-    <div class="content grid grid-cols-5 gap-[5px]">
+    <div class="content">
         {% for wdata in wdata %}
         <div class="cont">
             <a href="{{wdata.main_url}}" target="_blank">
-                <div class="overflow-hidden">
-                    <img src="{{wdata.image_url}}" class="hover:scale-125 duration-1000">
+                <div style="overflow: hidden;">
+                    <img src="{{wdata.image_url}}">
                 </div>
                 <p>{{wdata.w_title}}</p>
                 MRP: <span>&#8377;{{wdata.total}}</span>
-                <p style="color: red;">-{{wdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{wdata.dis_price}}</span></p>
+                <p style="color: red;">{{wdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{wdata.dis_price}}</span></p>
             </a>
         </div>
         {% endfor %}
-        <!-- 
-        <div id="box7" class="cont">
-            <a href="https://www.amazon.in/Janasya-Georgette-Printed-Palazzo-SET815-KR-PP/dp/B0CJ9HV4F8/ref=sr_1_41?dib=eyJ2IjoiMSJ9.-pJExJAn2HPUzyUY5Kl-_3x9SrvoE92kNYAkeGw4SlAN4D-e9ElQfucZwn2-mLQ20xs07E62zh-KvD3QbP1vDQy5op2VUCfZT35mjWYRlnhP8W6mNPol4njaJ0rVNCszXmS8StfJVUqfBTTiy53uwcXAr7-8A92Jw4GQKvQSCJuNUMuieV24IoJCx3qyMPMfhhsnRH9P4YFXmAqBvkwW0g6x1Kw7_OJhA3aiz2eGcxVMN0t18EiwkdplwPk0JyCVhFC-eFwimdH18OUtOvk5Vtaxtupr6Zfu8mp8PnjfbIQVntPwQ7crHE6HcAuRoiRR8tUM925UDlmbE7glfqOsnNFGfhimbq57tDzakVuiKg-onVnRCBYBlPVwRRC5LngQDZEfFSMZf42w9kEu-2_93n3gGCqxdeVGLUhoCjH2UB8YrnD7SQmuKT-XKnynVpN_.qPhrkjzn3QsZ1wGCXPfqenMDrEGTt8KVT4UAIrjuHyM&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=ff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=Z4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735882510&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031%2Cp_89%3AAarke+Ritu+Kumar%7CAda%7CAurelia%7CBIBA%7CFabindia%7CGlobus%7CGoSriKi%7CINDO+ERA%7CIndya%7CJanasya%7CMEERA+FAB%7CMax%7CRitu+Kumar%7CSoch%7CW+for+Woman%7Crangita&rnid=3837712031&rps=1&s=apparel&sr=1-41" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71oIRxhQTKL._SY741_.jpg">
-                <p>Janasya Women's Pink Georgette Foil Motif Printed Kurta with Palazzo and Dupatta</p>
-                MRP: <span>&#8377;5999</span>
-                <p style="color: red;">-77% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;1379</span></p>
-            </a>
-        </div>
-        <div id="box8" class="cont">
-            <a href="https://www.amazon.in/BIBA-Printed-Straight-Festive-COLLECTION20341_Dusty/dp/B0CXPS3KMG/ref=sr_1_1?dib=eyJ2IjoiMSJ9.lue0edNmF2xmU6sGmqb19mIWQP0xkJiiZ7_YwJTuQ13cHpCN-_9De8yx9mblJvTD1baIWwVMpe5PqdnJJqzGFjl6rqfcTJow00TOAWeFZGvS6eFqgKjnUwyEa4K6tVZDgQSJhMTKi6TcVrzzuPd1DAauLzSqofS6rBpxLf5c27jTXbj8kMMZHHY4oCDzy_TAfakZXWclF9Yc-jsm-a4rGv-EUSxI8I2thNEa76o9bd9HMad2nNgss2PHLnq-UNIV4b35yy5Q8jNywXgzhKY5coXnis4oqBrCvVa_XAzoeWkjZNQzSt3Xx9qr1wW6L9DiFOCK6h5rHUY4E-zgCelrjVi9X1YgOn3EQARYOwAU19R1uv6G8FsPvj1k5Rn-IcdJaMZaDacsYNxW-ba_um4BGKgv2NoMWMGKL7JynLdqVhKlTxO_w1kD8an8mkYE8_sS.c3SnSLqZpT73NdWR6ztIjTfoQnE17XAjEKjODWHAKxI&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=CJQG1A8MXGW2A8QX437V&pf_rd_s=merchandised-search-12&qid=1735908423&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_89%3ABIBA&rnid=3837712031&rps=1&s=apparel&sr=1-1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/612-3z+ObeL._SX679_.jpg">
-                <p>BIBA Floral Women Polyester Straight Kurta</p>
-                MRP: <span>&#8377;1999</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;999</span></p>
-            </a>
-        </div>
-        <div id="box9" class="cont">
-            <a href="https://www.amazon.in/BIBA-Women-Printed-Straight-ASSORTED20625_Plum_34/dp/B0CRYYZJSL/ref=sr_1_2?dib=eyJ2IjoiMSJ9.lue0edNmF2xmU6sGmqb19mIWQP0xkJiiZ7_YwJTuQ13cHpCN-_9De8yx9mblJvTD1baIWwVMpe5PqdnJJqzGFjl6rqfcTJow00TOAWeFZGvS6eFqgKjnUwyEa4K6tVZDgQSJhMTKi6TcVrzzuPd1DAauLzSqofS6rBpxLf5c27jTXbj8kMMZHHY4oCDzy_TAfakZXWclF9Yc-jsm-a4rGv-EUSxI8I2thNEa76o9bd9HMad2nNgss2PHLnq-UNIV4b35yy5Q8jNywXgzhKY5coXnis4oqBrCvVa_XAzoeWkjZNQzSt3Xx9qr1wW6L9DiFOCK6h5rHUY4E-zgCelrjVi9X1YgOn3EQARYOwAU19R1uv6G8FsPvj1k5Rn-IcdJaMZaDacsYNxW-ba_um4BGKgv2NoMWMGKL7JynLdqVhKlTxO_w1kD8an8mkYE8_sS.c3SnSLqZpT73NdWR6ztIjTfoQnE17XAjEKjODWHAKxI&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=CJQG1A8MXGW2A8QX437V&pf_rd_s=merchandised-search-12&qid=1735908423&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_89%3ABIBA&rnid=3837712031&rps=1&s=apparel&sr=1-2" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/7122ZuaPUML._SX679_.jpg">
-                <p>BIBA Women Rayon Printed Kurta</p>
-                MRP: <span>&#8377;1299</span>
-                <p style="color: red;">-55% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;579</span></p>
-            </a>
-        </div>
-        <div id="box10" class="cont">
-            <a href="https://www.amazon.in/BIBA-Womens-Cotton-Regular-MNMASRTD16642EAW23RUST_Brown_38/dp/B0CDXW5HMX/ref=sr_1_3?dib=eyJ2IjoiMSJ9.lue0edNmF2xmU6sGmqb19mIWQP0xkJiiZ7_YwJTuQ13cHpCN-_9De8yx9mblJvTD1baIWwVMpe5PqdnJJqzGFjl6rqfcTJow00TOAWeFZGvS6eFqgKjnUwyEa4K6tVZDgQSJhMTKi6TcVrzzuPd1DAauLzSqofS6rBpxLf5c27jTXbj8kMMZHHY4oCDzy_TAfakZXWclF9Yc-jsm-a4rGv-EUSxI8I2thNEa76o9bd9HMad2nNgss2PHLnq-UNIV4b35yy5Q8jNywXgzhKY5coXnis4oqBrCvVa_XAzoeWkjZNQzSt3Xx9qr1wW6L9DiFOCK6h5rHUY4E-zgCelrjVi9X1YgOn3EQARYOwAU19R1uv6G8FsPvj1k5Rn-IcdJaMZaDacsYNxW-ba_um4BGKgv2NoMWMGKL7JynLdqVhKlTxO_w1kD8an8mkYE8_sS.c3SnSLqZpT73NdWR6ztIjTfoQnE17XAjEKjODWHAKxI&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=CJQG1A8MXGW2A8QX437V&pf_rd_s=merchandised-search-12&qid=1735908423&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_89%3ABIBA&rnid=3837712031&rps=1&s=apparel&sr=1-3" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/619F1qA1VRL._SX679_.jpg">
-                <p>BIBA Women's Cotton Tunic Regular Kurta</p>
-                MRP: <span>&#8377;1299</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;649</span></p>
-            </a>
-        </div>
-        <div id="box11" class="cont">
-            <a href="https://www.amazon.in/BIBA-Women-Printed-Straight-JAMAWAR20167_Blue_36/dp/B0CNCXP6KZ/ref=sr_1_4?dib=eyJ2IjoiMSJ9.lue0edNmF2xmU6sGmqb19mIWQP0xkJiiZ7_YwJTuQ13cHpCN-_9De8yx9mblJvTD1baIWwVMpe5PqdnJJqzGFjl6rqfcTJow00TOAWeFZGvS6eFqgKjnUwyEa4K6tVZDgQSJhMTKi6TcVrzzuPd1DAauLzSqofS6rBpxLf5c27jTXbj8kMMZHHY4oCDzy_TAfakZXWclF9Yc-jsm-a4rGv-EUSxI8I2thNEa76o9bd9HMad2nNgss2PHLnq-UNIV4b35yy5Q8jNywXgzhKY5coXnis4oqBrCvVa_XAzoeWkjZNQzSt3Xx9qr1wW6L9DiFOCK6h5rHUY4E-zgCelrjVi9X1YgOn3EQARYOwAU19R1uv6G8FsPvj1k5Rn-IcdJaMZaDacsYNxW-ba_um4BGKgv2NoMWMGKL7JynLdqVhKlTxO_w1kD8an8mkYE8_sS.c3SnSLqZpT73NdWR6ztIjTfoQnE17XAjEKjODWHAKxI&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=CJQG1A8MXGW2A8QX437V&pf_rd_s=merchandised-search-12&qid=1735908423&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_89%3ABIBA&rnid=3837712031&rps=1&s=apparel&sr=1-4" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61DXJFNP80L._SX679_.jpg">
-                <p>BIBA Women Straight Viscose Printed Kurta</p>
-                MRP: <span>&#8377;1799</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;899</span></p>
-            </a>
-        </div>
-        <div id="box12" class="cont">
-            <a href="https://www.amazon.in/BIBA-Women-PRINTED-FLARED-STORY20138_YELLOW_38/dp/B0CV9HXRZS/ref=sr_1_16?dib=eyJ2IjoiMSJ9.lue0edNmF2xmU6sGmqb19mIWQP0xkJiiZ7_YwJTuQ13cHpCN-_9De8yx9mblJvTD1baIWwVMpe5PqdnJJqzGFjl6rqfcTJow00TOAWeFZGvS6eFqgKjnUwyEa4K6tVZDgQSJhMTKi6TcVrzzuPd1DAauLzSqofS6rBpxLf5c27jTXbj8kMMZHHY4oCDzy_TAfakZXWclF9Yc-jsm-a4rGv-EUSxI8I2thNEa76o9bd9HMad2nNgss2PHLnq-UNIV4b35yy5Q8jNywXgzhKY5coXnis4oqBrCvVa_XAzoeWkjZNQzSt3Xx9qr1wW6L9DiFOCK6h5rHUY4E-zgCelrjVi9X1YgOn3EQARYOwAU19R1uv6G8FsPvj1k5Rn-IcdJaMZaDacsYNxW-ba_um4BGKgv2NoMWMGKL7JynLdqVhKlTxO_w1kD8an8mkYE8_sS.c3SnSLqZpT73NdWR6ztIjTfoQnE17XAjEKjODWHAKxI&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=CJQG1A8MXGW2A8QX437V&pf_rd_s=merchandised-search-12&qid=1735908423&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_89%3ABIBA&rnid=3837712031&rps=1&s=apparel&sr=1-16" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61dhfiECXXL._SX679_.jpg">
-                <p>BIBA Solid Women Yellow Cotton Straight Kurta</p>
-                MRP: <span>&#8377;1799</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;899</span></p>
-            </a>
-        </div>
-        <div id="box13" class="cont">
-            <a href="https://www.amazon.in/Meena-Bazaar-Teal-Blue-Embroidery-Dupatta/dp/B0DJ97SLHJ/ref=sr_1_7?dib=eyJ2IjoiMSJ9.wJ_e6s8FSU8qgRtmCu3uWMjyA1Inw9-cpaj8fhqFVNQWTcFR7J_f7-FlxOccUuQrjbUwQRNIDLBOAS-J3wG64z7NKwFriepYKHsB8jsMLfsQvY9WsVfmZ0IiI1gQHRZMRxf24ydauTvrBhJZzETJkzeMMKtXwe3JQvrdH8a-3Asj3sgAsVdKVU1PRHVwk8egxdE0RspQ8teoBFinMoMArbMqwqrCtliVKNuSbbFpQZMpXC_sWzJH5KKyRPJhBAk2eQ10MeF-yHC-0-Gm_tzSxpuiENofbpNzJB-uhCGDXEdOCOZ1vIe_1LQXzsuctytQWfnbTUjRl8x4ZLx2y70FdLtZ90MqaDOeInUAOfLZpbzzJ2gg1_18rkWIoSpEOyTbzMia_6wrE1ZWs_MsQ-hhAk-DNsE9RXEsDsiQfrkHAcijzvf9dKQFjzrEQtwBRWI3.2ayYSZV0nmzqpnrpNWItDuEeokOoDaTu2v1JUUB6cFI&dib_tag=se&keywords=Meena+Bazaar&nsdOptOutParam=true&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=ZJH6NCC6SGHM1Y9P9FCN&pf_rd_s=merchandised-search-12&qid=1735969600&refinements=p_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-7" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51rsi3LDsqL._SX679_.jpg">
-                <p>Meena Bazaar Women's Teal-Blue Cotton Embroidery Kurta and Pant with Dupatta Set - (AW24-J-84-OL-1089-CHND-SKD)</p>
-                MRP: <span>&#8377;2995</span>
-                <p style="color: red;">-35% <span style="text-decoration:none; color: black; font-size: 19px;">&#8377;1949</span></p>
-            </a>
-        </div>
-        <div id="box14" class="cont">
-            <a href="https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2NjQzNjYwMjU4ODcwNjkyOjE3MzU5Njk2MDA6c3BfbXRmOjMwMDQwOTM2ODY5MzAzMjo6MDo6&url=%2FWomens-Green-Linen-Embroidered-Unstitched%2Fdp%2FB0DJR58WN6%2Fref%3Dsr_1_24_sspa%3Fdib%3DeyJ2IjoiMSJ9.wJ_e6s8FSU8qgRtmCu3uWMjyA1Inw9-cpaj8fhqFVNQWTcFR7J_f7-FlxOccUuQrjbUwQRNIDLBOAS-J3wG64z7NKwFriepYKHsB8jsMLfsQvY9WsVfmZ0IiI1gQHRZMRxf24ydauTvrBhJZzETJkzeMMKtXwe3JQvrdH8a-3Asj3sgAsVdKVU1PRHVwk8egxdE0RspQ8teoBFinMoMArbMqwqrCtliVKNuSbbFpQZMpXC_sWzJH5KKyRPJhBAk2eQ10MeF-yHC-0-Gm_tzSxtQghacSrOOW_eX8aMUtadE.PGB7zl0dVxqt9d4yd0mol1dRbsNGS2Hu2aieGXJFI0I%26dib_tag%3Dse%26keywords%3DMeena%2BBazaar%26nsdOptOutParam%3Dtrue%26pf_rd_i%3D1953602031%26pf_rd_m%3DA1VBAL9TL5WCBF%26pf_rd_p%3D89f39241-8a3f-4705-916d-9b1419906311%26pf_rd_r%3DZJH6NCC6SGHM1Y9P9FCN%26pf_rd_s%3Dmerchandised-search-12%26qid%3D1735969600%26refinements%3Dp_85%253A10440599031%26rnid%3D10440598031%26rps%3D1%26s%3Dapparel%26sr%3D1-24-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61VJxDCIFlL._SX679_.jpg">
-                <p>Biba Women's Green Linen Blend Embroidered Unstitched Suit Set</p>
-                MRP: <span>&#8377;3999</span>
-                <p style="color: red;">-20% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;3200</span></p>
-            </a>
-        </div>
-        <div id="box15" class="cont">
-            <a href="https://www.amazon.in/Meena-Bazaar-Mustard-Georgette-AW24-J-96-OL-SIARA-PLN-AGT-WOVN/dp/B0DRKT47ZJ/ref=sr_1_25?dib=eyJ2IjoiMSJ9.wJ_e6s8FSU8qgRtmCu3uWMjyA1Inw9-cpaj8fhqFVNQWTcFR7J_f7-FlxOccUuQrjbUwQRNIDLBOAS-J3wG64z7NKwFriepYKHsB8jsMLfsQvY9WsVfmZ0IiI1gQHRZMRxf24ydauTvrBhJZzETJkzeMMKtXwe3JQvrdH8a-3Asj3sgAsVdKVU1PRHVwk8egxdE0RspQ8teoBFinMoMArbMqwqrCtliVKNuSbbFpQZMpXC_sWzJH5KKyRPJhBAk2eQ10MeF-yHC-0-Gm_tzSxpuiENofbpNzJB-uhCGDXEdOCOZ1vIe_1LQXzsuctytQWfnbTUjRl8x4ZLx2y70FdLtZ90MqaDOeInUAOfLZpbzzJ2gg1_18rkWIoSpEOyTbzMia_6wrE1ZWs_MsQ-hhAk-DNsE9RXEsDsiQfrkHAcijzvf9dKQFjzrEQtwBRWI3.2ayYSZV0nmzqpnrpNWItDuEeokOoDaTu2v1JUUB6cFI&dib_tag=se&keywords=Meena+Bazaar&nsdOptOutParam=true&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=ZJH6NCC6SGHM1Y9P9FCN&pf_rd_s=merchandised-search-12&qid=1735969600&refinements=p_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-25" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61ftOoCfD4L._SX679_.jpg">
-                <p>Meena Bazaar Women's Aqua Georgette Saree With Blouse Piece- (AW24-J-96-OL-SIARA-PLN-AGT-WOVN)</p>
-                MRP: <span>&#8377;2695</span>
-                <p style="color: red;">-26% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;1999</span></p>
-            </a>
-        </div>
-        <div id="box16" class="cont">
-            <a href="https://www.amazon.in/Meena-Bazaar-Hyacinth-Embroidery-Unstitched/dp/B0DF2M6468/ref=sr_1_40?dib=eyJ2IjoiMSJ9.wJ_e6s8FSU8qgRtmCu3uWMjyA1Inw9-cpaj8fhqFVNQWTcFR7J_f7-FlxOccUuQrjbUwQRNIDLBOAS-J3wG64z7NKwFriepYKHsB8jsMLfsQvY9WsVfmZ0IiI1gQHRZMRxf24ydauTvrBhJZzETJkzeMMKtXwe3JQvrdH8a-3Asj3sgAsVdKVU1PRHVwk8egxdE0RspQ8teoBFinMoMArbMqwqrCtliVKNuSbbFpQZMpXC_sWzJH5KKyRPJhBAk2eQ10MeF-yHC-0-Gm_tzSxpuiENofbpNzJB-uhCGDXEdOCOZ1vIe_1LQXzsuctytQWfnbTUjRl8x4ZLx2y70FdLtZ90MqaDOeInUAOfLZpbzzJ2gg1_18rkWIoSpEOyTbzMia_6wrE1ZWs_MsQ-hhAk-DNsE9RXEsDsiQfrkHAcijzvf9dKQFjzrEQtwBRWI3.2ayYSZV0nmzqpnrpNWItDuEeokOoDaTu2v1JUUB6cFI&dib_tag=se&keywords=Meena+Bazaar&nsdOptOutParam=true&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=89f39241-8a3f-4705-916d-9b1419906311&pf_rd_r=ZJH6NCC6SGHM1Y9P9FCN&pf_rd_s=merchandised-search-12&qid=1735969600&refinements=p_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-40" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51sYSzs6RKL._SX679_.jpg">
-                <p>Meena Bazaar Women's Handloom Embroidery Unstitch Suits Set</p>
-                MRP: <span>&#8377;2295</span>
-                <p style="color: red;">-39% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;1399</span></p>
-            </a>
-        </div>
-        <div id="box17" class="cont">
-            <a href="https://www.amazon.in/Soch-Womens-Purple-Floral-Straight/dp/B0DBZ1NY3S/ref=sr_1_10?dib=eyJ2IjoiMSJ9.sNGRPQz_VtF2JRwEMiEoPS04sN_Y3EmBJv69VSUg5_k6egZc0YrhBr1HlH_HTfhIABZb9qwuA3dJtSmTqMQMmQEMWbcM3m-qkIf9n4AY527j-nT-uHo4mqhiijp7lkE7Gw3qd-qlGuogKJ4yO0OH9Vm6vRdi_XWlwd38t1dStBEPs-CvemI7HImEpdVL7v4UQHaXNpxJVZ3W6Kc30AzA9LYLyPYU48gSY1WdG7n-Nnc5635YShGUtUGWZfMAope8_7JoqmlbGg-DaRwivN3xGCtHN2rFWofezEeVRmafHRhl8smiKvOQq1zh3EJWW_c3H0HC-nJy_MVnvQUGJELbvDVfq8fxrZuIqbecntk5uvsaU5TY5cjivUyfU_gtKPpGqDVNeQLe0NhZP62sh-fHtI8W1IZCdcBFflJ8MTUOYE9cwfaudqqwVG_U43M53TgS.o4HPgQ5_8bLqbcvjKuvV9bUwkDU4EAfYkec-ViwjLt0&dib_tag=se&keywords=soch&nsdOptOutParam=true&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=629ff303-5dde-4791-8dde-0bc08f66d9f7&pf_rd_r=ZJH6NCC6SGHM1Y9P9FCN&pf_rd_s=merchandised-search-20&qid=1735970590&refinements=p_89%3ASoch&rnid=3837712031&s=apparel&sr=1-10" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51r2FRgSXyL._SY741_.jpg">
-                <p>Soch Womens Purple Rayon Slub Floral Print Straight Tunic</p>
-                MRP: <span>&#8377;790</span>
-                <p style="color: red;">-8% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;734</span></p>
-            </a>
-        </div>
-        <div id="box18" class="cont">
-            <a href="https://www.amazon.in/Ada-Embroidered-Lucknowi-Chikan-XL509732/dp/B08WCT62GM/ref=sr_1_19?dib=eyJ2IjoiMSJ9.r53ROePQJCVri1SIAm3L9eEmYf3WEMuzh3c1mJndwQZr0oSDCIPYs5B0iy7Li9ZpfPGcIphk442nNSEWWzmwHmog1nPO42l33oIdNODCJjNh6P4cOJXTdSMG024EpJ9Mz2Ea2quo9c3b3MHMzh96ZkCKuxyxvDIV7fHaPDRdutBYtrvn8IdXspz7-2t9zXzRZnFnUaisLxWgZTL-usb5PP_ko2-G79PL7HYOL_h4zk4r_gLkka7HmnuP7680BswzVoz5cu1c17GIhMP08JBTJIYFl-z3cq9EiN0WLP8pgnzbuuGJkyMnl5LaFcRatXF_fG6s3rQz4NQ0kCe13lzIQLPz8b34mDv0Mw9WBmWbb93l1Gni4xsiAqC6wuOc-BwytR__W6zM017sd1STIlUuoUTEkLfoyyZDNSmq-iisgi8rGBmb2zOUHlk0yvxsvrBN.Vqa9Uz44ly6o0RRIsy7LlVU5YCZRQQ7Ly7Sl5QSo-WY&dib_tag=se&keywords=ada&nsdOptOutParam=true&pf_rd_i=18316424031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=629ff303-5dde-4791-8dde-0bc08f66d9f7&pf_rd_r=3ZMAV717CFD2W9FFQ1CK&pf_rd_s=merchandised-search-20&pf_rd_t=30901&qid=1735970711&refinements=p_89%3AAda%2Cp_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-19" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61MmZnOjvJL._SY879_.jpg">
-                <p>Ada Hand Embroidered Lucknowi Chikankari Cotton Short Top Tunic Kurti for Women A534580</p>
-                MRP: <span>&#8377;1098</span>
-                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;998</span></p>
-            </a>
-        </div>
-        <div id="box19" class="cont">
-            <a href="https://www.amazon.in/rangita-Cotton-Printed-Length-Women_3XL/dp/B0DPPY816Z/ref=sr_1_22?dib=eyJ2IjoiMSJ9.gHzqtI-k4y_3lGpRp5S3IFD8hYsFd61RiGfzwVqqxIMQ0mUmfz1l1OnOb-JgBe-RxXOU9Uiz_vN2kHrkoZxdIaB-oAjlftLXUJE8wjmKlOummzNQ4n9RqzAzFqkCWL7PFC8ag-1sK8m3QTjm3HgRQu_FJ0HWJSArVjNW7-HOcgadU0BriH4fmi_KULVMYXm0zkQrQW0RFK4NpF8t3fELFxPHn_Vm2Zw_gKHwHS65GWFvnGg7IrjxN8Cim0WS7CrORAEGrQhWIIj0DPttuegQtFbkEpyC3R-6hQlxQILceKFhO894c9o2JdLRHEjVW-9qeVbSTiibEAKqcSWkZ8X--zFNSZG6PHMskLfhz3REqLHMltP3EeI3fQIjhen4cJKXp5R64WILNzfJkQ9DQvZzzOWqb6Lb9KzPv3rUchwiSeJjy_CWq66H_iHCPwSPoaHW.0NOyaA0hM6EwMueYCUovsmeQ0kH8HOac89VWqBAH-7w&dib_tag=se&keywords=rangita&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=629ff303-5dde-4791-8dde-0bc08f66d9f7&pf_rd_r=ZJH6NCC6SGHM1Y9P9FCN&pf_rd_s=merchandised-search-20&qid=1735970871&refinements=p_89%3Arangita%2Cp_n_pct-off-with-tax%3A2665401031&rnid=2665398031&s=apparel&sr=1-22" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61qRIKHfeZL._SY879_.jpg">
-                <p>rangita Cotton Calf Length A-Line Kurti for Women | Kurta for Women</p>
-                MRP: <span>&#8377;1399</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;699</span></p>
-            </a>
-        </div>
-        <div id="box20" class="cont">
-            <a href="https://www.amazon.in/rangita-Length-Embroidered-Flared-Women_M/dp/B0DP3KG9H8/ref=sr_1_29?dib=eyJ2IjoiMSJ9.gHzqtI-k4y_3lGpRp5S3IFD8hYsFd61RiGfzwVqqxIMQ0mUmfz1l1OnOb-JgBe-RxXOU9Uiz_vN2kHrkoZxdIaB-oAjlftLXUJE8wjmKlOummzNQ4n9RqzAzFqkCWL7PFC8ag-1sK8m3QTjm3HgRQu_FJ0HWJSArVjNW7-HOcgadU0BriH4fmi_KULVMYXm0zkQrQW0RFK4NpF8t3fELFxPHn_Vm2Zw_gKHwHS65GWFvnGg7IrjxN8Cim0WS7CrORAEGrQhWIIj0DPttuegQtFbkEpyC3R-6hQlxQILceKFhO894c9o2JdLRHEjVW-9qeVbSTiibEAKqcSWkZ8X--zFNSZG6PHMskLfhz3REqLHMltP3EeI3fQIjhen4cJKXp5R64WILNzfJkQ9DQvZzzOWqb6Lb9KzPv3rUchwiSeJjy_CWq66H_iHCPwSPoaHW.0NOyaA0hM6EwMueYCUovsmeQ0kH8HOac89VWqBAH-7w&dib_tag=se&keywords=rangita&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=629ff303-5dde-4791-8dde-0bc08f66d9f7&pf_rd_r=ZJH6NCC6SGHM1Y9P9FCN&pf_rd_s=merchandised-search-20&qid=1735970871&refinements=p_89%3Arangita%2Cp_n_pct-off-with-tax%3A2665401031&rnid=2665398031&s=apparel&sr=1-29" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71hC4a+cijL._SY879_.jpg">
-                <p>rangita Rayon Calf Length Embroidered Flared Kurti for Women | Kurta for Women</p>
-                MRP: <span>&#8377;1999</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;999</span></p>
-            </a>
-        </div>
-        <div id="box21" class="cont">
-            <a href="https://www.amazon.in/Ada-Embroidered-Lucknowi-Chikankari-Chanderi/dp/B0DFWTXL4D/ref=sr_1_75?dib=eyJ2IjoiMSJ9.OdexlZso2yylmiDyoMNROw941mjeEssxfEedfAQdImo_MDG7vuAxC4ClhVSy7fA643gCCUx8WODupN3OkK6kWiPjr0XFVfDUDV-ySOoj7Hz2QM_UpUEIlp9kMwdfa0AV5ttsL94zrPJ79IS2O95YfQOpuYMVD6NCNwGvioTA4n8-9_AMNRfW8zPjpfRtMtR4LXS7duEHUx4_rBX8qAktITrOvXynJ0pvaCVWN00gCW-h7UhgQ1QHOSgVCVhnsjWIVfXRlqqhlzm6-VhXYPM_598nhQUWnQUz6sQI2gbpbI1RirCJnNahg6Ugz_NtkLYSbVN8vwmD9mzWDbZLIlcHYYcmtrimvvwBgzlvS22e_pXclqaLLv9g16L73BMnqArApvINwKB2DwedLve0okv92YZzcti-Fbs-j_ESZoEmitN52uepXvq1gMoA3F5JiIvn.Ts9FzOPgej0OPkjOP7mk2sOSbFt4Pn4YWeynDqksOEk&dib_tag=se&keywords=ada&nsdOptOutParam=true&pf_rd_i=18316424031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=629ff303-5dde-4791-8dde-0bc08f66d9f7&pf_rd_r=3ZMAV717CFD2W9FFQ1CK&pf_rd_s=merchandised-search-20&pf_rd_t=30901&qid=1735971319&refinements=p_89%3AAda%2Cp_85%3A10440599031&rnid=10440598031&rps=1&s=apparel&sr=1-75&xpid=25bz_15JF0GEr" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/51MSIC6tK-L.jpg">
-                <p>Ada Hand Embroidered Lucknowi Chikankari Chanderi Kurta Kurti for Women A411570</p>
-                MRP: <span>&#8377;4989</span>
-                <p style="color: red;">-10% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;3990</span></p>
-            </a>
-        </div>
-        <div id="box22" class="cont">
-            <a href="https://www.amazon.in/RARE-Womens-Floral-Regular-EP7554_Multi/dp/B0C9JC33CB/ref=sr_1_20?_encoding=UTF8&dib=eyJ2IjoiMSJ9.05ySDYykJsTal9o5y1q9pEIC6BT7v3JjJEQOwnhsT7y7gJp0RiEw9JKbTUCkafn2L-UDXh2FXGDBodrS-mFIACpgY4CqKpGLP70V4huvPkhiXxodG_jbDNMd2LJGIolJzB6yE1xSsUgYwnKOuDQMtNiHF1gXj0Y5WQE-u-VVFn_Ui93KdbMDw4cx0hvmI9lvdJDH2hUcjbl03SBO4WJTamH45DcCA2ZIrUmvXD3rH0hdwIBjxWNE_KcqVusNAovsaz1ceDhraynzdkrdjaeWo6oVcez_foKFG1gviwaVzyva_VPzIzjtn_vE-CTz4ZJGPPHPrdEzrJI3pt5nYEQll-hZ-oqZ2u393u5Eho0Z3HLuroEgnZ9eH_3J2n7iCEPKDO-plPI0yv5lmfmXKBMPwXMalAenwd3XF6-PDeOAOQo2KP1JuE1cB-DhxnokVxQP.KOEjuRoKr6zVzW9_t8zhMINNaJeB5eezukxDxaIApxQ&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6&pf_rd_r=1HKT6993MYSJ2WT015E3&pf_rd_s=merchandised-search-1&qid=1735885920&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-20" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/81XwqXAIRSL._SY741_.jpg">
-                <p>Rare Women's Floral Regular Fit Blouse</p>
-                MRP: <span>&#8377;1599</span>
-                <p style="color: red;">-70% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;480</span></p>
-            </a>
-        </div>
-        <div id="box23" class="cont">
-            <a href="https://www.amazon.in/Bewakoof-Graphic-T-Shirt-Oversized-581312_Green_M/dp/B0BZZBPVYX/ref=sr_1_6?_encoding=UTF8&dib=eyJ2IjoiMSJ9.05ySDYykJsTal9o5y1q9pEIC6BT7v3JjJEQOwnhsT7y7gJp0RiEw9JKbTUCkafn2L-UDXh2FXGDBodrS-mFIACpgY4CqKpGLP70V4huvPkhiXxodG_jbDNMd2LJGIolJzB6yE1xSsUgYwnKOuDQMtNiHF1gXj0Y5WQE-u-VVFn_Ui93KdbMDw4cx0hvmI9lvdJDH2hUcjbl03SBO4WJTamH45DcCA2ZIrUmvXD3rH0hdwIBjxWNE_KcqVusNAovsaz1ceDhraynzdkrdjaeWo6oVcez_foKFG1gviwaVzyva_VPzIzjtn_vE-CTz4ZJGPPHPrdEzrJI3pt5nYEQll-hZ-oqZ2u393u5Eho0Z3HLuroEgnZ9eH_3J2n7iCEPKDO-plPI0yv5lmfmXKBMPwXMalAenwd3XF6-PDeOAOQo2KP1JuE1cB-DhxnokVxQP.KOEjuRoKr6zVzW9_t8zhMINNaJeB5eezukxDxaIApxQ&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6&pf_rd_r=1HKT6993MYSJ2WT015E3&pf_rd_s=merchandised-search-1&qid=1735885920&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-6" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/718wxuKJmxL._SX679_.jpg">
-                <p>Bewakoof Women's The Panda Way Graphic Print Cotton T-Shirt- Oversized Fit, Round Neck, Half Sleeves 581312_Green_M</p>
-                MRP: <span>&#8377;1499</span>
-                <p style="color: red;">-70% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;447</span></p>
-            </a>
-        </div>
-        <div id="box24" class="cont">
-            <a href="https://www.amazon.in/Bewakoof-Womens-Boyfriend-Sleeve-T-Shirt/dp/B0B8DF48TY/ref=sr_1_25?_encoding=UTF8&dib=eyJ2IjoiMSJ9.05ySDYykJsTal9o5y1q9pEIC6BT7v3JjJEQOwnhsT7y7gJp0RiEw9JKbTUCkafn2L-UDXh2FXGDBodrS-mFIACpgY4CqKpGLP70V4huvPkhiXxodG_jbDNMd2LJGIolJzB6yE1xSsUgYwnKOuDQMtNiHF1gXj0Y5WQE-u-VVFn_Ui93KdbMDw4cx0hvmI9lvdJDH2hUcjbl03SBO4WJTamH45DcCA2ZIrUmvXD3rH0hdwIBjxWNE_KcqVusNAovsaz1ceDhraynzdkrdjaeWo6oVcez_foKFG1gviwaVzyva_VPzIzjtn_vE-CTz4ZJGPPHPrdEzrJI3pt5nYEQll-hZ-oqZ2u393u5Eho0Z3HLuroEgnZ9eH_3J2n7iCEPKDO-plPI0yv5lmfmXKBMPwXMalAenwd3XF6-PDeOAOQo2KP1JuE1cB-DhxnokVxQP.KOEjuRoKr6zVzW9_t8zhMINNaJeB5eezukxDxaIApxQ&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6&pf_rd_r=1HKT6993MYSJ2WT015E3&pf_rd_s=merchandised-search-1&qid=1735885920&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-25" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61qACTygIaL._SY879_.jpg">
-                <p>Bewakoof Women's Graphic Printed 100% Cotton T-Shirt - Boyfriend Fit, Round Neck, Half Sleeve</p>
-                MRP: <span>&#8377;999</span>
-                <p style="color: red;">-60% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;398</span></p>
-            </a>
-        </div>
-        <div id="box25" class="cont">
-            <a href="https://www.amazon.in/Bewakoof-Womens-Typography-Cotton-Sleeves_582038_White_XL/dp/B0CC911ZTK/ref=sr_1_49?_encoding=UTF8&dib=eyJ2IjoiMSJ9.LCcJaM0DV3o277ygYFR0-seh_zhRuETVc0POiUUu6vmzszltZzK6aooSB9CvZXt-XSZyNh3JAo6UU1dJe1LNOupetf6-ZVeH53DUb0Lawt0umY6dTKNFSkHDj5-yIzZ5MC0-QifdbeW2hVEE41br4aJTaRBcbZoPIFFA_y7FwEhDm92moJ-Hl_xk8g9d86bpIlbP_aoNo4arsuVu7dG59JnipXouP6d8cCShyTd7UMxdKtXKHZmq9B76GiJ1rCQL3eRFgZiS8qbap9GdxzsNQa11oomzcfn_KLZDcbRnEX1SJgYQQ2Y3iVyLkYRD1ikRFhhuIFNglo8DV-6hqTl6LjNecJ2zEanUHU8GXI6h1gQIUMBgVSugLSUchn-3ImQ-INELOeZOH4D0k3AHhqYwT-npwRvDoNx3cwsHlpCkHM6NTead-bObiz_oZVPB9R4B.iE4gVgfgb76Z30Wp-OPlOpCMpq4JQ445gUuAeix5_Iw&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6%2Cff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=1HKT6993MYSJ2WT015E3%2CZ4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735886568&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-49&xpid=ZUAdCFL5HFeul" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61Xd8jtwRcL._SY879_.jpg">
-                <p>Bewakoof Women's Typography Oversized Fit Half Sleeve Round Neck Cotton Short Top</p>
-                MRP: <span>&#8377;899</span>
-                <p style="color: red;">-55% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;407</span></p>
-            </a>
-        </div>
-        <div id="box26" class="cont">
-            <a href="https://www.amazon.in/ONLY-Womens-T-Shirt-238746901-June-Bug_June/dp/B0BGSNNZYF/ref=sr_1_50?_encoding=UTF8&dib=eyJ2IjoiMSJ9.LCcJaM0DV3o277ygYFR0-seh_zhRuETVc0POiUUu6vmzszltZzK6aooSB9CvZXt-XSZyNh3JAo6UU1dJe1LNOupetf6-ZVeH53DUb0Lawt0umY6dTKNFSkHDj5-yIzZ5MC0-QifdbeW2hVEE41br4aJTaRBcbZoPIFFA_y7FwEhDm92moJ-Hl_xk8g9d86bpIlbP_aoNo4arsuVu7dG59JnipXouP6d8cCShyTd7UMxdKtXKHZmq9B76GiJ1rCQL3eRFgZiS8qbap9GdxzsNQa11oomzcfn_KLZDcbRnEX1SJgYQQ2Y3iVyLkYRD1ikRFhhuIFNglo8DV-6hqTl6LjNecJ2zEanUHU8GXI6h1gQIUMBgVSugLSUchn-3ImQ-INELOeZOH4D0k3AHhqYwT-npwRvDoNx3cwsHlpCkHM6NTead-bObiz_oZVPB9R4B.iE4gVgfgb76Z30Wp-OPlOpCMpq4JQ445gUuAeix5_Iw&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6%2Cff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=1HKT6993MYSJ2WT015E3%2CZ4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735886568&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-50&xpid=ZUAdCFL5HFeul" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71sZx4MnsoL._SY741_.jpg">
-                <p>ONLY Women's Rayon Blend Slim Fit Top</p>
-                MRP: <span>&#8377;2499</span>
-                <p style="color: red;">-65% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;874</span></p>
-            </a>
-        </div>
-        <div id="box27" class="cont">
-            <a href="https://www.amazon.in/Womens-Solid-Regular-10317425-gibraltar-Sea_Gibraltar/dp/B0CW9Y3N5S/ref=sr_1_104?_encoding=UTF8&dib=eyJ2IjoiMSJ9.6YDC7EWpHXeUriIMalrVrHOjwmrnOs3DK9-YG0N_4Ly2tEiXY_LDEq4bO1AZNNWjxVs1zwlfM9acQZp9hs2UOdX-IL9mxq62RJy5Yhej_EZOAuszbpTjXUiF5w5uhqjlcoA7IRMYkLS5xWXhjEay7CCxTdN46JEMP2nuf9wMuuL1q6zkmqbKzT37IhP0YlYa5OYtJI2louyj2OxhdLVT7NTX83iAuAnz0kMrMcOO_sNwHG9IMjbGp2jRoDW3Af677el-vuR__0E8A4SVW0VBIZ6yYa484BvB64ZYyJXsT8bVEWcN8UCYQ59R6y-VLK3C-xUsoq66ANbv6sNOwqy4He9JwKS1ICLkSjB7yc2J6lcF2KljLx-jOJirOxeDbdP9xTURCbsLcv2qqYwGQTwh7D0DViD0QxlmhRWNxzt-4zqmkSaX8_H1i_c3qG0faMnX.o8pD1H_sV_OjKqxH14vxmtGt_nUpn9UO1uY-FYZtx5A&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6%2Cff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=1HKT6993MYSJ2WT015E3%2CZ4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735886871&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-104&xpid=ZUAdCFL5HFeul" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61YqovTSx-L._SY879_.jpg">
-                <p>VERO MODA Women's Solid Regular Fit Shirt</p>
-                MRP: <span>&#8377;2999</span>
-                <p style="color: red;">-56% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;1308</span></p>
-            </a>
-        </div>
-        <div id="box28" class="cont">
-            <a href="https://www.amazon.in/Madamee-Women-Aqua-High-Sleeve/dp/B0CB61794N/ref=sr_1_151?_encoding=UTF8&dib=eyJ2IjoiMSJ9.YV2E1LyHLYj58c6WEqdoBHLTMtWoNAu02vDbZILP8r74iKPAu7NdXB6E52VmhqvZEQT6VafW9XM1cnkXpkU_QILjV8v27_Vy8SZDiVltQEIrpIcp8k4LwyuNgNIptyYZNyxAOvnJiWa3C1L82wYPNKIyOTRC3o1XDcqnnrqENePlgolFVcgbhcVl3TOQuYhDFxjeX3NERXCIJORpv7KufBtorrcT0NnKl3DPdstsuNflqpoGQpsti11CX3D9TtFfRtZ793__WiOzEOWg9_RZeq_zM6aIrasTBA_d_IMxKfxPZoxL2wNmDh7deuWIOAjefwC1d31jJ9PNmw9VsZ9yGvidOF68jplSPwiJDWnG7QgfT7HJEdg7R7VCpM50wASMZHWTb4SlCXTyx1eQAIj1ULMOVKykmtxF807en_iI7f4DQ-1izpT9WWjOXAuoVm5z.tGmzPDeX04WQIJ_aI2FmguaoejR0Y-_7Pg2r0JhOglg&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6%2Cff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=1HKT6993MYSJ2WT015E3%2CZ4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735886976&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-151&xpid=ZUAdCFL5HFeul" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/41zuxmecumL.jpg">
-                <p>Madamee Women Black Round Neck Half Sleeve Top</p>
-                MRP: <span>&#8377;1399</span>
-                <p style="color: red;">-60% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;5599</span></p>
-            </a>
-        </div>
-        <div id="box29" class="cont">
-            <a href="https://www.amazon.in/Allen-Solly-Womens-Regular-AHFTCRGF810520_Black/dp/B0BTM8L5WG/ref=sr_1_255?_encoding=UTF8&dib=eyJ2IjoiMSJ9.tdaphWwsWPsJTmCjk8erQoaJtAYWq5AhxcKkWMs2e12b1V6e92mx5LjllLtS0zrytgMW-vabYE44MwCjI19G6oSwkx4ZSPjLmB0biofT0grxIk1DXqO8LYvkq4c5fYcJMxyLBVqhgUmypqB1sT9ileuPKsubL9-q3PR0pKV49Dib76D7ifY1wqs_PflqLwIxcecynhTUDhgZ6kbVLoLsDdS3QN4zrYZs2hznKQeoJcsxZatJMtkE1C_vLmCkO4t5oiZrsQ_--8EEEAGew0J3Cc-_Chit7WRoiMhgZ_XwX3XHknw5NXNXBA3uzwVD1fzufPbYhHoDrF5bBTttV7ZSL9YfCKB10iPRNzsEpx3Q2thUVTBbTexkY7deN3VIRUFFqHoZTreg-XTTRPWRHiRYIdcRn6Vgj8RfLaRF79tF7Yu9eBgVUCa8fr_u5skH2NOS.SUTy_X6cOq1-VSHAlVH7rvhp3dKPu1YBJD7Fb5HIahk&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=b1ab940d-cf4f-4f02-8079-65373fa92aa6%2Cff54880b-f721-477f-af57-2a6d99828ef6&pf_rd_r=1HKT6993MYSJ2WT015E3%2CZ4W50QFJ52ZTA50MB2K2&pf_rd_s=merchandised-search-1&qid=1735887105&refinements=p_85%3A10440599031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_72%3A1318476031&rnid=1318475031&rps=1&s=apparel&sr=1-255&xpid=ZUAdCFL5HFeul" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61EauoAx9CL._SY741_.jpg">
-                <p>Allen Solly Women Regular Fit Blouse</p>
-                MRP: <span>&#8377;1999</span>
-                <p style="color: red;">-50% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;1000</span></p>
-            </a>
-        </div>
-        <div id="box30" class="cont">
-            <a href="https://www.amazon.in/Allen-Solly-Womens-Regular-AHTSWRGPL01278_Peach/dp/B0D4Z8YF26/ref=sr_1_43?dib=eyJ2IjoiMSJ9.tOvfDbzfj8r_qdU-4bFfz1qweeRppSehNbBAry8niFyY407Ch1q8ZISgoQS2SmvFP8fFx0CdwYaqrLRfYsHT-bFIO3-JO41KcjAa7ZdN0nuydiaTytyvgzp_yfGic7SkB8rg4FlklzREcf_5rVxpf7ViZmMrXML9mTwTINeNufKKLWdvGoBS4bFmY-2MHNdwEveyxEDmrXpW0C1s7bXmtC7mk0Pu8ozkXRszc8XEh3vyDNCr7ot9f5sMN4_owkPcwPwsyyPhAdKbZBBgDS6w8TQLBE4dDviNKqJMeEI9NorMO0cj0m3wGc6nvsHeK1zO7dthWy-6DIcuvGVnzUk8QQDD7VzMPhHzGLILYE7jN0NMWSPKWbf3ZgvHOci-ff8-srmVCGM2E8i9YsY1FABMQ6wKqCgpzUYqfCyqVFTl49QsLyeCmZu-OrUaJy-CBEtg.20tsU_NC2TXfUDFgr3eeK7uB733zyYZ9zMxNjDqZWu0&dib_tag=se&pf_rd_i=1953602031&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_p=1173b86b-b948-46ba-a73d-76c831799c96&pf_rd_r=33N7ZZPPD1BCTZBC80K1%2CWBWV89MF43SM0JGYDWBT%2Ceb6a7d8b-8311-4368-99c1-3a1bd850d080&pf_rd_s=center-1%2Cmobile-hybrid-10%2Cmobile-hybrid-14&pf_rd_t=101%2C30901%2C30901&qid=1735972062&refinements=p_85%3A10440599031%2Cp_n_pct-off-with-tax%3A2665401031%2Cp_36%3A60000-%2Cp_72%3A1318477031%2Cp_89%3AAND%7CAllen+Solly%7CBewakoof%7CCOVER+STORY%7CCalvin+Klein%7CFabAlley%7CGlobus%7CJanasya%7CKazo%7CLabel+RITU+KUMAR%7CLacoste%7CLevi%27s%7CMadame%7CMarks+%26+Spencer%7CMiss+Chase%7CONLY%7CRARE%7CSpykar%7CTommy+Hilfiger%7CUNITED+COLORS+OF+BENETTON%7CUnited+Colors+of+Benetton%7CVERO+MODA%7CVan+Heusen%7CWrangler%7Cthe+label+life&rnid=3837712031&rps=1&s=apparel&sr=1-43" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/61TUicVhNeL._SY741_.jpg">
-                <p>Allen Solly Women's Solid Regular Fit Blouse</p>
-                MRP: <span>&#8377;1799</span>
-                <p style="color: red;">-49% <span style="text-decoration:none; color: black;font-size:19px;">&#8377;919</span></p>
-            </a>
-        </div> -->
     </div>
     <div class="more">
         <a href="https://www.amazon.in/b/ref=AF_WIN_bub_w_cml_t_2?pf_rd_r=EGTG9YBAQ8VWEX3B8B4S&pf_rd_p=9a0cb6fd-b7aa-4cdb-a3c8-8599f759d050&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=6648217031&node=1953602031">

@@ -15,9 +15,11 @@
     </div>
     <div class="container">
         <div class="main">
-            <form>
+            <form method="post">
             <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Sign in</p>
             <p>Email or mobile phone number</p>
+            <input type="text">
+            <p>Password</p>
             <input type="text">
             <button type="submit">Continue</button>
             </form>
@@ -32,7 +34,7 @@
         </div>
         <div class="submain">
             <p>New to Webmart</p>
-            <a href="{% url 'register' %}">
+            <a href="{% url 'signup' %}">
                 <button type="submit">Create a Webmart account</button>
             </a>
         </div>

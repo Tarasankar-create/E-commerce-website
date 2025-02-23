@@ -5,12 +5,6 @@ from .models import menContent,menSlider,womenSlider,womenContent,kidSlider,kidC
 def home(request):
     return render(request,'Home_index.html')
 
-def login(request):
-    return render(request,'Login_index.html')
-
-def register(request):
-    return render(request,'Register_index.html')
-
 def menFashion(request):
     mendata=menContent.objects.all()
     menslider=menSlider.objects.all()
