@@ -52,7 +52,7 @@
 
 .box{
     width:22%;
-    height:380px;
+    height:390px;
     padding:10px;
     background-color: #fff;
 }
@@ -65,15 +65,17 @@
 }
 
 .content1{
-    display: flex;
-    flex-wrap: wrap;
-    gap:7px;
-    background-color: #fff;
-    margin-top: 3px;
+    margin-top:3px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    text-align: center;
+    gap:5px;
+    margin-top:15px;
+    padding:2px;
 }
 .content1 img{
-    width:160px;
-    height:160px;
+    width:150px;
+    height:130px;
     cursor: pointer;
 }
 .content2{
@@ -83,10 +85,10 @@
     text-align: center;
     gap:5px;
     margin-top:15px;
-    
+    padding:2px;
 }
 .content2 img{
-    width:160px;
+    width:150px;
     height:100px;
     cursor: pointer;
 }
@@ -95,18 +97,22 @@
 }
 
 .home_style img{
-    width:160px;
-    height:104px;
+    width:150px;
+    height:100px;
 }
 
 .accessories img{
-    width:160px;
-    height:104px;
+    width:150px;
+    height:100px;
 }
 .accessories{
     margin-top: 13px;
 }
-
+.womenfashion img{
+    width:140px;
+    height:100px;
+    object-fit:auto;
+}
 #box8 img{
     width:160px;
     height:108px;

@@ -6,7 +6,7 @@
     }
     
 </style>
-<!-- <div class="header">
+<div class="header">
     <div class="logo">
         <img src="{% static 'images/logo_main.jpg' %}">
         <p>Webmart</p>
@@ -27,65 +27,11 @@
             <p>EN</p>
         </div>
         <div class="sign">
-            <p>Hello, sign in</p>
-            <p>Account & Lists</p>
-            <i class="fa-solid fa-caret-down"></i>
-            <ul class="drop">
-                <a href="{% url 'login' %}">
-                    <button type="submit" href="{% url 'login' %}">Sign in</button>
-                </a>
-                <span>New customer start here?<a href="#">Start here</a></span>
-            </ul>
-        </div>
-        <div class="return">
-            <p style="position: relative;top:5px;">Returns</p>
-            <p style="position: relative; bottom:4px;">& orders</p>
-        </div>
-        <div class="cart">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-            <p>Cart</p>
+            <p>Hello, Sign in</p>
+            <button type="button" id="sin">Sign in</button>
+            <button type="button" id="sup">Sign Up</button>
         </div>
     </div>
-</div> -->
-<div class="header">
-    <div class="left_head">
-        <div class="logo">
-            <img src="{% static 'images/logo.png' %}">
-            <p>Webmart</p>
-        </div>
-
-        <div class="location">
-            <i class="fa-solid fa-location-dot" style="color: #fff;"></i>
-            <p>Update location</p>
-        </div>
-        <div class="search">
-            <input type="text" placeholder="search Webmart.in">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-    </div>
-    <div class="right_head">
-        <div class="lang">
-            <img src="{% static 'images/flag.png' %}">
-            <p>EN</p>
-        </div>
-        <div class="sign">
-            <p>Hello, sign in</p>
-            <p>Account & Lists <span><i class="fa-solid fa-caret-down"></i></span></p>
-            <div class="drop">
-                <button type="button">Sign in</button>
-                <p style="margin-top:3px;;">New customer start here?<span id="rlink"> Start here</span></p>
-            </div>
-        </div>
-        <div class="return">
-            <p style="position: relative;top:5px;">Returns</p>
-            <p style="position: relative; bottom:4px;">& orders</p>
-        </div>
-        <div class="cart">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-            <p>Cart</p>
-        </div>
-    </div>
-
 </div>
 <div class="subhead">
     <p style="margin-left:10px; color: #fff;">&gt;&gt;</p>
@@ -99,19 +45,19 @@
 </div>
 <script>
     let logo=document.querySelector('.logo')
-    let cart=document.querySelector('.cart')
+    let sin=document.getElementById('sin')
     let loc=document.querySelector('.location')
-    let ret=document.querySelector('.return')
+    let sup=document.getElementById('sup')
     logo.addEventListener('click',()=>{
         window.location.href="{% url 'home' %}";
     })
-    cart.addEventListener('click',()=>{
-        window.location.href="https://www.amazon.in/gp/cart/view.html?ref_=nav_cart";
+    sin.addEventListener('click',()=>{
+        window.location.href="{% url 'login' %}";
     })
     loc.addEventListener('click',()=>{
         window.location.href="{% url 'login' %}";
     })
-    ret.addEventListener('click',()=>{
-        window.location.href="{% url 'login' %}"
+   sup.addEventListener('click',()=>{
+        window.location.href="{% url 'signup' %}"
     })
 </script>
