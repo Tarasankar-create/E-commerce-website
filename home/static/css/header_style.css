@@ -128,12 +128,15 @@ body{
     height:40px;
     background-color:rgb(255,216,20);
     border-radius:5px;
+    cursor: pointer;
+    text-decoration: underline;
 }
 .sign p{
     white-space:nowrap;
 }
-
-
+.sign button:hover{
+    background-color:rgb(227, 194, 29);
+}
 
 .subhead{
     width:100%;

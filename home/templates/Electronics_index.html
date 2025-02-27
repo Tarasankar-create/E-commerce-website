@@ -19,18 +19,6 @@
                     <img src="{{eslide.slide_url}}" class="slide">
                 </a>
                 {% endfor %}
-                <!-- <a href="#">
-                <img src="https://www.pcinq.com/wp-content/uploads/2022/10/Intel-13th-gen-Giveaway.webp" class="slide">
-            </a>
-            <a href="#">
-                <img src="https://eyesafe.com/wp-content/uploads/2021/08/gigabyte-eyesafe-certified-low-blue-light-gaming.jpg" class="slide">
-            </a>
-            <a href="#">
-                <img src="https://img.global.news.samsung.com/in/wp-content/uploads/2023/05/Feature-Banner_728x410.jpg" class="slide">
-            </a>
-            <a href="#">
-                <img src="https://cdn.godrej.com/img/Category/GAPP0111LeakproofACWebBanner2ndCTCd_16104606.jpg" class="slide">
-            </a> -->
         </div>
     </div>
     <div class="prev">
@@ -42,12 +30,12 @@
         {% for edata in edata %}
         <div class="cont">
             <a href="{{edata.main_url}}" target="_blank">
-                <div class="overflow-hidden">
-                    <img src="{{edata.image_url}}" class="hover:scale-125 duration-1000">
+                <div class="relative overflow-hidden w-full min-h-64">
+                    <img src="{{edata.image_url}}" class="hover:scale-105 duration-1000 object-cover w-full h-full">
                 </div>
                 <p>{{edata.e_title}}</p>
                 MRP: <span>&#8377;{{edata.total}}</span>
-                <p style="color: red;">-{{edata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{edata.dis_price}}</span></p>
+                <p style="color: red;">{{edata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{edata.dis_price}}</span></p>
             </a>
         </div>
         {% endfor %}
