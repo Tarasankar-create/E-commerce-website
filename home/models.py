@@ -9,9 +9,9 @@ class menContent(models.Model):
     main_url=models.URLField(max_length=2000)
     image_url=models.URLField(max_length=1000)
     men_title=models.CharField(max_length=200)
-    total=models.IntegerField()
+    total=models.CharField(max_length=20)
     discount=models.IntegerField()
-    dis_price=models.IntegerField()
+    dis_price=models.CharField(max_length=20)
 
 class womenSlider(models.Model):
     id=models.IntegerField(primary_key=True,default=None)
@@ -22,9 +22,9 @@ class womenContent(models.Model):
     main_url=models.URLField(max_length=2000)
     image_url=models.URLField(max_length=1000)
     w_title=models.CharField(max_length=200)
-    total=models.IntegerField()
+    total=models.CharField(max_length=20)
     discount=models.IntegerField()
-    dis_price=models.IntegerField()
+    dis_price=models.CharField(max_length=20)
 
 class kidSlider(models.Model):
     id=models.IntegerField(primary_key=True,default=None)
@@ -35,9 +35,9 @@ class kidContent(models.Model):
     main_url=models.URLField(max_length=2000)
     image_url=models.URLField(max_length=1000)
     k_title=models.CharField(max_length=200)
-    total=models.IntegerField()
+    total=models.CharField(max_length=20)
     discount=models.IntegerField()
-    dis_price=models.IntegerField()
+    dis_price=models.CharField(max_length=20)
 
 class decorSlider(models.Model):
     id=models.IntegerField(primary_key=True,default=None)
@@ -48,9 +48,9 @@ class decorContent(models.Model):
     main_url=models.URLField(max_length=2000)
     image_url=models.URLField(max_length=1000)
     d_title=models.CharField(max_length=200)
-    total=models.IntegerField()
+    total=models.CharField(max_length=20)
     discount=models.IntegerField()
-    dis_price=models.IntegerField()
+    dis_price=models.CharField(max_length=20)
 
 class beautySlider(models.Model):
     id=models.IntegerField(primary_key=True,default=None)
@@ -61,9 +61,9 @@ class beautyContent(models.Model):
     main_url=models.URLField(max_length=2000)
     image_url=models.URLField(max_length=1000)
     b_title=models.CharField(max_length=200)
-    total=models.IntegerField()
+    total=models.CharField(max_length=20)
     discount=models.IntegerField()
-    dis_price=models.IntegerField()
+    dis_price=models.CharField(max_length=20)
 
 class electronicsSlider(models.Model):
     id=models.IntegerField(primary_key=True,default=None)
@@ -73,9 +73,9 @@ class electronicsContent(models.Model):
     main_url=models.URLField(max_length=2000)
     image_url=models.URLField(max_length=1000)
     e_title=models.CharField(max_length=200)
-    total=models.IntegerField()
+    total=models.CharField(max_length=20)
     discount=models.IntegerField()
-    dis_price=models.IntegerField()
+    dis_price=models.CharField(max_length=20)
 
 class mobileSlider(models.Model):
     id=models.IntegerField(primary_key=True,default=None)
@@ -86,7 +86,7 @@ class mobileContent(models.Model):
     main_url=models.URLField(max_length=2000)
     image_url=models.URLField(max_length=1000)
     m_title=models.CharField(max_length=200)
-    total=models.IntegerField()
+    total=models.CharField(max_length=20)
     discount=models.IntegerField()
-    dis_price=models.IntegerField()
+    dis_price=models.CharField(max_length=20)
 
