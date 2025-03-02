@@ -1,6 +1,11 @@
 from django.contrib import admin
-from .models import menContent,menSlider,womenSlider,womenContent,kidSlider,kidContent,decorSlider,decorContent,beautySlider,beautyContent,electronicsSlider,electronicsContent,mobileSlider,mobileContent
+from .models import Catagories,homeSlider,homeContSlider1,homeContSlider2,menContent,menSlider,womenSlider,womenContent,kidSlider,kidContent,decorSlider,decorContent,beautySlider,beautyContent,electronicsSlider,electronicsContent,mobileSlider,mobileContent
 # Register your models here.
+
+admin.site.register(Catagories)
+admin.site.register(homeSlider)
+admin.site.register(homeContSlider1)
+admin.site.register(homeContSlider2)
 
 admin.site.register(menSlider)
 admin.site.register(menContent)

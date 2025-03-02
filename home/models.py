@@ -1,6 +1,23 @@
 from django.db import models
 
 # Create your models here.
+class Catagories(models.Model):
+    name=models.CharField(primary_key=True,max_length=20)
+    def __str__(self):
+        return self.name
+class homeSlider(models.Model):
+    id=models.IntegerField(primary_key=True,default=None)
+    slide_url=models.URLField(max_length=2000)
+class homeContSlider1(models.Model):
+    id=models.IntegerField(primary_key=True,default=None)
+    slide_url1=models.URLField(max_length=2000)
+class homeContSlider2(models.Model):
+    id=models.IntegerField(primary_key=True,default=None)
+    name=models.ForeignKey(Catagories,on_delete=models.CASCADE)
+    slide_url2=models.URLField(max_length=2000)
+    def __str__(self):
+        return str(self.name)
+
 class menSlider(models.Model):
     id=models.IntegerField(primary_key=True,default=None)
     slide_url=models.URLField(max_length=2000)

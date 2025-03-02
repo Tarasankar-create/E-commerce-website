@@ -44,49 +44,51 @@ function nextImage() {
 
 setInterval(nextImage, 2500);
 
+// cont1 slider
+let scroll=document.querySelector('.scroller')
 
-//cont4 slider
-let h_scroll2=document.querySelectorAll('.h_scroll2_img')
-let lbtn4=document.querySelector('.lbtn4')
-let rbtn4=document.querySelector('.rbtn4')
-let counter4=0
-let totalscroll2=h_scroll2.length;
-h_scroll2.forEach((h_scroll2,i)=>{
-    h_scroll2.style.left=`${i*100}%`
-})
-lbtn4.addEventListener('click',()=>{
-    if(counter4>0){
-        counter4--;
-    }
-    else if(counter>=4){
-        counter1=0;
-    }
-    slideImage4();
-})
-rbtn4.addEventListener('click',()=>{
-    if(counter4<totalscroll2-3){
-        counter4++;
-    }
-    else if(counter>=4){
-        counter1=0;
-    }
-    slideImage4();
-})
-function slideImage4(){
-    h_scroll2.forEach((h_scroll2)=>{
-        h_scroll2.style.transform=`translateX(-${counter4*100}%)`
-    });
+const scrollleft=()=>{
+    scroll.scrollTo({
+        left:scroll.scrollLeft-1000,
+        behavior:'smooth'
+    })
+}
+const scrollright=()=>{
+    scroll.scrollTo({
+        left:scroll.scrollLeft+1000,
+        behavior:'smooth'
+    })
+}
+
+//cont2 slider
+let scroll1=document.querySelector('.scroller1')
+
+const scrollleft1=()=>{
+    scroll1.scrollTo({
+        left:scroll1.scrollLeft-1000,
+        behavior:'smooth'
+    })
+}
+const scrollright1=()=>{
+    scroll1.scrollTo({
+        left:scroll1.scrollLeft+1000,
+        behavior:'smooth'
+    })
 }
 
 
-window.addEventListener('wheel', (e) => {
-    if(e.deltaX!==0 || e.shiftKey){
-        e.preventDefault();
-    }
-},{passive:false});
+// con4 slider
+const scroll2=document.querySelector('.scroller2')
 
-window.addEventListener('touchmove', (e) => {
-    if(math.abs(e.touches[0].clientx-e.touches[1]?.clientx)>0){
-        e.preventDefault();
-    }
-},{passive:false});
+const scrollleft2=()=>{
+    scroll2.scrollTo({
+        left:scroll2.scrollLeft-1140,
+        behavior:'smooth'
+    })
+}
+const scrollright2=()=>{
+    scroll2.scrollTo({
+        left:scroll2.scrollLeft+1140,
+        behavior:'smooth'
+    })
+}

@@ -1,9 +1,18 @@
 from django.shortcuts import render
-from .models import menContent,menSlider,womenSlider,womenContent,kidSlider,kidContent,decorSlider,decorContent,beautySlider,beautyContent,electronicsSlider,electronicsContent,mobileSlider,mobileContent
+from .models import Catagories,homeSlider,homeContSlider1,homeContSlider2,menContent,menSlider,womenSlider,womenContent,kidSlider,kidContent,decorSlider,decorContent,beautySlider,beautyContent,electronicsSlider,electronicsContent,mobileSlider,mobileContent
 
 # Create your views here.
+
 def home(request):
-    return render(request,'Home_index.html')
+    homeslider=homeSlider.objects.all()
+    homeCont1=homeContSlider1.objects.all()
+    homeCont2=homeContSlider2.objects.all()
+    data={
+        'slider':homeslider,
+        'cont1':homeCont1,
+        'cont2':homeCont2
+    }
+    return render(request,'Home_index.html',data)
 
 def menFashion(request):
     mendata=menContent.objects.all()

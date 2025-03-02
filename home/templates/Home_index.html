@@ -14,18 +14,11 @@
     <div class="slide_main">
         <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
-            <a href="{% url 'menFashion' %}">
-                <img src="https://graphicgoogle.com/wp-content/uploads/2018/01/Men-Women-Apparel-Facebook-Ad-Banner-Template-1200x627.jpg" class="slide" style="object-fit:cover; height: auto;">
+            {% for data in slider%}
+            <a href="{% url 'home' %}">
+                <img src="{{ data.slide_url }}" class="slide" style="object-fit:cover; height: auto;">
             </a>
-            <a href="{% url 'menFashion' %}">
-                <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/d717051d-51c6-4105-a4fd-11f439c64fa2.__CR0,0,1464,600_PT0_SX1464_V1___.jpg" class="slide">
-            </a>
-            <a href="{% url 'decor' %}">
-                <img src="https://images-na.ssl-images-amazon.com/images/G/01/img17/home/vertical-store/1075198_us_183_shopbyroom_homedecorcandles_desktophero_2677x963._CB514125295_.jpg" class="slide">
-            </a>
-            <a href="{% url 'beauty' %}">
-                <img src="https://www.lakmeindia.com/cdn/shop/collections/sun_protection_page_banner.jpg?v=1679313979" class="slide">
-            </a>
+            {% endfor %}
         </div>
         <button type="submit" class="rbtn">&gt;</button>
     </div>
@@ -261,74 +254,29 @@
     <div class="cont1">
         <p  style="font-size:22px; color: black;    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold;">Upto 50% off | Home decors</p>
         <div class="cont1Btn">
-            <button class="lbtn1">&lt;</button>
+            <button class="lbtn1" onclick="scrollleft()">&lt;</button>
             <div class="scroller">
+                {% for data in cont1 %}
                 <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
+                        <img src="{{ data.slide_url1 }}" width="220px" height="220px">
                 </a>
-                <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
-                </a>
-                <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
-                </a>
-                <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
-                </a>
-                <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
-                </a>
-                <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
-                </a>
-                <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
-                </a>
-                <a href="{% url 'decor' %}">
-                        <img src="https://m.media-amazon.com/images/I/71+hDHvlyYL._AC_SY200_.jpg" class="h_scroll_img">
-                </a>
-                
+                {% endfor %}
             </div>
-            <button class="rbtn1">&gt;</button>
+            <button class="rbtn1" onclick="scrollright()">&gt;</button>
         </div>
     </div>
     <div class="cont2">
         <p style="font-size:22px; color: black;    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold;">Best sellers in clothing & Accessories</p>
         <div class="cont2Btn">
-            <button class="lbtn2">&lt;</button>
+            <button class="lbtn2" onclick="scrollleft1()">&lt;</button>
             <div class="scroller1">
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
+                {% for data in cont2 %}
+                <a href="{% url data.name.name %}">
+                    <img src="{{ data.slide_url2 }}" width="220px" height="300px">
                 </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
-                <a href="{% url 'menFashion' %}">
-                    <img src="https://m.media-amazon.com/images/I/61u6E7uQ93L._AC_SY200_.jpg" class="h_scroll1_img">
-                </a>
+                {% endfor %}
             </div>
-            <button class="rbtn2">&gt;</button>
+            <button class="rbtn2" onclick="scrollright1()">&gt;</button>
         </div>
     </div>
     <div class="cont3">
@@ -358,7 +306,7 @@
     <div class="cont4">
         <p style="font-size:22px; color: black;    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: bold;">Upto 50% off | Fashionable & Trendy clothes</p>
         <div class="cont4Btn">
-            <button class="lbtn4">&lt;</button>
+            <button class="lbtn4" onclick="scrollleft2()">&lt;</button>
             <div class="scroller2">  
                 <a href="{% url 'menFashion' %}">
                     <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Winterbrands/Variant_6_978x1420._SY530_QL85_FMpng_.png" class="h_scroll2_img">
@@ -406,7 +354,7 @@
                     <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/INDIEGEMS/Variant_2_564x922._SY530_QL85_FMpng_.png" class="h_scroll2_img">
                 </a>              
             </div>
-            <button class="rbtn4">&gt;</button>
+            <button class="rbtn4" onclick="scrollright2()">&gt;</button>
         </div>
     </div>
 </body>
