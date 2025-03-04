@@ -9,7 +9,3 @@ class signup(models.Model):
     email=models.EmailField()
     password=models.CharField(max_length=50)
 
-class login(models.Model):
-    mob=models.IntegerField()
-    email=models.EmailField()
-    password=models.CharField(max_length=50)

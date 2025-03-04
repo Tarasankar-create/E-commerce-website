@@ -15,13 +15,15 @@
     </div>
     <div class="container">
         <div class="main">
+            {{msg}}
             <form method="post">
-            <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Sign in</p>
-            <p>Email or mobile phone number</p>
-            <input type="text">
-            <p>Password</p>
-            <input type="text">
-            <button type="submit">Continue</button>
+                {% csrf_token %}
+                <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Sign in</p>
+                <p class="text">Email or mobile phone number</p>
+                <input type="text" name="key">
+                <p class="text">Password</p>
+                <input type="text" name="pwd">
+                <button type="submit">Continue</button>
             </form>
             <p style="margin-top:20px;font-size:14px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">By continuing, you agree to Webmart's<span> <a href="#">Conditions&nbsp;of&nbsp; Use</a></span> and <span><a href="#">Privacy Notice</a></span></p>
             <div class="help">
