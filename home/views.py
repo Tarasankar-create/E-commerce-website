@@ -8,11 +8,13 @@ def home(request):
     homeCont1=homeContSlider1.objects.all()
     homeCont2=homeContSlider2.objects.all()
     name=request.session.get('name')
+    pin=request.session.get('pin')
     data={
         'slider':homeslider,
         'cont1':homeCont1,
         'cont2':homeCont2,
-        'name':name
+        'name':name,
+        'pin':pin
     }
     return render(request,'Home_index.html',data)
 

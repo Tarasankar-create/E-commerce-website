@@ -36,7 +36,7 @@ body{
 
 .container{
     width:20%;
-    height:650px;
+    height:500px;
     border-bottom:1px solid gray;
     margin: auto;
     padding:26px;
@@ -96,28 +96,4 @@ form button{
 
 .container a:hover{
     color:orange !important;
-}
-
-.footer{
-    width:30%;
-    height:80px;
-    margin: auto;
-    margin-top:25px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.support{
-    display: flex;
-    gap:20px;
-}
-
-.support a{
-    color:rgb(2,116,137);
-    position: relative;
-    top:8px;
-}
-.support a:hover{
-    color:orange;
 }

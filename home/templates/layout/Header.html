@@ -1,5 +1,8 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/header_style.css' %}"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
     .obj a{
         box-shadow: 0px 4px 6px rgb(184,142,57);
@@ -14,7 +17,7 @@
         </div>
         <div class="location">
             <i class="fa-solid fa-location-dot"></i>
-            <p>Update location</p>
+            <p>Pincode-{{pin|slice:":6"}}</p>
         </div>
         <div class="searchbar">
             <form class="search">
@@ -29,10 +32,10 @@
             </div>
             <div class="sign">
                 <p>Hello, {{name|slice:":6"}}</p>
-                <a href="">
-                <button type="button" class="logou">Update Profile</button></a>
+                <a href="{% url 'update' %}">
+                <button type="button" class="logou">Update Profile<i class="fa-solid fa-gear"></i></button></a>
                 <a href="{% url 'logout' %}">
-                <button type="button" class="logou">Logout</button></a>
+                <button type="button" class="logou">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
             </div>
         </div>
     </div>

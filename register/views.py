@@ -4,6 +4,7 @@ from django.contrib.auth import logout
 
 
 # Create your views here.
+
 def login(request):
     if request.method=='POST':
         key=request.POST['key']
@@ -11,6 +12,8 @@ def login(request):
         try:
             ob=signup.objects.get(email=key,password=pwd)
             request.session['name']=ob.name
+            request.session['pin']=ob.pin
+            request.session['email']=ob.email
             return redirect('home')
         except Exception as e:
             return render(request,'Login_index.html',{'msg':'Invalid email or password'})
@@ -21,19 +24,44 @@ def register(request):
         name=request.POST['name']
         coun=request.POST['country']
         mobile=request.POST['mob']
+        pin=request.POST['pin']
         email=request.POST['email']
         pwd=request.POST['password']
         try:
-            ob=signup.objects.create(name=name,country=coun,mob=mobile,email=email,password=pwd)
+            ob=signup.objects.create(name=name,country=coun,mob=mobile,pin=pin,email=email,password=pwd)
             ob.save()
             return redirect('login')
         except Exception:
             return render(request,'Register_index.html',{'msg':'Error'})
     return render(request,'Register_index.html')
 
+def update_view(request):
+    email = request.session.get('email')
+    ob=signup.objects.get(email=email)
+    if request.method=='POST':
+        name=request.POST['name']
+        coun=request.POST['country']
+        mobile=request.POST['mob']
+        pin=request.POST['pin']
+        email=request.POST['email']
+        pwd=request.POST['password']
+
+        ob.name=name
+        ob.country=coun
+        ob.mob=mobile
+        ob.pin=pin
+        ob.email=email
+        ob.password=pwd
+        ob.save()
+        request.session['name']=ob.name
+        request.session['pin']=ob.pin
+        request.session['email']=ob.email
+        # This upper lines change the data if the data is render to the home page after update.
+        return redirect('home')
+
+    return render(request,'update_index.html',{'ob':ob})
+
 
 def logout_view(request):
-    print("Session data before logout:", request.session.items())  # Print session data before flushing
     request.session.flush()  # Clear session
-    print("Session data after logout:", request.session.items())  # Print session data after flushing
     return redirect('home')
