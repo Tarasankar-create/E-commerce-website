@@ -17,11 +17,12 @@
         </div>
         <div class="location">
             <i class="fa-solid fa-location-dot"></i>
-            <p>Pincode-{{pin|slice:":6"}}</p>
+            <p><span style="font-size:14px; color: gray;">Delivering to -</span>{{pin|slice:":6"}}</p>
         </div>
         <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
+            <form method="POST" class="search">
+                {% csrf_token %}
+                <input type="text" placeholder="Search Webmart.in" name="sdata">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
@@ -50,8 +51,9 @@
             <p>Update location</p>
         </div>
         <div class="searchbar">
-            <form class="search">
-                <input type="text" placeholder="Search Webmart.in">
+            <form method="post" class="search">
+                {% csrf_token %}
+                <input type="text" placeholder="Search Webmart.in" name="sdata">
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
@@ -78,6 +80,9 @@
     <span class="{% if request.path == '/electronics/' %}obj{% endif %}"><a href="{% url 'electronics' %}">Electronics</a></span>
     <span class="{% if request.path == '/mobile/' %}obj{% endif %}"><a href="{% url 'mobile' %}">Mobiles & accessories</a></span>
 </div>
+{% if msg %}
+<p id="err">{{msg}}</p>
+{% endif %}
 <script>
     let logo=document.querySelector('.logo')
     let sin=document.getElementById('sin')

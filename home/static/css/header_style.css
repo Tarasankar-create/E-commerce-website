@@ -53,24 +53,21 @@ body{
 }
 
 .location{
-    width:150px;
+    width:165px;
     height:60px;
     display: flex;
     align-items: center;
     cursor: pointer;
     gap:10px;
+    justify-content: center;
 }
 .location i{
     color:#fff;
 }
 .location p{
     color:#fff;
-    font-weight:300;
+    font-weight:200;
 }
-.location:hover{
-    border: 1px solid #fff;
-}
-
 .searchbar{
     width:700px;
     height:60px;
@@ -180,3 +177,8 @@ body{
 .subhead a:active{
     text-shadow:1px 1px 5px gray;
 } 
+
+#err{
+    text-align: center;
+    color: red;
+}

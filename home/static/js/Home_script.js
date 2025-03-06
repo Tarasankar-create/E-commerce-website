@@ -49,13 +49,13 @@ let scroll=document.querySelector('.scroller')
 
 const scrollleft=()=>{
     scroll.scrollTo({
-        left:scroll.scrollLeft-1000,
+        left:scroll.scrollLeft-1350,
         behavior:'smooth'
     })
 }
 const scrollright=()=>{
     scroll.scrollTo({
-        left:scroll.scrollLeft+1000,
+        left:scroll.scrollLeft+1350,
         behavior:'smooth'
     })
 }
@@ -65,13 +65,13 @@ let scroll1=document.querySelector('.scroller1')
 
 const scrollleft1=()=>{
     scroll1.scrollTo({
-        left:scroll1.scrollLeft-1000,
+        left:scroll1.scrollLeft-1350,
         behavior:'smooth'
     })
 }
 const scrollright1=()=>{
     scroll1.scrollTo({
-        left:scroll1.scrollLeft+1000,
+        left:scroll1.scrollLeft+1350,
         behavior:'smooth'
     })
 }
