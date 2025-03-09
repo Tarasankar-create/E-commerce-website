@@ -8,6 +8,24 @@ slide.forEach((slide,i)=>{
     slide.style.left=`${i*100}%`
 })
 
+// Left Button - Move to previous slide
+lbtn.addEventListener('click', () => {
+    if (counter > 0) {
+        counter--;
+    }
+    slideImage();
+});
+
+// Right Button - Move to next slide
+rbtn.addEventListener('click', () => {
+    if (counter < totalImages - 1) {
+        counter++;
+    } else {
+        counter = 0;
+    }
+    slideImage();
+});
+
 function nextImage(){
     counter++;
     if(counter>=totalImages){

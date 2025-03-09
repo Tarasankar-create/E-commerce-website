@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="slide_main">
+        <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
             {% for wslide in wslide %}
             <a href="#">
@@ -19,12 +20,13 @@
             </a>
             {% endfor %}
         </div>
+        <button type="submit" class="rbtn">&gt;</button>
     </div>
     <div class="content">
         {% for wdata in wdata %}
         <div class="cont">
             <a href="{{wdata.main_url}}" target="_blank">
-                <div style="overflow: hidden;">
+                <div>
                     <img src="{{wdata.image_url}}">
                 </div>
                 <p>{{wdata.w_title}}</p>

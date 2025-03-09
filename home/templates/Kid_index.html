@@ -13,32 +13,22 @@
 </head>
 <body>
     <div class="slide_main">
+        <button type="submit" class="lbtn">&lt;</button>
         <div class="slider">
             {% for kslide in kslide %}
             <a href="{% url 'kidFashion' %}">
                 <img src="{{kslide.slide_url}}" class="slide">
             </a>
             {% endfor %}
-            <!-- <a href="{% url 'kidFashion' %}">
-                <img src="https://i.pinimg.com/originals/3c/41/ab/3c41ab736bc52789af651115e4f0a980.jpg" class="slide">
-            </a>
-            <a href="{% url 'kidFashion' %}">
-                <img src="https://unisensebd.com/img/slider/s4.jpg" class="slide">
-            </a>
-            <a href="{% url 'kidFashion' %}">
-                <img src="https://fashion4kids.ie/wp-content/uploads/2021/06/middle-banner-scaled.jpg" class="slide">
-            </a>
-            <a href="{% url 'kidFashion' %}">
-                <img src="https://i.pinimg.com/736x/0b/39/14/0b3914ae30b768461468509a81e94d9c.jpg" class="slide">
-            </a> -->
         </div>
+        <button type="submit" class="rbtn">&gt;</button>
     </div>
     <div class="content grid grid-cols-5 gap-[5px]">
         {% for kdata in kdata %}
         <div id="box1" class="cont">
             <a href="{{kdata.main_url}}" target="_blank">
-                <div class="overflow-hidden">
-                    <img src="{{kdata.image_url}}" class="hover:scale-125">
+                <div>
+                    <img src="{{kdata.image_url}}">
                 </div>
                 <p>{{kdata.k_title}}</p>
                 MRP: <span>&#8377;{{kdata.total}}</span>
