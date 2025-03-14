@@ -10,7 +10,10 @@ def login(request):
         key=request.POST['key']
         pwd=request.POST['pwd']
         try:
-            ob=signup.objects.get(email=key,password=pwd)
+            if '@' in key:
+                ob=signup.objects.get(email=key,password=pwd)
+            else:
+                ob=signup.objects.get(mob=key,password=pwd)
             request.session['name']=ob.name
             request.session['pin']=ob.pin
             request.session['email']=ob.email
@@ -56,7 +59,7 @@ def update_view(request):
         request.session['name']=ob.name
         request.session['pin']=ob.pin
         request.session['email']=ob.email
-        # This upper lines change the data if the data is render to the home page after update.
+        # These upper lines change the data if the data is render to the home page after update.
         return redirect('home')
 
     return render(request,'update_index.html',{'ob':ob})
