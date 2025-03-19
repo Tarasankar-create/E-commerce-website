@@ -10,6 +10,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Home styles</title>
     <link rel="stylesheet" href="{% static 'css/Decor_style.css' %}">
+    {% if name %}
+    <style>
+        .cont{
+            height:465px;
+        }
+    </style>
+    {% endif %}
 </head>
 <body>
     <div class="slide_main">
@@ -34,14 +41,22 @@
                 MRP: <span>&#8377;{{ddata.total}}</span>
                 <p style="color: red;">-{{ddata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{ddata.dis_price}}</span></p>
             </a>
+            {% if name%}
+            <div class="cartSection">
+                <button type="submit" class="cartBtn">Add to cart</button>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
+    {% if not name %}
     <div class="more">
         <a href="https://www.amazon.in/b/ref=ohlr_halo_pc_2?pf_rd_r=8AY1D83S7JY2ZXRNMRMF&pf_rd_p=8ef28f92-0139-43d0-96e0-24447647a25d&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=976442031&ie=UTF8&node=12414705031&ref_=HaloPC_BeddingDecor_t2">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
+    {% endif %}
+  
 </body>
 <script src="{% static 'js/Decor_script.js' %}"></script>
 </html>

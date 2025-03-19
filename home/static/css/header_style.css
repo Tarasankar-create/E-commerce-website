@@ -131,8 +131,23 @@ body{
     text-decoration: underline;
     font-family: "Roboto", sans-serif;
 }
+.upDate{
+    width:140px;
+    height:40px;
+    background-color:#d4d0d0;
+    font-weight:500;
+    border-radius:5px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: "Roboto", sans-serif;
+}
+.upDate i{
+    position:relative;
+    left:4px;
+    top:2px;
+}
 .logou{
-    width:120px;
+    width:90px;
     height:40px;
     background-color:#d4d0d0;
     font-weight:500;
@@ -142,8 +157,9 @@ body{
     font-family: "Roboto", sans-serif;
 }
 .logou i{
-    margin-left:5px;
-    margin-top:5px;
+    position:relative;
+    left:4px;
+    top:2px;
 }
 .sign p{
     white-space:nowrap;

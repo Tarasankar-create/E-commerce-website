@@ -10,6 +10,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Mobile & Accessories</title>
     <link rel="stylesheet" href="{% static 'css/Mobile_style.css' %}">
+    {% if name %}
+    <style>
+        .cont{
+            height:465px;
+        }
+    </style>
+    {% endif %}
 </head>
 <body>
     <div class="slide_main">
@@ -34,14 +41,22 @@
                 MRP: <span>&#8377;{{mdata.total}}</span>
                 <p style="color: red;">{{mdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{mdata.dis_price}}</span></p>
             </a>
+            {% if name %}
+            <div class="cartSection">
+                <button type="submit" class="cartBtn">Add to cart</button>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
+    {% if not name %}
     <div class="more">
         <a href="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
+    {% endif %}
+
 </body>
 <script src="{% static 'js/Mobile_script.js' %}"></script>
 </html>

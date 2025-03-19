@@ -10,6 +10,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Electronics</title>
     <link rel="stylesheet" href="{% static 'css/Electronics_style.css' %}">
+    {% if name %}
+    <style>
+        .cont{
+            height:465px;
+        }
+    </style>
+    {% endif %}
 </head>
     <body>
         <div class="slide_main">
@@ -39,14 +46,22 @@
                 MRP: <span>&#8377;{{edata.total}}</span>
                 <p style="color: red;">{{edata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{edata.dis_price}}</span></p>
             </a>
+            {% if name %}
+            <div class="cartSection">
+                <button type="submit" class="cartBtn">Add to cart</button>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
+    {% if not name %}
     <div class="more">
         <a href="https://www.amazon.in/electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
+    {% endif %}
+
 </body>
 <script src="{% static 'js/Electronics_script.js' %}"></script>
 </html>

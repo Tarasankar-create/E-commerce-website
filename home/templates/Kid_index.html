@@ -10,6 +10,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Kid's fashion</title>
     <link rel="stylesheet" href="{% static 'css/Kid_style.css' %}">
+    {% if name %}
+    <style>
+        .cont{
+            height:465px;
+        }
+    </style>
+    {% endif %}
 </head>
 <body>
     <div class="slide_main">
@@ -34,14 +41,22 @@
                 MRP: <span>&#8377;{{kdata.total}}</span>
                 <p style="color: red;">-{{kdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px">&#8377;{{kdata.dis_price}}</span></p>
             </a>
+            {% if name %}
+            <div class="cartSection">
+                <button type="submit" class="cartBtn">Add to cart</button>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
+    {% if not name %}
     <div class="more">
         <a href="https://www.amazon.in/b/ref=AF_WIN_bub_w_cml_t_3?pf_rd_r=WRR1EKCBES363N117Q73&pf_rd_p=9a0cb6fd-b7aa-4cdb-a3c8-8599f759d050&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=6648217031&node=9361420031">
             <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
+    {% endif %}
+
 </body>
 <script src="{% static 'js/Kid_script.js' %}"></script>
 </html>
