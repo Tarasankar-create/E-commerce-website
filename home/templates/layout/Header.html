@@ -1,15 +1,22 @@
+<!DOCTYPE html>
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/header_style.css' %}"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<style>
-    .obj a{
-        box-shadow: 0px 4px 6px rgb(184,142,57);
-    }
-    
-</style>
-{% if  name %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/header_style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .obj a {
+            box-shadow: 0px 4px 6px rgb(184, 142, 57);
+        }
+    </style>
+</head>
+
+<body>
+    {% if name %}
     <div class="header">
         <div class="logo">
             <img src="{% static 'images/logo_main.jpg' %}">
@@ -34,13 +41,38 @@
             <div class="sign">
                 <p>Hello, {{name|slice:":6"}}</p>
                 <a href="{% url 'update' %}">
-                <button type="button" class="upDate">Update Profile<i class="fa-solid fa-gear"></i></button></a>
+                    <button type="button" class="upDate">Update Profile<i class="fa-solid fa-gear"></i></button></a>
                 <a href="{% url 'logout' %}">
-                <button type="button" class="logou">Logout<i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
+                    <button type="button" class="logou">Logout<i
+                            class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
             </div>
         </div>
     </div>
-{% else %}
+    <div class="subhead">
+        <p style="margin-left:10px; color: #fff;">&gt;&gt;</p>
+        <span class="{% if request.path == '/menfashion/' %}obj{% endif %}"><a href="{% url 'menFashion' %}">Men's
+                fashion</a></span>
+        <span class="{% if request.path == '/womenfashion/' %}obj{% endif %}"><a href="{% url 'womenFashion' %}">Women's
+                fashion</a></span>
+        <span class="{% if request.path == '/kidfashion/' %}obj{% endif %}"><a href="{% url 'kidFashion' %}">Kids's
+                fashion</a></span>
+        <span class="{% if request.path == '/beauty/' %}obj{% endif %}"><a href="{% url 'beauty' %}">Beauty & face
+                care</a></span>
+        <span class="{% if request.path == '/decor/' %}obj{% endif %}"><a href="{% url 'decor' %}">Home
+                styles</a></span>
+        <span class="{% if request.path == '/electronics/' %}obj{% endif %}"><a
+                href="{% url 'electronics' %}">Electronics</a></span>
+        <span class="{% if request.path == '/mobile/' %}obj{% endif %}"><a href="{% url 'mobile' %}">Mobiles &
+                accessories</a></span>
+        <span id="cartLogo">
+            <a href="{% url 'cart' %}" class="Cart">
+                <img src="{% static 'images/carts.png' %}" width="25px" height="25px" />
+                <p>Cart</p>
+            </a>     
+        </span>
+
+    </div>
+    {% else %}
     <div class="header">
         <div class="logo">
             <img src="{% static 'images/logo_main.jpg' %}">
@@ -64,40 +96,54 @@
             </div>
             <div class="sign">
                 <p>Hello, Sign in</p>
-                <button type="button" class="btn" id="sin">Sign in</button>
+                <button type="button" class="btn" id="sig">Sign in</button>
                 <button type="button" class="btn" id="sup">Sign Up</button>
             </div>
         </div>
     </div>
-{% endif %}
-<div class="subhead">
-    <p style="margin-left:10px; color: #fff;">&gt;&gt;</p>
-    <span class="{% if request.path == '/menfashion/' %}obj{% endif %}"><a href="{% url 'menFashion' %}">Men's fashion</a></span>
-    <span class="{% if request.path == '/womenfashion/' %}obj{% endif %}"><a href="{% url 'womenFashion' %}">Women's fashion</a></span>
-    <span class="{% if request.path == '/kidfashion/' %}obj{% endif %}"><a href="{% url 'kidFashion' %}">Kids's fashion</a></span>
-    <span class="{% if request.path == '/beauty/' %}obj{% endif %}"><a href="{% url 'beauty' %}">Beauty & face care</a></span>
-    <span class="{% if request.path == '/decor/' %}obj{% endif %}"><a href="{% url 'decor' %}">Home styles</a></span>
-    <span class="{% if request.path == '/electronics/' %}obj{% endif %}"><a href="{% url 'electronics' %}">Electronics</a></span>
-    <span class="{% if request.path == '/mobile/' %}obj{% endif %}"><a href="{% url 'mobile' %}">Mobiles & accessories</a></span>
-</div>
-{% if msg %}
-<p id="err">{{msg}}</p>
-{% endif %}
+    <div class="subhead">
+        <p style="margin-left:10px; color: #fff;">&gt;&gt;</p>
+        <span class="{% if request.path == '/menfashion/' %}obj{% endif %}"><a href="{% url 'menFashion' %}">Men's
+                fashion</a></span>
+        <span class="{% if request.path == '/womenfashion/' %}obj{% endif %}"><a href="{% url 'womenFashion' %}">Women's
+                fashion</a></span>
+        <span class="{% if request.path == '/kidfashion/' %}obj{% endif %}"><a href="{% url 'kidFashion' %}">Kids's
+                fashion</a></span>
+        <span class="{% if request.path == '/beauty/' %}obj{% endif %}"><a href="{% url 'beauty' %}">Beauty & face
+                care</a></span>
+        <span class="{% if request.path == '/decor/' %}obj{% endif %}"><a href="{% url 'decor' %}">Home
+                styles</a></span>
+        <span class="{% if request.path == '/electronics/' %}obj{% endif %}"><a
+                href="{% url 'electronics' %}">Electronics</a></span>
+        <span class="{% if request.path == '/mobile/' %}obj{% endif %}"><a href="{% url 'mobile' %}">Mobiles &
+                accessories</a></span>
+    </div>
+    {% endif %}
+    {% if msg %}
+    <p id="err">{{msg}}</p>
+    {% endif %}
+</body>
+
+</html>
 <script>
-    let logo=document.querySelector('.logo')
-    let sin=document.getElementById('sin')
-    let loc=document.querySelector('.location')
-    let sup=document.getElementById('sup')
-    logo.addEventListener('click',()=>{
-        window.location.href="{% url 'home' %}";
-    })
-    sin.addEventListener('click',()=>{
-        window.location.href="{% url 'login' %}";
-    })
-    loc.addEventListener('click',()=>{
-        window.location.href="{% url 'login' %}";
-    })
-   sup.addEventListener('click',()=>{
-        window.location.href="{% url 'signup' %}";
+    document.addEventListener('DOMContentLoaded', () => {
+        let logo = document.querySelector('.logo')
+        let sig = document.getElementById('sig')
+        let loc = document.querySelector('.location')
+        let sup = document.getElementById('sup')
+        let cart = document.getElementById('cartLogo')
+        logo.addEventListener('click', () => {
+            window.location.href = "{% url 'home' %}";
+        })
+        sig.addEventListener('click', () => {
+            window.location.href = "{% url 'login' %}";
+        })
+        loc.addEventListener('click', () => {
+            window.location.href = "{% url 'login' %}";
+        })
+        sup.addEventListener('click', () => {
+            window.location.href = "{% url 'signup' %}";
+        })
+        
     })
 </script>

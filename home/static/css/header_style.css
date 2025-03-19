@@ -1,200 +1,242 @@
-*{
-    margin:0px;
-    padding:0px;
-    text-decoration:none;
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
     box-sizing: border-box;
 }
-p{
+
+p {
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    width:100%;
-    min-height:1000px;
-    background-color:rgb(227,230,230);
+
+body {
+    width: 100%;
+    min-height: 1000px;
+    background-color: rgb(227, 230, 230);
 }
 
-.header{
-    width:100%;
-    height:60px;
+.header {
+    width: 100%;
+    height: 60px;
     display: flex;
-    gap:10px;
-    position:sticky;
-    top:0px;
-    z-index:1000;
-    background-color:rgb(22,25,33);
-    box-shadow:0px 0px 5px gray;
+    gap: 10px;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background-color: rgb(22, 25, 33);
+    box-shadow: 0px 0px 5px gray;
 }
 
-.logo{
-    width:150px;
-    height:60px;
+.logo {
+    width: 150px;
+    height: 60px;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-.logo:hover{
+
+.logo:hover {
     border: 1px solid #fff;
 }
-.logo img{
-    width:80px;
-    height:50px;
-    border-radius:100%;
+
+.logo img {
+    width: 80px;
+    height: 50px;
+    border-radius: 100%;
     object-fit: cover;
     position: relative;
-    left:5px;
-}
-.logo p{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    letter-spacing:3px;
-    position: relative;
-    right:20px;
-    font-size:18px;
+    left: 5px;
 }
 
-.location{
-    width:165px;
-    height:60px;
+.logo p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 3px;
+    position: relative;
+    right: 20px;
+    font-size: 18px;
+}
+
+.location {
+    width: 165px;
+    height: 60px;
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap:10px;
+    gap: 10px;
     justify-content: center;
 }
-.location i{
-    color:#fff;
+
+.location i {
+    color: #fff;
 }
-.location p{
-    color:#fff;
-    font-weight:200;
+
+.location p {
+    color: #fff;
+    font-weight: 200;
 }
-.searchbar{
-    width:700px;
-    height:60px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
+.searchbar {
+    width: 700px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.search{
+
+.search {
     width: 600px;
-    height:30px;
-    display:flex;
-}
-.search input{
-    width:540px;
-    border:none;
-    padding:5px;
-    border-top-left-radius:2px;
-    border-bottom-left-radius:2px;
-}
-.search button{
-    width:50px;
     height: 30px;
-    border:none;
-    background-color:rgb(184,142,57);
-    border-top-right-radius:2px;
-    border-bottom-right-radius:2px;
+    display: flex;
+}
+
+.search input {
+    width: 540px;
+    border: none;
+    padding: 5px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.search button {
+    width: 50px;
+    height: 30px;
+    border: none;
+    background-color: rgb(184, 142, 57);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
     cursor: pointer;
 }
 
-.rightnav{
-    gap:8px;
-    display:flex;
+.rightnav {
+    gap: 8px;
+    display: flex;
 }
 
-.lang{
-    width:20%;
+.lang {
+    width: 20%;
     display: flex;
     align-items: center;
-    gap:3px;
+    gap: 3px;
 }
-.lang img{
-    width:25px;
-    height:25px;
+
+.lang img {
+    width: 25px;
+    height: 25px;
 }
-.sign{
-    width:80%;
+
+.sign {
+    width: 80%;
     display: flex;
     align-items: center;
-    justify-content:space-around;
-    gap:30px;
-    padding:0px 5px;
-   
+    justify-content: space-around;
+    gap: 30px;
+    padding: 0px 5px;
+
 }
-.btn{
-    width:120px;
-    height:40px;
-    background-color:rgb(255,216,20);
-    border-radius:5px;
+
+.btn {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255, 216, 20);
+    border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     text-decoration: underline;
     font-family: "Roboto", sans-serif;
 }
-.upDate{
-    width:140px;
-    height:40px;
-    background-color:#d4d0d0;
-    font-weight:500;
-    border-radius:5px;
+
+.upDate {
+    width: 140px;
+    height: 40px;
+    background-color: #d4d0d0;
+    font-weight: 500;
+    border-radius: 5px;
     cursor: pointer;
     text-decoration: underline;
     font-family: "Roboto", sans-serif;
-}
-.upDate i{
-    position:relative;
-    left:4px;
-    top:2px;
-}
-.logou{
-    width:90px;
-    height:40px;
-    background-color:#d4d0d0;
-    font-weight:500;
-    border-radius:5px;
-    cursor: pointer;
-    text-decoration: underline;
-    font-family: "Roboto", sans-serif;
-}
-.logou i{
-    position:relative;
-    left:4px;
-    top:2px;
-}
-.sign p{
-    white-space:nowrap;
-}
-.btn:hover{
-    background-color:rgb(227, 194, 29);
-}
-.logou:hover{
-    background-color:rgb(237, 237, 237);
 }
 
-.subhead{
-    width:100%;
-    height:35px;
+.upDate i {
+    position: relative;
+    left: 4px;
+    top: 2px;
+}
+
+.logou {
+    width: 90px;
+    height: 40px;
+    background-color: #d4d0d0;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: "Roboto", sans-serif;
+}
+
+.logou i {
+    position: relative;
+    left: 4px;
+    top: 2px;
+}
+
+.sign p {
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background-color: rgb(227, 194, 29);
+}
+
+.logou:hover {
+    background-color: rgb(237, 237, 237);
+}
+
+.subhead {
+    width: 100%;
+    height: 35px;
     display: flex;
     align-items: center;
-    /* margin-top:60px; */
-    gap:15px;
-    background-color:rgb(35, 47, 62);
-    box-shadow:3px 0px 6px gray;
+    gap: 15px;
+    background-color: rgb(35, 47, 62);
+    box-shadow: 3px 0px 6px gray;
+    position: relative;
 }
-.subhead a{
-    margin-left:10px;
+
+.subhead a {
+    margin-left: 10px;
     color: #fff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
 }
-.subhead a:hover{
-    color:rgb(184, 142, 57);
-}
-.subhead a:active{
-    text-shadow:1px 1px 5px gray;
-} 
 
-#err{
+.subhead a:hover {
+    color: rgb(184, 142, 57);
+}
+
+.subhead a:active {
+    text-shadow: 1px 1px 5px gray;
+}
+
+#err {
     text-align: center;
     color: red;
+}
+
+#cartLogo {
+    position: absolute;
+    right: 25px;
+    bottom: 4px;
+    font-size: 21px;
+
+}
+
+.Cart {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#cartLogo p {
+    font-size: 16px;
 }

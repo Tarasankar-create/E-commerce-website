@@ -19,9 +19,10 @@ from django.urls import path,include
 from home import views as hviews
 from register import urls
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    #Home
     path('',hviews.home,name='home' ),
     path('menfashion/',hviews.menFashion,name='menFashion' ),
     path('womenfashion/',hviews.womenFashion,name='womenFashion' ),
@@ -30,7 +31,9 @@ urlpatterns = [
     path('decor/',hviews.decor,name='decor' ),
     path('electronics/',hviews.electronics,name='electronics' ),
     path('mobile/',hviews.mobile,name='mobile' ),
-
+    #Register
     path('register/',include('register.urls')),
+    #Customer
+    path('customer/',include('customer.urls'))
    
 ]
