@@ -48,7 +48,7 @@
             </a>
             {% if name %}
             <div class="cartSection">
-                <button type="submit" class="cartBtn">Add to cart</button>
+                <button type="submit" class="cartBtn" data-id="{{edata.id}}" data-catagory="electronicsContent">Add to cart</button>
             </div>
             {% endif %}
         </div>
@@ -63,6 +63,25 @@
     {% endif %}
 
 </body>
+<script src="{% static 'js/jQuery/jQuery.js' %}"></script>
 <script src="{% static 'js/Electronics_script.js' %}"></script>
+<script>
+    $('.cartBtn').on('click',function(){
+        const id=$(this).data('id')
+        const catagory=$(this).data('catagory')
+       $.ajax({
+           url:'{% url "add_to_cart" %}',
+           type:'POST',
+           data:{
+               id:id,
+               catagory:catagory,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
+           },
+           success:function(response){
+               alert(response.message)
+           }
+       })
+    })
+</script>
 </html>
 {% endblock %}

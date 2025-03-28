@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    {%  extends 'layout/base.html' %}
+    {% extends 'layout/base.html' %}
     {% load static %}
     {% block homeblock %}
     <meta charset="UTF-8">
@@ -12,12 +13,13 @@
     <link rel="stylesheet" href="{% static 'css/Mobile_style.css' %}">
     {% if name %}
     <style>
-        .cont{
-            height:465px;
+        .cont {
+            height: 465px;
         }
     </style>
     {% endif %}
 </head>
+
 <body>
     <div class="slide_main">
         <button type="submit" class="lbtn">&lt;</button>
@@ -39,11 +41,14 @@
                 </div>
                 <p>{{mdata.m_title}}</p>
                 MRP: <span>&#8377;{{mdata.total}}</span>
-                <p style="color: red;">{{mdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{mdata.dis_price}}</span></p>
+                <p style="color: red;">{{mdata.discount}}% <span
+                        style="text-decoration:none; color: black; font-size:19px;">&#8377;{{mdata.dis_price}}</span>
+                </p>
             </a>
             {% if name %}
             <div class="cartSection">
-                <button type="submit" class="cartBtn">Add to cart</button>
+                <button type="submit" class="cartBtn" data-id="{{mdata.id}}" data-catagory="mobileContent">Add to
+                    cart</button>
             </div>
             {% endif %}
         </div>
@@ -52,12 +57,35 @@
     {% if not name %}
     <div class="more">
         <a href="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles">
-            <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
+            <button>See more<i class="fa-solid fa-arrow-right"
+                    style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
         </a>
     </div>
     {% endif %}
 
 </body>
+<script src="{% static 'js/jQuery/jQuery.js' %}"></script>
 <script src="{% static 'js/Mobile_script.js' %}"></script>
+<script>
+    $('.cartBtn').on('click', function () {
+        const id = $(this).data('id')
+        const catagory = $(this).data('catagory')
+        $.ajax({
+            url: '{% url "add_to_cart" %}',
+            type: 'POST',
+            data: {
+                id: id,
+                catagory: catagory,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            success: function (response) {
+
+                alert(response.message)
+            }
+        })
+
+    })
+</script>
+
 </html>
 {% endblock %}
