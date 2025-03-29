@@ -119,7 +119,7 @@
 }
 .cartBtn{
     width:80%;
-    padding:7px 0px;
+    padding:4px 0px;
     background-color:rgb(255 216 20);
     cursor: pointer;
     transform: translateX(12% );

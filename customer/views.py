@@ -10,8 +10,8 @@ def add_to_cart(request):
     if request.method == 'POST':
         id=request.POST.get('id')
         catagory=request.POST.get('catagory')
-        print(id)
-        print(catagory)
+        print("sent data",type(id))
+        print("sent data",type(catagory))
         
         if "cart" not in request.session:
             request.session['cart']=[]
@@ -19,9 +19,14 @@ def add_to_cart(request):
         found=False
 
         for item in cart:
-            if item['id']==id:
-                item['quantity']+=1
+            print("cart data",item['id'])
+            print("cart data",type(item['id']))
+            print("cart data",type(item['Catagory']))
+            print("cart data",item['Catagory'])
+            if item['id']==int(id) and item['Catagory']==catagory:
+                item['quantity']=item['quantity']+1
                 found=True
+                print("After update",item['quantity'])
                 break
         if not found:
             if catagory=="menContent":
@@ -61,7 +66,9 @@ def add_to_cart(request):
                     'img':prod['image_url'],
                     'total':prod['total'],
                     'discount':prod['discount'],
-                    'dis_price':prod['dis_price']
+                    'dis_price':prod['dis_price'],
+                    'quantity':1,
+                    'Catagory':catagory
                 }
                 if catagory=="menContent":
                     prod_data['title']=prod['men_title']
@@ -83,11 +90,22 @@ def add_to_cart(request):
             
                 cart.append(prod_data)
                 request.session.modified=True
-                return JsonResponse({'message':'Item successfully added'},status=200)
-            else:
-                return JsonResponse({'message':'Product not found'},status=400)
-            
-        else:
-             return JsonResponse({'message':'Invalid response'},status=400)
-                
-    return JsonResponse({'message':'complete'},status=200)
+                return JsonResponse({'message':'Item successfully added'},status=200)      
+
+        request.session['cart']=cart 
+        request.session.modified=True
+    return JsonResponse({'message':'Item successfully added'},status=200)
+
+def remove_from_cart(request):
+    if request.method == 'POST':
+        id=request.POST.get('id')
+        catagory=request.POST.get('catagory')
+        cart=request.session.get('cart',[])
+        for item in cart:
+            print("Before",item)
+            if item['id']==int(id) and item['Catagory']==catagory:
+                cart.remove(item)
+                break
+        request.session['cart']=cart
+        request.session.modified=True
+    return JsonResponse({'message':'Item removed'},status=200)

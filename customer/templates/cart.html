@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -11,14 +12,23 @@
 <body class="bg-[#f1f1f1] p-1">
     <h1 class="p-2 text-3xl bg-[#ccc] text-center shadow-lg mb-2">Your Cart 🛒</h1>
     <div class="px-2">
+        {% if cart %}
         {% for cart in cart %}
         <div class="flex justify-around w-full bg-[rgb(138 137 137)] shadow-md p-3 my-2">
             <div class="w-[15%]">
-                <img src="{{cart.img}}" alt="cart"
-                    class="w-[200px] h-[200px]">
+                <img src="{{cart.img}}" alt="cart" class="w-[200px] h-[200px]">
             </div>
-            <div class="w-[70%] bg-[white] p-2">
-                <p>{{cart.title}}</p>
+            <div class="w-[70%] bg-[white] p-2 relative ">
+                <div>
+                    <p class="text-[20px]">{{cart.title}}</p>
+                    <span style="text-decoration: line-through; font-size:14px;">MRP : {{cart.total}}</span><span
+                        class="text-[red]"> {{cart.discount}}%</span>
+                    <p class="text-[20px] text-[blue]">MRP : {{cart.dis_price}}</p>
+                </div>
+                <div class="w-1/5 bg-[#FD0001] text-center absolute bottom-2 right-7 rounded">
+                    <button class="cartRemove w-full p-1 py-2 text-[18px] text-[white] cursor-pointer"
+                        data-id="{{cart.id}}" data-cata="{{cart.Catagory}}">🗑️ Remove from cart</button>
+                </div>
             </div>
             <div class="flex justify-center items-center w-[10%] bg-[white]">
                 <div>
@@ -27,8 +37,37 @@
             </div>
         </div>
         {% endfor %}
-    </div>
-
+        {% else %}
+        <div class="flex justify-center items-center w-full bg-[rgb(138 137 137)] shadow-md p-3 my-2">
+            <h1 class="text-xl">Your cart is empty </h1>
+        </div>
+        {% endif %}
+        {% if cart %}
+        <div class="sticky text-center bottom-0 bg-[gray] py-2 shadow-lg">
+            <button class="bg-[green] p-3 text-[white] text-[18px] cursor-pointer">Proceed to checkout -&gt;</button>
+        </div>
+        {% endif %}
 </body>
+<script src="{% static 'js/jQuery/jQuery.js' %}"></script>
+<script>
+    $('.cartRemove').on('click', function () {
+        const id = $(this).data('id')
+        const catagory = $(this).data('cata')
+        console.log(id)
+        console.log(catagory)
+        $.ajax({
+            url: "{% url 'remove_from_cart' %}",
+            type: 'POST',
+            data: {
+                'id': id,
+                'catagory': catagory,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            success: function (response) {
+                alert(response.message)
+            }
+        })
+    })
+</script>
 
 </html>
