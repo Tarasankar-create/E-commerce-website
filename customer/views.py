@@ -109,3 +109,6 @@ def remove_from_cart(request):
         request.session['cart']=cart
         request.session.modified=True
     return JsonResponse({'message':'Item removed'},status=200)
+
+def checkOut(request):
+    return render(request,'checkout.html')

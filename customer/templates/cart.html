@@ -14,7 +14,7 @@
     <div class="px-2">
         {% if cart %}
         {% for cart in cart %}
-        <div class="flex justify-around w-full bg-[rgb(138 137 137)] shadow-md p-3 my-2">
+        <div class="flex justify-around w-full bg-[rgb(138 137 137)] shadow-md p-3 my-2 mb-5">
             <div class="w-[15%]">
                 <img src="{{cart.img}}" alt="cart" class="w-[200px] h-[200px]">
             </div>
@@ -43,8 +43,8 @@
         </div>
         {% endif %}
         {% if cart %}
-        <div class="sticky text-center bottom-0 bg-[gray] py-2 shadow-lg">
-            <button class="bg-[green] p-3 text-[white] text-[18px] cursor-pointer">Proceed to checkout -&gt;</button>
+        <div class="sticky text-center bottom-0 bg-[#ccc] py-2 shadow-lg">
+            <button class="checkOut bg-[green] p-3 text-[white] text-[18px] cursor-pointer" >Proceed to checkout -&gt;</button>
         </div>
         {% endif %}
 </body>
@@ -67,6 +67,9 @@
                 alert(response.message)
             }
         })
+    })
+    $('.checkOut').on('click',function(){
+        window.location.href="{% url 'checkout' %}"
     })
 </script>
 
