@@ -10,8 +10,6 @@ def add_to_cart(request):
     if request.method == 'POST':
         id=request.POST.get('id')
         catagory=request.POST.get('catagory')
-        print("sent data",type(id))
-        print("sent data",type(catagory))
         
         if "cart" not in request.session:
             request.session['cart']=[]
@@ -19,10 +17,6 @@ def add_to_cart(request):
         found=False
 
         for item in cart:
-            print("cart data",item['id'])
-            print("cart data",type(item['id']))
-            print("cart data",type(item['Catagory']))
-            print("cart data",item['Catagory'])
             if item['id']==int(id) and item['Catagory']==catagory:
                 item['quantity']=item['quantity']+1
                 found=True
@@ -111,4 +105,17 @@ def remove_from_cart(request):
     return JsonResponse({'message':'Item removed'},status=200)
 
 def checkOut(request):
-    return render(request,'checkout.html')
+    cart=request.session.get("cart",[])
+    final_amount=0
+    total_product=len(cart)
+    for item in cart:
+        final_price=float(item['dis_price'].replace(',',''))*float(item['quantity'])
+        item['total_price']=round(final_price,3)
+        final_amount+=final_price
+    request.session['cart']=cart
+    # request.session['total_amount']=round(final_amount,2)
+
+    return render(request,'checkout.html',{'cart':cart,'total_amount':final_amount,'total':total_product})
+
+def payment(request):
+    return render(request,'payment_options.html')

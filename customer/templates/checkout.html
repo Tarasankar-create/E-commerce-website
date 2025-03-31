@@ -15,34 +15,41 @@
            <h1 class="text-2xl w-[15%] text-center ">Quantity</h1>
            <h1 class="text-2xl w-[15%] text-center ">Total amount</h1>
         </div>
-        <div class=" h-[200px] flex justify-around gap-1 shadow-lg mt-6 px-22">
+        {% for cart in cart %}
+        <div class=" h-[230px] flex justify-around gap-1 shadow-lg mt-6 px-22 mb-6">
             <div class="w-[15%] bg-[#ccc] text-center">
-                <img src="https://pplware.sapo.pt/downloads/imagem_17102007/ima15.jpg" alt="Hello" class="h-[200px]"/>
+                <img src="{{cart.img}}" alt="Hello" class="h-[230px]"/>
             </div>
             <div class="w-[45%]  text-2xl p-2">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, inventore!</p>
-                <p>Amount</p>
+                <p>{{cart.title}}</p>
+                <p class="text-blue-800 mt-2">MRP : {{cart.dis_price}}</p>
             </div>
             <div class="flex items-center w-[10%] text-3xl">
-                <h1>10</h1>
+                <h1>{{cart.quantity}}</h1>
             </div>
             <div class="flex items-center w-[10%] text-3xl">
-                <h1>100</h1>
+                <h1>{{cart.total_price}}</h1>
             </div>
         </div>
-        <div class="flex h-[100px] justify-around items-center shadow-lg text-2xl px-23 mb-5">
+        {% endfor %}
+        <div class="sticky bottom-16 bg-gray-200 flex h-[100px] justify-around items-center shadow-lg text-2xl px-23 mb-5">
           <div class="w-[80%] flex gap-5">
-            <p >Total Number Of Product : </p>
-            <h1 class="mt-[2px]">1</h1>
+            <p >Total Number of Products : </p>
+            <h1 class="mt-[2px]">{{total}}</h1>
           </div>
           <div class="text-center">
-            <p>Total Amount : -</p>
-            <h1>100</h1>
+            <p>Final Amount :-</p>
+            <h1>{{total_amount}}</h1>
           </div>
         </div>
-        <div class="sticky text-center bottom-0 bg-[#ccc] py-2 shadow-lg">
+        <div class="payment sticky text-center bottom-0 bg-[#ccc] py-2 shadow-lg">
             <button class="checkOut bg-[green] p-3 text-[white] text-[18px] cursor-pointer" >Proceed to Payment</button>
         </div>
     </div>
 </body>
+<script>
+    document.querySelector('.payment').addEventListener('click',function(){
+        window.location.href="{% url 'payment' %}"
+    })
+</script>
 </html>
