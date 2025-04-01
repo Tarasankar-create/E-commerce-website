@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import JsonResponse
 from home.models import menContent,womenContent,kidContent,beautyContent,decorContent,electronicsContent,mobileContent
 
@@ -113,9 +113,39 @@ def checkOut(request):
         item['total_price']=round(final_price,3)
         final_amount+=final_price
     request.session['cart']=cart
-    # request.session['total_amount']=round(final_amount,2)
+    request.session['total_amount']=round(final_amount,2)
 
     return render(request,'checkout.html',{'cart':cart,'total_amount':final_amount,'total':total_product})
 
 def payment(request):
+    total_amount=request.session.get("total_amount",0)
+    if total_amount==0:
+        return render(request,'cart.html')
+    
+    return render(request,'payment_options.html',{'total':total_amount})
+
+def process_payment(request):
+    if request.method == "GET":
+        payment=request.GET.get("payment")
+        print(payment)
+        if payment=="Creditcard":
+            print(payment)
+            return redirect('credit')
+        elif payment=="upi":
+            print(payment)
+            return redirect('Upi')
+        elif payment =="paypal":
+            print(payment)
+            return redirect('order_success')
+        elif payment =="cod":
+            print(payment)
+            return redirect('order_success')
+       
+
     return render(request,'payment_options.html')
+def creditcard(request):
+    return render(request,'card_payment.html')
+def upi(request):
+    return render(request,'upi_payment.html')
+def order_success(request):
+    return render(request,'order_success.html')
