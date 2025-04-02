@@ -144,6 +144,9 @@ def process_payment(request):
 
     return render(request,'payment_options.html')
 def creditcard(request):
+    if request.method == "GET":
+        card=request.GET.get("card")
+        print(card)
     return render(request,'card_payment.html')
 def upi(request):
     return render(request,'upi_payment.html')
