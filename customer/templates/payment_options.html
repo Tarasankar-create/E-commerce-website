@@ -14,8 +14,10 @@
         <h1 class="p-2 text-3xl bg-[#ccc] text-center shadow-lg mb-2">Choose Payment Method 💳</h1>
         <div class="flex justify-center mt-5">
             <div class="w-[700px] bg-gray-200 p-10 shadow-lg">
+                <p class="text-2xl text-[red]">{{msg}}</p>
                 <h1 class="text-3xl mt-4 ">Choose Payment Method : {{msg}}</h1>
-                <form method="GET" action="{% url 'process_payment' %}" class="text-2xl mt-2 ms-4">
+                <form method="POST" action="{% url 'process_payment' %}" class="text-2xl mt-2 ms-4">
+                    {% csrf_token %}
                     <input class="scale-150" type="radio" name="payment" value="Creditcard">
                     <label>Credi/Debit card 💳</label><br>
                     <input class="scale-150" type="radio" name="payment" value="upi">

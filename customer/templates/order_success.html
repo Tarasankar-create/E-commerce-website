@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Order success</title>
+</head>
+
+<body class="bg-gray-200">
+    <div class="flex justify-center mt-10">
+        <div class="loading mx-auto">
+            <dotlottie-player src="https://lottie.host/d924a092-10c7-4091-a0c1-9a76d5411a96/ZfWphtluus.lottie"
+                background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+            <p class="text-5xl font-bold">&nbsp;Processing...</p>
+        </div>
+        <div class="order mx-auto hidden">
+            <dotlottie-player src="https://lottie.host/451bed8d-81f7-44be-8220-ec7fb07fe5ef/s2PCaA0Zam.lottie"
+                background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+            <p class="text-5xl font-bold text-[rgb(123,185,43)]">Order success</p>
+        </div>
+        <div class="complete flex flex-col justify-center items-center mx-auto hidden">
+            <img class="w-[300px]" src="{% static 'images/check.png' %}"/>
+            <p class="text-5xl font-bold text-[rgb(123,185,43)]">Order success</p>
+            <button class="py-1 px-5 bg-[rgb(123,185,43)] text-[20px] mt-7 translate-x-17 cursor-pointer">Back to Home</button>
+        </div>
+    </div>
+</body>
+<script>
+    loading = document.querySelector('.loading')
+    order = document.querySelector('.order')
+    success = document.querySelector('.complete')
+    homeButton = document.querySelector('button')
+    function show() {
+        setTimeout(() => {
+            loading.style.display = "none";
+            order.style.display = "block";
+        }, 5000)
+        hide();
+    }
+    function hide() {
+        setTimeout(() => {
+            behavior = "smooth";
+            loading.style.display = "none";
+            order.style.display = "none";
+            success.style.display = "block";
+
+        }, 13000)
+    }
+    homeButton.addEventListener('click', function () {
+        window.location.href = "{% url 'home' %}";
+    });
+    window.onload = show();
+</script>
+
+</html>

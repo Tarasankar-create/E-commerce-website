@@ -125,30 +125,43 @@ def payment(request):
     return render(request,'payment_options.html',{'total':total_amount})
 
 def process_payment(request):
-    if request.method == "GET":
-        payment=request.GET.get("payment")
+    if request.method == "POST":
+        payment=request.POST.get("payment")
         print(payment)
         if payment=="Creditcard":
-            print(payment)
             return redirect('credit')
         elif payment=="upi":
-            print(payment)
             return redirect('Upi')
         elif payment =="paypal":
-            print(payment)
             return redirect('order_success')
         elif payment =="cod":
-            print(payment)
             return redirect('order_success')
-       
+        else:
+            total=request.session.get("total_amount",0)
+            return render(request,"payment_options.html",{"msg":"Invalid ! Please choose a valid payment method","total":total})
 
     return render(request,'payment_options.html')
 def creditcard(request):
-    if request.method == "GET":
-        card=request.GET.get("card")
-        print(card)
+    if request.method == "POST":
+        total=request.session.get("total_amount",0)
+        card=request.POST.get("card")
+        cardNum=request.POST.get("cardNum")
+        cardExpiry=request.POST.get("cardExpiry")
+        cardCvv=request.POST.get("cardCvv")
+        list_special="!~`#$%^&*()-_+=;:'\"*/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz"
+        if (len(cardNum)==16 and len(cardCvv)==3):
+            if any(num in list_special  for num in cardNum):
+                return render(request,'card_payment.html',{"msg":f"Invalid {card} card Number","total":total})
+            elif any(cvv in list_special  for cvv in cardCvv):
+                return render(request,'card_payment.html',{"msg":"Invalid CVV","total":total})
+            else:
+                return redirect('order_success')
+        else:
+            return render(request,"card_payment.html",{"msg":f"Please enter valid {card} card number or cvv"})
     return render(request,'card_payment.html')
 def upi(request):
     return render(request,'upi_payment.html')
 def order_success(request):
+    request.session['cart']=[]
+    request.session['total_amount']=0
     return render(request,'order_success.html')
