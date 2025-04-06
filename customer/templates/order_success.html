@@ -12,15 +12,10 @@
 
 <body class="bg-gray-200">
     <div class="flex justify-center mt-10">
-        <div class="loading mx-auto">
-            <dotlottie-player src="https://lottie.host/d924a092-10c7-4091-a0c1-9a76d5411a96/ZfWphtluus.lottie"
-                background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-            <p class="text-5xl font-bold">&nbsp;Processing...</p>
-        </div>
         <div class="order mx-auto hidden">
             <dotlottie-player src="https://lottie.host/451bed8d-81f7-44be-8220-ec7fb07fe5ef/s2PCaA0Zam.lottie"
-                background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-            <p class="text-5xl font-bold text-[rgb(123,185,43)]">Order success</p>
+                background="transparent" speed="1" style="width: 300px; margin-left: 50px;" loop autoplay></dotlottie-player>
+            <p class="text-5xl font-bold text-black">Order Processing...</p>
         </div>
         <div class="complete flex flex-col justify-center items-center mx-auto hidden">
             <img class="w-[300px]" src="{% static 'images/check.png' %}"/>
@@ -30,25 +25,21 @@
     </div>
 </body>
 <script>
-    loading = document.querySelector('.loading')
     order = document.querySelector('.order')
     success = document.querySelector('.complete')
     homeButton = document.querySelector('button')
     function show() {
-        setTimeout(() => {
-            loading.style.display = "none";
-            order.style.display = "block";
-        }, 5000)
+        order.style.display = "block";
         hide();
+     
     }
     function hide() {
         setTimeout(() => {
             behavior = "smooth";
-            loading.style.display = "none";
             order.style.display = "none";
             success.style.display = "block";
 
-        }, 13000)
+        }, 7000)
     }
     homeButton.addEventListener('click', function () {
         window.location.href = "{% url 'home' %}";

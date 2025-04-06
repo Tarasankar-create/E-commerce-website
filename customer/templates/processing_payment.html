@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>process-payment...</title>
+</head>
+<body>
+    <div class="loading flex flex-col justify-center items-center ">
+        <dotlottie-player src="https://lottie.host/d924a092-10c7-4091-a0c1-9a76d5411a96/ZfWphtluus.lottie"
+            background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+        <p class="text-5xl font-bold">&nbsp;Processing payment...</p>
+    </div>
+</body>
+<script>
+    loadIng=document.querySelector('.loading')
+    function order(){
+        setTimeout(() => {
+            window.location.href="{% url 'order_success' %}"
+        }, 5000);
+    }
+    window.onload = order();
+
+</script>
+</html>

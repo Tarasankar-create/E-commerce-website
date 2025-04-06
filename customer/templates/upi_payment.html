@@ -12,36 +12,15 @@
     <div id="container">
         <h1 class="p-2 text-3xl bg-[#ccc] text-center shadow-lg mb-2"> <image class="h-[40px] mx-auto" src="{% static 'images/upi.svg' %}"/></h1>
         <div class="flex justify-center p-5">
-            <form method="POST" id="credit" class="mt-3 p-4 text-xl shadow-lg border-1 border-black">
+            <form method="POST" action="{% url 'Upi' %}" id="credit" class="mt-3 w-[400px] p-4 text-xl shadow-lg border-1 border-black">
                 {% csrf_token %}
                 <h1 class="text-2xl mb-3 text-center">🏛️ UPI</h1>
+                <p class="text-[red] ">{{msg}}</p>
                 <label>UPI ID : </label><br>
-                <input class="border-1 border-black p-1 my-3" type="text" placeholder="@ybl" name="cardNum" required/><br>
-                <button id="btn" type="button" class="w-full mt-2 bg-[rgb(255,216,20)] py-1 px-10 rounded cursor-pointer">Pay</button>
+                <input class="w-full border-1 border-black p-1 my-3" type="text" placeholder="@ybl" name="upiNum" required/><br>
+                <button id="btn" type="submit" class="w-full mt-2 bg-[rgb(255,216,20)] py-1 px-10 rounded cursor-pointer">Pay</button>
             </form>
         </div>
     </div>
-    <div id="process-payment" class="bg-gray-200 hidden">
-        <div class="flex justify-center mt-10">
-            <div class="mx-auto">
-                <dotlottie-player src="https://lottie.host/d924a092-10c7-4091-a0c1-9a76d5411a96/ZfWphtluus.lottie"
-                    background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-                <p class="text-5xl font-bold">&nbsp;Processing...</p>
-            </div>
-        </div>
-    </div>
 </body>
-<script>
-    container=document.getElementById('container')
-    pay=document.getElementById('process-payment')
-    btn=document.getElementById('btn')
-    btn.addEventListener('click', function () {
-        console.log("Processing payment...")
-        container.style.display="none";
-        pay.style.display="block";
-        setTimeout(()=>{
-            window.location.href="{% url 'order_success' %}"
-        },5000)
-    })
-</script>
 </html>

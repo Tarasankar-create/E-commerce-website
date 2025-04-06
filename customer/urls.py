@@ -10,5 +10,6 @@ urlpatterns=[
     path('processPayment/',views.process_payment,name='process_payment'),
     path('creditcard/',views.creditcard,name='credit'),
     path('upi/',views.upi,name='Upi'),
+    path('payment_process/',views.payment_process,name='payprocess'),
     path('order_success/',views.order_success,name='order_success'),
 ]

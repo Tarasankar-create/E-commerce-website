@@ -7,69 +7,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>credit/Debit card</title>
-    
+
 </head>
 
 <body>
-    <div>
+    <div id="card-payment">
         <h1 class="p-2 text-3xl bg-[#ccc] text-center shadow-lg mb-2">Choose Payment Method 💳</h1>
         <div class="flex justify-center h-[100vh]">
             <div class="shadow-lg p-5">
                 <p class="text-xl text-center text-[red]">{{msg}}</p>
                 <!-- Credit card -->
                 <div class="mt-4 border-1 border-black p-4 text-2xl">
-                    <input id="creditBtn" class="scale-150" type="radio" name="card" value="credit" onclick="toggle()" checked/>
+                    <input id="creditBtn" class="scale-150" type="radio" name="card" value="credit" onclick="toggle()"
+                        checked />
                     <label>Creditcard</label>
                 </div>
-                <form method="POST" action="{% url 'credit' %}" id="credit" class="mt-3 p-4 text-xl shadow-xl border-1 border-black">
+                <form method="POST" action="{% url 'credit' %}" id="credit"
+                    class="mt-3 p-4 text-xl shadow-xl border-1 border-black">
                     {% csrf_token %}
                     <h1 class="text-2xl mb-3  underline">Credit card</h1>
-                    <input type="hidden" name="card" value="credit"/>
+                    <input type="hidden" name="card" value="credit" />
                     <label>Card number : </label>
-                    <input class="border-1 border-black p-1 my-3" type="text" placeholder="16 digit card number" name="cardNum" required/><br>
+                    <input class="border-1 border-black p-1 my-3" type="text" placeholder="16 digit card number"
+                        name="cardNum" required /><br>
                     <label>Expiry date : </label>
-                    <input class="relative left-5 border-1 border-black p-1 my-3" type="month" placeholder="00/00" name="cardExpiry" required/><br>
+                    <input class="relative left-5 border-1 border-black p-1 my-3" type="month" placeholder="00/00"
+                        name="cardExpiry" required /><br>
                     <label>CVV : </label>
-                    <input class="relative left-20 border-1 border-black p-1 my-3" type="text" placeholder="CVV" name="cardCvv" required/><br>
-                    <input class="translate-x-33 mt-2 bg-[rgb(255,216,20)] py-2 px-10 rounded cursor-pointer" type="submit" value="Pay"/>
+                    <input class="relative left-20 border-1 border-black p-1 my-3" type="text" placeholder="CVV"
+                        name="cardCvv" required /><br>
+                    <input class="translate-x-33 mt-2 bg-[rgb(255,216,20)] py-2 px-10 rounded cursor-pointer"
+                        type="submit" value="Pay" />
                 </form>
                 <!-- Debit card -->
                 <div class="mt-4 border-1 border-black p-4 text-2xl">
                     <input id="DebitBtn" class="scale-150" type="radio" name="card" value="Debit" onclick="toggle()" />
                     <label>Debitcard</label>
                 </div>
-                <form method="POST" action="{% url 'credit' %}" id="debit" class="mt-3 p-4 text-xl shadow-xl border-1 border-black">
+                <form method="POST" action="{% url 'credit' %}" id="debit"
+                    class="mt-3 p-4 text-xl shadow-xl border-1 border-black">
                     {% csrf_token %}
                     <h1 class="text-2xl mb-3  underline">Debit card</h1>
-                    <input type="hidden" name="card" value="debit"/>
+                    <input type="hidden" name="card" value="debit" />
                     <label>Card number : </label>
-                    <input class="border-1 border-black p-1 my-3" type="text" placeholder="16 digit card number" name="cardNum" required/><br>
+                    <input class="border-1 border-black p-1 my-3" type="text" placeholder="16 digit card number"
+                        name="cardNum" required /><br>
                     <label>Expiry date : </label>
-                    <input class="relative left-5 border-1 border-black p-1 my-3" type="month" placeholder="00/00" name="cardExpiry" required/><br>
+                    <input class="relative left-5 border-1 border-black p-1 my-3" type="month" placeholder="00/00"
+                        name="cardExpiry" required /><br>
                     <label>CVV : </label>
-                    <input class="relative left-20 border-1 border-black p-1 my-3" type="text" placeholder="CVV" name="cardCvv" required/><br>
-                    <input class="translate-x-33 mt-2 bg-[rgb(255,216,20)] py-2 px-10 rounded cursor-pointer" type="submit" value="Pay"/>
+                    <input class="relative left-20 border-1 border-black p-1 my-3" type="text" placeholder="CVV"
+                        name="cardCvv" required /><br>
+                    <input class="translate-x-33 mt-2 bg-[rgb(255,216,20)] py-2 px-10 rounded cursor-pointer"
+                        type="submit" value="Pay" />
                 </form>
             </div>
         </div>
     </div>
 </body>
 <script>
-    function toggle(){
-        const credit=document.getElementById('credit')
-        const debit=document.getElementById('debit')
-        const creditBtn=document.getElementById('creditBtn')
-        const debitBtn=document.getElementById('debitBtn')
-        if (creditBtn.checked){
-            credit.style.display="block";
-            debit.style.display="none";
-    
-        }else{
-            debit.style.display="block";
-            credit.style.display="none";
+    cardPayment = document.getElementById('card-payment')
+    loadIng = document.querySelector('.loading')
+    function toggle() {
+        const credit = document.getElementById('credit')
+        const debit = document.getElementById('debit')
+        const creditBtn = document.getElementById('creditBtn')
+        const debitBtn = document.getElementById('debitBtn')
+        if (creditBtn.checked) {
+            credit.style.display = "block";
+            debit.style.display = "none";
+
+        } else {
+            debit.style.display = "block";
+            credit.style.display = "none";
         }
     }
-    window.onload=toggle();
+    function final(){
+        loadIng.style.display="block";
+        cardPayment.style.display="none";
+    }
+    window.onload = toggle();
 
 </script>
 

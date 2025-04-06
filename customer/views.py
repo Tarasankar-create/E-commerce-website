@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+import re
 from django.http import JsonResponse
 from home.models import menContent,womenContent,kidContent,beautyContent,decorContent,electronicsContent,mobileContent
 
@@ -127,13 +128,14 @@ def payment(request):
 def process_payment(request):
     if request.method == "POST":
         payment=request.POST.get("payment")
+        payPal="https://www.paypal.com/in/home"
         print(payment)
         if payment=="Creditcard":
             return redirect('credit')
         elif payment=="upi":
             return redirect('Upi')
         elif payment =="paypal":
-            return redirect('order_success')
+            return redirect(payPal)
         elif payment =="cod":
             return redirect('order_success')
         else:
@@ -155,12 +157,22 @@ def creditcard(request):
             elif any(cvv in list_special  for cvv in cardCvv):
                 return render(request,'card_payment.html',{"msg":"Invalid CVV","total":total})
             else:
-                return redirect('order_success')
+                return redirect('payprocess')
         else:
             return render(request,"card_payment.html",{"msg":f"Please enter valid {card} card number or cvv"})
     return render(request,'card_payment.html')
 def upi(request):
+    if request.method == 'POST':
+        upiNum=request.POST.get('upiNum')
+        list_match="^[0-9]{10}@[a-z]{3}"
+        if re.match(list_match,upiNum):
+            return redirect('payprocess')
+        else:
+            return render(request,'upi_payment.html',{"msg":"Error ! Please enter valid upi number"})
+        return redirect('payprocess')
     return render(request,'upi_payment.html')
+def payment_process(request):
+    return render(request,'processing_payment.html')
 def order_success(request):
     request.session['cart']=[]
     request.session['total_amount']=0
