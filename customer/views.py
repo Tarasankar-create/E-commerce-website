@@ -148,7 +148,6 @@ def creditcard(request):
         total=request.session.get("total_amount",0)
         card=request.POST.get("card")
         cardNum=request.POST.get("cardNum")
-        cardExpiry=request.POST.get("cardExpiry")
         cardCvv=request.POST.get("cardCvv")
         list_special="!~`#$%^&*()-_+=;:'\"*/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz"
         if (len(cardNum)==16 and len(cardCvv)==3):
@@ -169,7 +168,6 @@ def upi(request):
             return redirect('payprocess')
         else:
             return render(request,'upi_payment.html',{"msg":"Error ! Please enter valid upi number"})
-        return redirect('payprocess')
     return render(request,'upi_payment.html')
 def payment_process(request):
     return render(request,'processing_payment.html')
