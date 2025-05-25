@@ -19,19 +19,19 @@
             {% csrf_token %}
             <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Create Account</p>
             <p class="phead">Your name</p>
-            <input type="text" placeholder="First and Last name" name="name">
+            <input type="text" placeholder="First and Last name" name="name"required>
             <p class="phead" style="margin-bottom:2px;">Mobile number</p>
             <select name="country">
                 <option value="India">IN +91</option>
                 <option value="Afganistan">Afganistan+93</option>
             </select>
-            <input type="text" placeholder="Mobile number" style=" width:70%;position:relative; left:10px;bottom:5px;" name="mob">
+            <input type="text" placeholder="Mobile number" style=" width:70%;position:relative; left:10px;bottom:5px;" name="mob" required>
             <p class="phead">Pincode</p>
-            <input type="number" placeholder="Pincode" name="pin">
+            <input type="number" placeholder="Pincode" name="pin" required>
             <p class="phead">Email</p>
-            <input type="email" placeholder="Email" name="email">
+            <input type="email" placeholder="Email" name="email" required>
             <p class="phead">Password</p>
-            <input type="password" placeholder="At leat 6 characteres" name="password">
+            <input type="password" placeholder="At leat 6 characteres" name="password" required>
             <i class="fa-solid fa-circle-exclamation" style="color:rgb(17,150,171);float:left;position: relative;top:11px;"></i>
             <p style="position: relative;top:10px;left:5px;margin-bottom:10px;">Passsword must be at least 6 characteres.</p>
             <button type="submit">SignUp</button>
