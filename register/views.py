@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import signup
 from django.contrib.auth import logout
+import re
 
 
 # Create your views here.
@@ -30,12 +31,19 @@ def register(request):
         pin=request.POST['pin']
         email=request.POST['email']
         pwd=request.POST['password']
+        error='Password must contain Uppercase,Lowercase and symbols'
         try:
-            ob=signup.objects.create(name=name,country=coun,mob=mobile,pin=pin,email=email,password=pwd)
-            ob.save()
-            return redirect('login')
+            Upper=re.search(r'[A-Z]',pwd)
+            Lower=re.search(r'[a-z]',pwd)
+            sym=re.search(r'[!~@#$%^&*()_+-=/*-+<>:"|;//,]',pwd)
+            if Upper and Lower and sym:
+                ob=signup.objects.create(name=name,country=coun,mob=mobile,pin=pin,email=email,password=pwd)
+                ob.save()
+                return redirect('login')
+            else:
+                return render(request,'Register_index.html',{'msg':error})
         except Exception:
-            return render(request,'Register_index.html',{'msg':'Error'})
+            return render(request,'Register_index.html',{'msg':error})
     return render(request,'Register_index.html')
 
 def update_view(request):
