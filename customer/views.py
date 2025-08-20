@@ -111,12 +111,12 @@ def checkOut(request):
     total_product=len(cart)
     for item in cart:
         final_price=float(item['dis_price'].replace(',',''))*float(item['quantity'])
-        item['total_price']=round(final_price,3)
+        item['total_price']=(f'{final_price:.2f}')
         final_amount+=final_price
     request.session['cart']=cart
-    request.session['total_amount']=round(final_amount,2)
+    request.session['total_amount']=f'{final_amount:.2f}'
 
-    return render(request,'checkout.html',{'cart':cart,'total_amount':final_amount,'total':total_product})
+    return render(request,'checkout.html',{'cart':cart,'total_amount':f'{final_amount:.2f}','total':total_product})
 
 def payment(request):
     total_amount=request.session.get("total_amount",0)
