@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Update profile</title>
+    <link rel="stylesheet" href="{% static 'css/Update_style.css' %}"/>
+</head>
+<body>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}"/>
+        <p>Webmart</p>
+    </div>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Update Profile</p>
+            <p class="phead">Your name</p>
+            <input type="text" placeholder="First and Last name" name="name" value="{{ob.name}}">
+            <p class="phead" style="margin-bottom:2px;">Mobile number</p>
+            <select name="country" value="{{ob.country}}">
+                <option value="India">IN +91</option>
+                <option value="Afganistan">Afganistan+93</option>
+            </select>
+            <input type="text" placeholder="Mobile number" style=" width:70%;position:relative; left:10px;bottom:5px;" name="mob" value="{{ob.mob}}">
+            <p class="phead">Pincode</p>
+            <input type="number" placeholder="Pincode" name="pin" value="{{ob.pin}}">
+            <p class="phead">Email</p>
+            <input type="email" placeholder="Email" name="email" value="{{ob.email}}">
+            <p class="phead">Password</p>
+            <input type="password" placeholder="At leat 6 characteres" name="password" value="{{ob.password}}">
+            <i class="fa-solid fa-circle-exclamation" style="color:rgb(17,150,171);float:left;position: relative;top:7px;"></i>
+            <p style="position: relative;top:6px;left:5px;margin-bottom:10px;">Passsword must be at least 6 characteres.</p>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    
+</body>
+</html>

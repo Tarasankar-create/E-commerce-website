@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/Register_style.css' %}">
+</head>
+<body>
+    <div class="logo">
+        <img src="{% static 'images/logo4.jpg' %}">
+        <p>Webmart</p><br>
+    </div>
+    <div style="text-align: center;">
+        <p style="color: red; font-size: 18px;">{{msg}}</p>
+    </div>
+    <div class="container">
+        <form class="main" method="post">
+            {% csrf_token %}
+            <p style="font-size:27px;font-weight:400px; font-family: Arial, sans-serif;">Create Account</p>
+            <p class="phead">Your name</p>
+            <input type="text" placeholder="First and Last name" name="name"required>
+            <p class="phead" style="margin-bottom:2px;">Mobile number</p>
+            <select name="country">
+                <option value="India">IN +91</option>
+                <option value="Afganistan">Afganistan+93</option>
+            </select>
+            <input type="text" placeholder="Mobile number" style=" width:70%;position:relative; left:10px;bottom:5px;" name="mob" required>
+            <p class="phead">Pincode</p>
+            <input type="number" placeholder="Pincode" name="pin" required>
+            <p class="phead">Email</p>
+            <input type="email" placeholder="Email" name="email" required>
+            <p class="phead">Password</p>
+            <input type="password" placeholder="At leat 6 characteres" name="password" required>
+            <i class="fa-solid fa-circle-exclamation" style="color:rgb(17,150,171);float:left;position: relative;top:11px;"></i>
+            <p style="position: relative;top:10px;left:5px;margin-bottom:10px;">Passsword must be at least 6 characteres.</p>
+            <button type="submit">SignUp</button>
+        </form>
+            <hr style="margin-top: 20px;color:rgb(213, 217, 217);">
+            <p style="margin-top:12px;margin-bottom: 10px;">Buying for work?</p>
+            <a href="https://www.amazon.in/business/register/org/landing?ref_=ap_altreg_ab" style="text-decoration:none; position: relative;bottom:5px; color:rgb(2,116,137);">Shop on Webmart Business</a>
+            <hr style="margin-top: 15px;color:rgba(213, 217, 217, 0.244);">
+            <p style="margin-top:25px;">Already have an Account? <a href="#" style="text-decoration:none; color:rgb(2,116,137);">Sign in.</a></p>
+            <p style="margin-top:20px;font-size:14px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">By continuing, you agree to Webmart's<span> <a href="https://www.amazon.in/gp/help/customer/display.html/ref=ap_register_notification_condition_of_use?ie=UTF8&nodeId=200545940">Conditions&nbsp;of&nbsp; Use</a></span> and <span><a href="https://www.amazon.in/gp/help/customer/display.html/ref=ap_register_notification_privacy_notice?ie=UTF8&nodeId=200534380">Privacy Notice</a></span></p>
+            
+    </div>
+    <hr>
+    <div class="footer">
+        <div class="support">
+            <a href="https://www.amazon.in/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&nodeId=200545940">Conditions of Use</a>
+            <a href="https://www.amazon.in/gp/help/customer/display.html/ref=ap_desktop_footer_privacy_notice?ie=UTF8&nodeId=200534380">Privacy Notice</a>
+            <a href="https://www.amazon.in/gp/help/customer/display.html?ie=UTF8&nodeId=508510">Help</a><br>
+        </div>
+        <p style="position: relative; bottom:7px;right:5px;">© 2024-2025, Webmart.com, Inc. or its affiliates</p>
+    </div>
+</body>
+</html>

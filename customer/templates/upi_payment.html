@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <title>UPI</title>
+</head>
+<body>
+    <div id="container">
+        <h1 class="p-2 text-3xl bg-[#ccc] text-center shadow-lg mb-2"> <image class="h-[40px] mx-auto" src="{% static 'images/upi.svg' %}"/></h1>
+        <div class="flex justify-center p-5">
+            <form method="POST" action="{% url 'Upi' %}" id="credit" class="mt-3 w-[400px] p-4 text-xl shadow-lg border-1 border-black">
+                {% csrf_token %}
+                <h1 class="text-2xl mb-3 text-center">🏛️ UPI</h1>
+                <p class="text-[red] ">{{msg}}</p>
+                <label>UPI ID : </label><br>
+                <input class="w-full border-1 border-black p-1 my-3" type="text" placeholder="@ybl" name="upiNum" required/><br>
+                <button id="btn" type="submit" class="w-full mt-2 bg-[rgb(255,216,20)] py-1 px-10 rounded cursor-pointer">Pay</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%  extends 'layout/base.html' %}
+    {% load static %}
+    {% block homeblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Women's fashion</title>
+    <link rel="stylesheet" href="{% static 'css/Women_style.css' %}">
+    {% if name %}
+    <style>
+        .cont{
+            height:465px;
+        }
+    </style>
+    {% endif %}
+</head>
+<body>
+    <div class="slide_main">
+        <button type="submit" class="lbtn">&lt;</button>
+        <div class="slider">
+            {% for wslide in wslide %}
+            <a href="#">
+                <img src="{{wslide.slide_url}}" class="slide">
+            </a>
+            {% endfor %}
+        </div>
+        <button type="submit" class="rbtn">&gt;</button>
+    </div>
+    <div class="content">
+        {% for wdata in wdata %}
+        <div class="cont">
+            <a href="{{wdata.main_url}}" target="_blank">
+                <div>
+                    <img src="{{wdata.image_url}}">
+                </div>
+                <p>{{wdata.w_title}}</p>
+                MRP: <span>&#8377;{{wdata.total}}</span>
+                <p style="color: red;">{{wdata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{wdata.dis_price}}</span></p>
+            </a>
+            {% if name %}
+            <div class="cartSection">
+                <button type="submit" class="cartBtn" data-id="{{wdata.id}}" data-catagory="womenContent">Add to cart</button>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% if not name %}
+    <div class="more">
+        <a href="https://www.amazon.in/b/ref=AF_WIN_bub_w_cml_t_2?pf_rd_r=EGTG9YBAQ8VWEX3B8B4S&pf_rd_p=9a0cb6fd-b7aa-4cdb-a3c8-8599f759d050&pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-1&pf_rd_t=&pf_rd_i=6648217031&node=1953602031">
+            <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
+        </a>
+    </div>
+    {% endif %}
+
+</body>
+<script src="{% static 'js/jQuery/jQuery.js' %}"></script>
+<script src="{% static 'js/Women_script.js' %}"></script>
+<script>
+    $('.cartBtn').on('click',function(){
+        const id=$(this).data('id')
+        const catagory=$(this).data('catagory')
+       $.ajax({
+           url:'{% url "add_to_cart" %}',
+           type:'POST',
+           data:{
+               id:id,
+               catagory:catagory,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
+           },
+           success:function(response){
+               alert(response.message)
+           }
+       })
+    })
+</script>
+</html>
+{% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% extends 'layout/base.html' %}
+    {% load static %}
+    {% block homeblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Mobile & Accessories</title>
+    <link rel="stylesheet" href="{% static 'css/Mobile_style.css' %}">
+    {% if name %}
+    <style>
+        .cont {
+            height: 465px;
+        }
+    </style>
+    {% endif %}
+</head>
+
+<body>
+    <div class="slide_main">
+        <button type="submit" class="lbtn">&lt;</button>
+        <div class="slider">
+            {% for mslide in mslide %}
+            <a href="#">
+                <img src="{{mslide.slide_url}}" class="slide">
+            </a>
+            {% endfor %}
+        </div>
+        <button type="submit" class="rbtn">&gt;</button>
+    </div>
+    <div class="content grid grid-cols-4 gap-[5px]">
+        {% for mdata in mdata %}
+        <div class="cont">
+            <a href="{{mdata.main_url}}" target="_blank">
+                <div>
+                    <img src="{{mdata.image_url}}">
+                </div>
+                <p>{{mdata.m_title}}</p>
+                MRP: <span>&#8377;{{mdata.total}}</span>
+                <p style="color: red;">{{mdata.discount}}% <span
+                        style="text-decoration:none; color: black; font-size:19px;">&#8377;{{mdata.dis_price}}</span>
+                </p>
+            </a>
+            {% if name %}
+            <div class="cartSection">
+                <button type="submit" class="cartBtn" data-id="{{mdata.id}}" data-catagory="mobileContent">Add to
+                    cart</button>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% if not name %}
+    <div class="more">
+        <a href="https://www.amazon.in/mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles">
+            <button>See more<i class="fa-solid fa-arrow-right"
+                    style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
+        </a>
+    </div>
+    {% endif %}
+
+</body>
+<script src="{% static 'js/jQuery/jQuery.js' %}"></script>
+<script src="{% static 'js/Mobile_script.js' %}"></script>
+<script>
+    $('.cartBtn').on('click', function () {
+        const id = $(this).data('id')
+        const catagory = $(this).data('catagory')
+        $.ajax({
+            url: '{% url "add_to_cart" %}',
+            type: 'POST',
+            data: {
+                id: id,
+                catagory: catagory,
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            success: function (response) {
+
+                alert(response.message)
+            }
+        })
+
+    })
+</script>
+
+</html>
+{% endblock %}

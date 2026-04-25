@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%  extends 'layout/base.html' %}
+    {% load static %}
+    {% block homeblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Electronics</title>
+    <link rel="stylesheet" href="{% static 'css/Electronics_style.css' %}">
+    {% if name %}
+    <style>
+        .cont{
+            height:465px;
+        }
+    </style>
+    {% endif %}
+</head>
+    <body>
+        <div class="slide_main">
+            <button type="submit" class="lbtn">&lt;</button>
+            <div class="slider">
+                {% for eslide in eslide %}
+                <a href="#">
+                    <img src="{{eslide.slide_url}}" class="slide">
+                </a>
+                {% endfor %}
+            </div>
+            <button type="submit" class="rbtn">&gt;</button>
+        </div>
+    <div class="prev">
+        <div class="adv">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/HmsWvHT3uzw?autoplay=1" frameborder="0" allowfullscreen allow="autoplay fullscreen" style="width:100%; height:500px;"></iframe>    
+        </div>
+    </div>
+    <div class="content grid grid-cols-5 gap-[5px]">
+        {% for edata in edata %}
+        <div class="cont">
+            <a href="{{edata.main_url}}" target="_blank">
+                <div>
+                    <img src="{{edata.image_url}}">
+                </div>
+                <p>{{edata.e_title}}</p>
+                MRP: <span>&#8377;{{edata.total}}</span>
+                <p style="color: red;">{{edata.discount}}% <span style="text-decoration:none; color: black; font-size:19px;">&#8377;{{edata.dis_price}}</span></p>
+            </a>
+            {% if name %}
+            <div class="cartSection">
+                <button type="submit" class="cartBtn" data-id="{{edata.id}}" data-catagory="electronicsContent">Add to cart</button>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% if not name %}
+    <div class="more">
+        <a href="https://www.amazon.in/electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics">
+            <button>See more<i class="fa-solid fa-arrow-right" style="color: black; margin-left:5px; position: relative; top:3px;"></i></button>
+        </a>
+    </div>
+    {% endif %}
+
+</body>
+<script src="{% static 'js/jQuery/jQuery.js' %}"></script>
+<script src="{% static 'js/Electronics_script.js' %}"></script>
+<script>
+    $('.cartBtn').on('click',function(){
+        const id=$(this).data('id')
+        const catagory=$(this).data('catagory')
+       $.ajax({
+           url:'{% url "add_to_cart" %}',
+           type:'POST',
+           data:{
+               id:id,
+               catagory:catagory,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
+           },
+           success:function(response){
+               alert(response.message)
+           }
+       })
+    })
+</script>
+</html>
+{% endblock %}
