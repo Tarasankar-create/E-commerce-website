@@ -20,11 +20,7 @@ body {
     width: 100%;
     height: 60px;
     display: flex;
-<<<<<<< HEAD
     gap: 50px;
-=======
-    gap: 10px;
->>>>>>> 0d74bc078ca2322ddf87c1357a6a36051c0b1a20
     position: sticky;
     top: 0px;
     z-index: 1000;
@@ -115,10 +111,7 @@ body {
 .rightnav {
     gap: 8px;
     display: flex;
-<<<<<<< HEAD
-    margin-left: 60px;
-=======
->>>>>>> 0d74bc078ca2322ddf87c1357a6a36051c0b1a20
+    margin-left: 100px;
 }
 
 .lang {
@@ -140,11 +133,7 @@ body {
     justify-content: space-around;
     gap: 30px;
     padding: 0px 5px;
-<<<<<<< HEAD
     margin-left: 45px;
-=======
->>>>>>> 0d74bc078ca2322ddf87c1357a6a36051c0b1a20
-
 }
 
 .btn {
@@ -176,11 +165,7 @@ body {
 }
 
 .logou {
-<<<<<<< HEAD
-    width: 140px;
-=======
-    width: 90px;
->>>>>>> 0d74bc078ca2322ddf87c1357a6a36051c0b1a20
+  width: 140px;
     height: 40px;
     background-color: #d4d0d0;
     font-weight: 500;
