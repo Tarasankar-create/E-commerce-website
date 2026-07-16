@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: django-app
+  namespace: e-commerce
+spec:
+  replicass: 2
+  selector:
+    matchLabels:
+      app: django_app
+  template:
+    metadata:
+      labels:
+        app: django_app
+    spec:
+      containers:
+      - name: django-dep
+        image: tarasankar393/django-ecommerce-app:v1.0.1
+        ports:
+        - containerPort: 8000
