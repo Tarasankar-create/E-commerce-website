@@ -24,7 +24,7 @@
         <div class="slider">
             {% for kslide in kslide %}
             <a href="{% url 'kidFashion' %}">
-                <img src="{{kslide.slide_url}}" class="slide">
+                <img src="{{kslide.slide_url.url}}" class="slide">
             </a>
             {% endfor %}
         </div>
@@ -35,7 +35,7 @@
         <div id="box1" class="cont">
             <a href="#" target="_blank">
                 <div>
-                    <img src="{{kdata.image_url}}">
+                    <img src="{{kdata.image_url.url}}">
                 </div>
                 <p>{{kdata.k_title}}</p>
                 MRP: <span>&#8377;{{kdata.total}}</span>

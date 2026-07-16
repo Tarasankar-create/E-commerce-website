@@ -16,7 +16,7 @@
         <div class="slider">
             {% for data in slider%}
             <a href="{% url 'home' %}">
-                <img src="{{ data.slide_url }}" class="slide" style="object-fit:cover; height: auto;">
+                <img src="{{ data.slide_url.url }}" class="slide" style="object-fit:cover; height: auto;">
             </a>
             {% endfor %}
         </div>
@@ -258,7 +258,7 @@
             <div class="scroller">
                 {% for data in cont1 %}
                 <a href="{% url 'decor' %}">
-                        <img src="{{ data.slide_url1 }}" width="220px" height="220px">
+                        <img src="{{ data.slide_url1.url }}" width="220px" height="220px">
                 </a>
                 {% endfor %}
             </div>
@@ -272,7 +272,7 @@
             <div class="scroller1">
                 {% for data in cont2 %}
                 <a href="{% url data.name.name %}">
-                    <img src="{{ data.slide_url2 }}" width="220px" height="300px">
+                    <img src="{{ data.slide_url2.url }}" width="220px" height="300px">
                 </a>
                 {% endfor %}
             </div>

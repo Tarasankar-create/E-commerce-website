@@ -24,7 +24,7 @@
             <div class="slider">
                 {% for eslide in eslide %}
                 <a href="#">
-                    <img src="{{eslide.slide_url}}" class="slide">
+                    <img src="{{eslide.slide_url.url}}" class="slide">
                 </a>
                 {% endfor %}
             </div>
@@ -40,7 +40,7 @@
         <div class="cont">
             <a href="#" target="_blank">
                 <div>
-                    <img src="{{edata.image_url}}">
+                    <img src="{{edata.image_url.url}}">
                 </div>
                 <p>{{edata.e_title}}</p>
                 MRP: <span>&#8377;{{edata.total}}</span>

@@ -26,7 +26,7 @@
         <div class="slider">
             {% for slide in menSlider %}
             <a href="#">
-                <img src="{{slide.slide_url}}" class="slide">
+                <img src="{{slide.slide_url.url}}" class="slide">
             </a>
             {% endfor %}
         </div>
@@ -37,7 +37,7 @@
         <div class="cont">
             <a href="#" target="_blank">
                 <div>
-                    <img src="{{data.image_url}}">
+                    <img src="{{data.image_url.url}}">
                 </div>
                 <p>{{data.men_title}}</p>
                 MRP: <span>&#8377;{{data.total}}</span>

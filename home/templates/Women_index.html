@@ -24,7 +24,7 @@
         <div class="slider">
             {% for wslide in wslide %}
             <a href="#">
-                <img src="{{wslide.slide_url}}" class="slide">
+                <img src="{{wslide.slide_url.url}}" class="slide">
             </a>
             {% endfor %}
         </div>
@@ -35,7 +35,7 @@
         <div class="cont">
             <a href="#" target="_blank">
                 <div>
-                    <img src="{{wdata.image_url}}">
+                    <img src="{{wdata.image_url.url}}">
                 </div>
                 <p>{{wdata.w_title}}</p>
                 MRP: <span>&#8377;{{wdata.total}}</span>
