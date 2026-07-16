@@ -85,8 +85,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.getenv('DB_NAME','mydatabase'),
         'USER': os.getenv('DB_USER','root'),
-        'PASSWORD': os.getenv('DB_PASSWORD',''),
-        'HOST': os.getenv('DB_HOST','mysql'),
+        'PASSWORD': os.getenv('DB_PASSWORD','root'),
+        'HOST': os.getenv('DB_HOST','127.0.0.1'),
         'PORT': os.getenv('DB_PORT','3306'),
     }
 }
@@ -127,6 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL='/media/'
+MEDIA_ROOT=BASE_DIR/'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
