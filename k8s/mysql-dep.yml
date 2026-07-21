@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mysql-app
+  namespace: e-commerce
+spec:
+  replicass: 1
+  selector:
+    matchLabels:
+      app: mysql_app
+  template:
+    metadata:
+      labels:
+        app: mysql_app
+    spec:
+      containers:
+      - name: mysql-dep
+        image: mysql:8.4
+        ports:
+        - containerPort: 3306
