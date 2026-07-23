@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: django-service
-  namespace: e-commerce
+  namespace: ecommerce
 spec:
   selector: 
     app: django_app
@@ -10,5 +10,5 @@ spec:
   - protocol: TCP
     port: 8000
     targetPort: 8000
-  type: ClusterIP
+  type: NodePort
   

@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: django-app
-  namespace: e-commerce
+  namespace: ecommerce
 spec:
   replicas: 2
   selector:
@@ -18,3 +18,10 @@ spec:
         image: tarasankar393/django-ecommerce-app:v1.0.1
         ports:
         - containerPort: 8000
+      resources:
+        requests:
+          cpu:"500m"
+          memory:"512Mi"
+        limits:
+          cpu: "1"
+          memory: "1Gi"
