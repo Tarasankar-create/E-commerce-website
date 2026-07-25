@@ -18,10 +18,15 @@ spec:
         image: tarasankar393/django-ecommerce-app:v1.0.1
         ports:
         - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: django-config
+        - secretRef:
+            name: django-secret
       resources:
         requests:
-          cpu:"500m"
-          memory:"512Mi"
+          cpu: "500m"
+          memory: "512Mi"
         limits:
           cpu: "1"
           memory: "1Gi"

@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: django-config
+  namespace: ecommerce
+data:
+  DEBUG: "False"
+  ALLOWED_HOST: "*"
+  REDIS_URL: "redis://redis-service:6379/1"
+  DB_HOST: "mysql-service"
+  DB_PORT: "3306"
+  DB_NAME: "mydatabase"
