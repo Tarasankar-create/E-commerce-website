@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-from decouple import config
-from dotenv import load_dotenv
-load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,11 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY','django-insecure-9(34@)zwogbdl+)v=xcd$+$os=gsvf0-x1kawhnddwlugsp-we')
+SECRET_KEY = SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-9(34@)zwogbdl+)v=xcd$+$os=gsvf0-x1kawhnddwlugsp-we')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG','False')== 'True'
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS','').split(',') if os.getenv('ALLOWED_HOSTS') else []
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
 
 
 # Application definition
@@ -86,9 +84,9 @@ WSGI_APPLICATION = 'mywebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'NAME': os.getenv('DB_NAME','mywebsite_db'),
+        'USER': os.getenv('DB_USER','django_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD',"1"),
         'HOST': os.getenv('DB_HOST','127.0.0.1'),
         'PORT': os.getenv('DB_PORT','3306'),
     }
@@ -98,7 +96,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": os.getenv("REDIS_URL","redis://redis:6379/1"),
+        "LOCATION": os.getenv("REDIS_URL","redis://127.0.0.1:6379/1"),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
