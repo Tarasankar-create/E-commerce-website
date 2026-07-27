@@ -23,7 +23,7 @@ spec:
             name: django-config
         - secretRef:
             name: django-secret
-        volumeMounts:                  
+        volumeMounts:
         - name: media-storage
           mountPath: /app/media
         resources:
@@ -33,7 +33,7 @@ spec:
           limits:
             cpu: "1"
             memory: "1Gi"
-      volumes:                           
+      volumes:
       - name: media-storage
         persistentVolumeClaim:
           claimName: django-media-pvc
