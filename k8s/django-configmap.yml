@@ -10,3 +10,5 @@ data:
   DB_HOST: "mysql-service"
   DB_PORT: "3306"
   DB_NAME: "mydatabase"
+  DJANGO_SUPERUSER_USERNAME: "admin"
+  DJANGO_SUPERUSER_EMAIL: "abc@email.com"

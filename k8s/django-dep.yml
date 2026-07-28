@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: django-dep
-        image: tarasankar393/django-app:v2.0.1
+        image: tarasankar393/django-app:v2.0.2
         ports:
         - containerPort: 8000
         envFrom:
@@ -26,13 +26,6 @@ spec:
         volumeMounts:
         - name: media-storage
           mountPath: /app/media
-        resources:
-          requests:
-            cpu: "500m"
-            memory: "512Mi"
-          limits:
-            cpu: "1"
-            memory: "1Gi"
       volumes:
       - name: media-storage
         persistentVolumeClaim:
