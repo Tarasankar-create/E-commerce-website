@@ -127,17 +127,17 @@ body {
 }
 
 .sign {
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 30px;
     padding: 0px 5px;
-    margin-left: 45px;
+    margin-left: 25px;
 }
 
 .btn {
-    width: 120px;
+    width: 130px;
     height: 40px;
     background-color: rgb(255, 216, 20);
     border-radius: 5px;
@@ -148,7 +148,7 @@ body {
 }
 
 .upDate {
-    width: 140px;
+    width: 160px;
     height: 40px;
     background-color: #d4d0d0;
     font-weight: 500;
@@ -165,7 +165,7 @@ body {
 }
 
 .logou {
-  width: 140px;
+  width: 150px;
     height: 40px;
     background-color: #d4d0d0;
     font-weight: 500;
