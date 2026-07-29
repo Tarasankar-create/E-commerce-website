@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 import re
 from django.http import JsonResponse
 from home.models import menContent,womenContent,kidContent,beautyContent,decorContent,electronicsContent,mobileContent
+from django.conf import settings
 
 def cart(request):
     cart=request.session.get('cart',[])
@@ -21,7 +22,7 @@ def add_to_cart(request):
             if item['id']==int(id) and item['Catagory']==catagory:
                 item['quantity']=item['quantity']+1
                 found=True
-                print("After update",item['quantity'])
+                #print("After update",item['quantity'])
                 break
         if not found:
             if catagory=="menContent":
@@ -58,7 +59,7 @@ def add_to_cart(request):
             if prod:
                 prod_data={
                     'id':prod['id'],
-                    'img':prod['image_url'],
+                    'img':settings.MEDIA_URL + str(prod['image_url']).lstrip('/'),
                     'total':prod['total'],
                     'discount':prod['discount'],
                     'dis_price':prod['dis_price'],
