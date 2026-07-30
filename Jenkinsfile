@@ -27,8 +27,8 @@ pipeline {
             steps {
                 script {
                     code_checkout(
-                        "https://github.com/LondheShubham153/Wanderlust-Mega-Project.git",
-                        "main"
+                        "https://github.com/Tarasankar-create/E-commerce-website.git",
+                        "prod"
                     )
                 }
             }
