@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     code_checkout(
-                        "https://github.com/Tarasankar-create/E-commerce-website.git",
+                        "https://github.com/Tarasankar-create/webmart-web.git",
                         "prod"
                     )
                 }

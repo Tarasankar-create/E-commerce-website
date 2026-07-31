@@ -17,7 +17,7 @@ pipeline {
         stage('Git code checkout'){
             steps{
                 script{
-                    code_checkout("https://github.com/Tarasankar-create/E-commerce-website.git",
+                    code_checkout("https://github.com/Tarasankar-create/webmart-web.git",
                         "prod")
                 }
             }
@@ -45,7 +45,7 @@ pipeline {
                     git commit -m "Update docker tag in deployment"
 
                     echo "Git push changes"
-                    git push https://github.com/Tarasankar-create/E-commerce-website.git prod
+                    git push https://github.com/Tarasankar-create/webmart-web.git prod
                     """
                 }
             }

@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoUrl: ""
+    repoUrl: "https://github.com/Tarasankar-create/webmart-web.git"
     tarhetRevision: prod
     path: k8s
   destination:
