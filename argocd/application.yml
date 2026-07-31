@@ -1,13 +1,13 @@
 kind: Application
-apiVesion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 metadata:
   name: webmart
   namespace: argocd
 spec:
   project: default
   source:
-    repoUrl: "https://github.com/Tarasankar-create/webmart-web.git"
-    tarhetRevision: prod
+    repoURL: "https://github.com/Tarasankar-create/webmart-web.git"
+    targetRevision: prod
     path: k8s
   destination:
     server: "https://kubernetes.default.svc"
