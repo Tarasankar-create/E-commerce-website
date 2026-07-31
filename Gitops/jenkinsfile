@@ -1,0 +1,89 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'DOCKER_TAG', defaultValue: '', description: 'Docker image tag from CI pipeline')
+    }
+
+    stages {
+        stage('CD Pipeline Test') {
+            steps {
+                script {
+                    echo "CD Pipeline started successfully"
+                    echo "Received Docker Tag: ${params.DOCKER_TAG}"
+                }
+            }
+        }
+        stage('Git code checkout'){
+            steps{
+                script{
+                    code_checkout("https://github.com/Tarasankar-create/E-commerce-website.git",
+                        "prod")
+                }
+            }
+        }
+        stage('Update docker image tag'){
+            steps{
+                script{
+                    sh """
+                    sed -i -e 's|tarasankar393/django-app:.*|tarasankar393/django-app:${params.DOCKER_TAG}|g' k8s/django-dep.yml
+                    """
+                }
+            }
+        }
+        stage('Git push'){
+            steps{
+                script{
+                    sh """
+                    echo "Checking git status"
+                    git status
+
+                    echo "Adding changes"
+                    git add .
+
+                    echo "Commit changes"
+                    git commit -m "Update docker tag in deployment"
+
+                    echo "Git push changes"
+                    git push https://github.com/Tarasankar-create/E-commerce-website.git prod
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "CD Pipeline completed successfully"
+            emailext(
+                subject:"CD pipeline success ",
+                body:"""
+                <p>CD pipeline completed successfully</p>
+                Job_Name: ${env.JOB_NAME} <br>
+                Build_Number: ${env.BUILD_NUMBER} <br>
+                """,
+                mimeType: 'text/html',
+                to: "dastarasankar393@gmail.com"
+            )
+        }
+
+        failure {
+            echo "CD Pipeline failed"
+            emailext(
+                subject:"CD pipeline failed ",
+                body:"""
+                <p>CD pipeline failed</p>
+                Job_Name: ${env.JOB_NAME} <br>
+                Build_Number: ${env.BUILD_NUMBER} <br>
+                """,
+                mimeType: 'text/html',
+                to: "dastarasankar393@gmail.com"
+            )
+        }
+
+        always {
+            deleteDir()
+            echo "CD Pipeline cleanup completed"
+        }
+    }
+}
