@@ -2,10 +2,10 @@ from django.shortcuts import render,redirect
 from .models import signup
 from django.contrib.auth import logout
 import re
+from django.views.decorators.http import *
 
 
-# Create your views here.
-
+@require_POST
 def login(request):
     if request.method=='POST':
         key=request.POST['key']
@@ -23,6 +23,7 @@ def login(request):
             return render(request,'Login_index.html',{'msg':'Invalid email or password'})
     return render(request,'Login_index.html')
 
+@require_POST
 def register(request):
     if request.method=='POST':
         name=request.POST['name']
@@ -46,6 +47,7 @@ def register(request):
             return render(request,'Register_index.html',{'msg':error})
     return render(request,'Register_index.html')
 
+@require_http_methods(["GET","POST"])
 def update_view(request):
     email = request.session.get('email')
     ob=signup.objects.get(email=email)
@@ -72,7 +74,7 @@ def update_view(request):
 
     return render(request,'update_index.html',{'ob':ob})
 
-
+@require_GET
 def logout_view(request):
     request.session.flush()  # Clear session
     return redirect('home')
