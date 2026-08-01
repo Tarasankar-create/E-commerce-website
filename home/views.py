@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
 from .models import Catagories,homeSlider,homeContSlider1,homeContSlider2,menContent,menSlider,womenSlider,womenContent,kidSlider,kidContent,decorSlider,decorContent,beautySlider,beautyContent,electronicsSlider,electronicsContent,mobileSlider,mobileContent
+from django.views.decorators.http import *
 
-# Create your views here.
-
+@require_http_methods(["GET", "POST"])
 def home(request):
     homeslider=homeSlider.objects.all()
     homeCont1=homeContSlider1.objects.all()
@@ -56,6 +56,7 @@ def home(request):
     }
     return render(request,'Home_index.html',data)
 
+@require_GET
 def menFashion(request):
     mendata=menContent.objects.all()
     menslider=menSlider.objects.all()
@@ -65,6 +66,7 @@ def menFashion(request):
     }
     return render(request,'Men_index.html',data) 
 
+@require_GET
 def womenFashion(request):
     wslide=womenSlider.objects.all()
     wdata=womenContent.objects.all()
@@ -74,6 +76,7 @@ def womenFashion(request):
     }
     return render(request,'Women_index.html',data) 
 
+@require_GET
 def kidFashion(request):
     kslide=kidSlider.objects.all()
     kdata=kidContent.objects.all()
@@ -83,6 +86,7 @@ def kidFashion(request):
     }
     return render(request,'Kid_index.html',data) 
 
+@require_GET
 def beauty(request):
     bslide=beautySlider.objects.all()
     bdata=beautyContent.objects.all()
@@ -92,6 +96,7 @@ def beauty(request):
     }
     return render(request,'Beauty_index.html',data) 
 
+@require_GET
 def decor(request):
     dslide=decorSlider.objects.all()
     ddata=decorContent.objects.all()
@@ -101,6 +106,7 @@ def decor(request):
     }
     return render(request,'Decor_index.html',data) 
 
+@require_GET
 def electronics(request):
     eslide=electronicsSlider.objects.all()
     edata=electronicsContent.objects.all()
@@ -110,6 +116,7 @@ def electronics(request):
     }
     return render(request,'Electronics_index.html',data) 
 
+@require_GET
 def mobile(request):
     mslide=mobileSlider.objects.all()
     mdata=mobileContent.objects.all()
