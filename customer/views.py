@@ -3,7 +3,7 @@ import re
 from django.http import JsonResponse
 from home.models import menContent,womenContent,kidContent,beautyContent,decorContent,electronicsContent,mobileContent
 from django.conf import settings
-from django.views.decorators.http import *
+from django.views.decorators.http import require_GET,require_POST,require_http_methods
 
 def cart(request):
     cart=request.session.get('cart',[])
