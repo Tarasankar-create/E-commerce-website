@@ -65,6 +65,18 @@ pipeline {
                 }
             }
         }
+        stage('Update env'){
+            steps{
+                script{
+                    dir('Automations'){
+                        sh """
+                        chmod +x updatebackendnew.sh
+                        ./updatebackendnew.sh
+                        """
+                    }
+                }
+            }
+        }
         
         stage("Docker build"){
             steps{
