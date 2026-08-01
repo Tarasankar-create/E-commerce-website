@@ -3,11 +3,13 @@ import re
 from django.http import JsonResponse
 from home.models import menContent,womenContent,kidContent,beautyContent,decorContent,electronicsContent,mobileContent
 from django.conf import settings
+from django.views.decorators.http import *
 
 def cart(request):
     cart=request.session.get('cart',[])
     return render(request,'cart.html',{"cart":cart})
 
+@require_POST
 def add_to_cart(request):
     if request.method == 'POST':
         id=request.POST.get('id')
@@ -92,6 +94,7 @@ def add_to_cart(request):
         request.session.modified=True
     return JsonResponse({'message':'Item successfully added'},status=200)
 
+@require_POST
 def remove_from_cart(request):
     if request.method == 'POST':
         id=request.POST.get('id')
@@ -106,6 +109,7 @@ def remove_from_cart(request):
         request.session.modified=True
     return JsonResponse({'message':'Item removed'},status=200)
 
+@require_GET
 def checkOut(request):
     cart=request.session.get("cart",[])
     final_amount=0
@@ -119,6 +123,7 @@ def checkOut(request):
 
     return render(request,'checkout.html',{'cart':cart,'total_amount':f'{final_amount:.2f}','total':total_product})
 
+@require_GET
 def payment(request):
     total_amount=request.session.get("total_amount",0)
     if total_amount==0:
@@ -126,6 +131,7 @@ def payment(request):
     
     return render(request,'payment_options.html',{'total':total_amount})
 
+@require_POST
 def process_payment(request):
     if request.method == "POST":
         payment=request.POST.get("payment")
@@ -144,6 +150,8 @@ def process_payment(request):
             return render(request,"payment_options.html",{"msg":"Invalid ! Please choose a valid payment method","total":total})
 
     return render(request,'payment_options.html')
+
+@require_POST
 def creditcard(request):
     if request.method == "POST":
         total=request.session.get("total_amount",0)
@@ -161,6 +169,8 @@ def creditcard(request):
         else:
             return render(request,"card_payment.html",{"msg":f"Please enter valid {card} card number or cvv"})
     return render(request,'card_payment.html')
+
+@require_POST
 def upi(request):
     if request.method == 'POST':
         upiNum=request.POST.get('upiNum')
@@ -170,8 +180,12 @@ def upi(request):
         else:
             return render(request,'upi_payment.html',{"msg":"Error ! Please enter valid upi number"})
     return render(request,'upi_payment.html')
+
+@require_GET
 def payment_process(request):
     return render(request,'processing_payment.html')
+
+@require_GET
 def order_success(request):
     request.session['cart']=[]
     request.session['total_amount']=0
