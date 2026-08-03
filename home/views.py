@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Catagories,homeSlider,homeContSlider1,homeContSlider2,menContent,menSlider,womenSlider,womenContent,kidSlider,kidContent,decorSlider,decorContent,beautySlider,beautyContent,electronicsSlider,electronicsContent,mobileSlider,mobileContent
-from django.views.decorators.http import *
+from django.views.decorators.http import require_GET,require_POST,require_http_methods
 
 @require_http_methods(["GET", "POST"])
 def home(request):

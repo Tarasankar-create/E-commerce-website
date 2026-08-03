@@ -7,44 +7,44 @@ admin.site.register(homeSlider)
 admin.site.register(homeContSlider1)
 admin.site.register(homeContSlider2)
 
-class userMen(admin.ModelAdmin):
+class user_men(admin.ModelAdmin):
     list_display=("id","men_title")
 
 admin.site.register(menSlider)
-admin.site.register(menContent,userMen)
+admin.site.register(menContent,user_men)
 
-class userWomen(admin.ModelAdmin):
+class user_women(admin.ModelAdmin):
     list_display=("id","w_title")
 
 admin.site.register(womenSlider)
-admin.site.register(womenContent,userWomen)
+admin.site.register(womenContent,user_women)
 
-class userKid(admin.ModelAdmin):
+class user_kid(admin.ModelAdmin):
     list_display=("id","k_title")
 
 admin.site.register(kidSlider)
-admin.site.register(kidContent,userKid)
+admin.site.register(kidContent,user_kid)
 
-class userDecor(admin.ModelAdmin):
+class user_decor(admin.ModelAdmin):
     list_display=("id","d_title")
 
 admin.site.register(decorSlider)
-admin.site.register(decorContent,userDecor)
+admin.site.register(decorContent,user_decor)
 
-class userBeauty(admin.ModelAdmin):
+class user_beauty(admin.ModelAdmin):
     list_display=("id","b_title")
 
 admin.site.register(beautySlider)
-admin.site.register(beautyContent,userBeauty)
+admin.site.register(beautyContent,user_beauty)
 
-class userElectronics(admin.ModelAdmin):
+class user_electronics(admin.ModelAdmin):
     list_display=("id","e_title")
 
 admin.site.register(electronicsSlider)
-admin.site.register(electronicsContent,userElectronics)
+admin.site.register(electronicsContent,user_electronics)
 
-class userMobile(admin.ModelAdmin):
+class user_mobile(admin.ModelAdmin):
     list_display=("id","m_title")
 
 admin.site.register(mobileSlider)
-admin.site.register(mobileContent,userMobile)
+admin.site.register(mobileContent,user_mobile)

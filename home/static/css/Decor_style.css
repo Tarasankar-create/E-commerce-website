@@ -41,12 +41,7 @@
     box-shadow:0px 0px 5px 0px #fff;
 }
 
-.content{
-    width:98%;
-    margin: auto;
-    margin-top:15px;
-    box-shadow:1px 1px 6px gray;
-}
+
 
 .content {
     width: 98%;
@@ -60,6 +55,10 @@
 
 
 .cont {
+    width:98%;
+    margin: auto;
+    margin-top:15px;
+    box-shadow:1px 1px 6px gray;
     background-color: rgb(247, 247, 247);
     display: flex;
     flex-direction: column;
@@ -77,12 +76,6 @@
     border-radius: 5px;
 }
 
-.cont p {
-    color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
 
 .cont span {
     color: gray;
@@ -99,17 +92,16 @@
     text-overflow: ellipsis;
     line-height: 1em;
     max-height: 3em;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .cont p:hover {
     color: orange;
 }
-.cont img {
-    width: 100%;
-    height: 270px;
-    margin: 7px 0px;
-    border-radius: 5px;
-}
+
 .cartSection{
     width:100%;
     border-top:2px solid gray;
