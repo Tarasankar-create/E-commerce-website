@@ -12,7 +12,7 @@ def cart(request):
 @require_POST
 def add_to_cart(request):
     if request.method == 'POST':
-        id=request.POST.get('id')
+        Id=request.POST.get('id')
         catagory=request.POST.get('catagory')
         
         if "cart" not in request.session:
@@ -21,38 +21,38 @@ def add_to_cart(request):
         found=False
 
         for item in cart:
-            if item['id']==int(id) and item['Catagory']==catagory:
+            if item['id']==int(Id) and item['Catagory']==catagory:
                 item['quantity']=item['quantity']+1
                 found=True
                 #print("After update",item['quantity'])
                 break
         if not found:
             if catagory=="menContent":
-                prod=menContent.objects.filter(id=id).values(
+                prod=menContent.objects.filter(id=Id).values(
                     "id","image_url","men_title","total","discount","dis_price"
                 ).first()
             elif catagory =="womenContent":
-                prod=womenContent.objects.filter(id=id).values(
+                prod=womenContent.objects.filter(id=Id).values(
                     "id","image_url","w_title","total","discount","dis_price"
                 ).first()
             elif catagory == "kidContent":
-                prod=kidContent.objects.filter(id=id).values(
+                prod=kidContent.objects.filter(id=Id).values(
                     "id","image_url","k_title","total","discount","dis_price"
                 ).first()
             elif catagory == "beautyContent":
-                prod=beautyContent.objects.filter(id=id).values(
+                prod=beautyContent.objects.filter(id=Id).values(
                     "id","image_url","b_title","total","discount","dis_price"
                 ).first()
             elif catagory == "decorContent":
-                prod=decorContent.objects.filter(id=id).values(
+                prod=decorContent.objects.filter(id=Id).values(
                     "id","image_url","d_title","total","discount","dis_price"
                 ).first()
             elif catagory == "electronicsContent":
-                prod=electronicsContent.objects.filter(id=id).values(
+                prod=electronicsContent.objects.filter(id=Id).values(
                     "id","image_url","e_title","total","discount","dis_price"
                 ).first()
             elif catagory == "mobileContent":
-                prod=mobileContent.objects.filter(id=id).values(
+                prod=mobileContent.objects.filter(id=Id).values(
                     "id","image_url","m_title","total","discount","dis_price"
                 ).first()
             else:
@@ -97,12 +97,12 @@ def add_to_cart(request):
 @require_POST
 def remove_from_cart(request):
     if request.method == 'POST':
-        id=request.POST.get('id')
+        Id=request.POST.get('id')
         catagory=request.POST.get('catagory')
         cart=request.session.get('cart',[])
         for item in cart:
             print("Before",item)
-            if item['id']==int(id) and item['Catagory']==catagory:
+            if item['id']==int(Id) and item['Catagory']==catagory:
                 cart.remove(item)
                 break
         request.session['cart']=cart
@@ -110,7 +110,7 @@ def remove_from_cart(request):
     return JsonResponse({'message':'Item removed'},status=200)
 
 @require_GET
-def checkOut(request):
+def checkout(request):
     cart=request.session.get("cart",[])
     final_amount=0
     total_product=len(cart)
@@ -135,14 +135,14 @@ def payment(request):
 def process_payment(request):
     if request.method == "POST":
         payment=request.POST.get("payment")
-        payPal="https://www.paypal.com/in/home"
+        paypal="https://www.paypal.com/in/home"
         print(payment)
         if payment=="Creditcard":
             return redirect('credit')
         elif payment=="upi":
             return redirect('Upi')
         elif payment =="paypal":
-            return redirect(payPal)
+            return redirect(paypal)
         elif payment =="cod":
             return redirect('order_success')
         else:
@@ -156,26 +156,27 @@ def creditcard(request):
     if request.method == "POST":
         total=request.session.get("total_amount",0)
         card=request.POST.get("card")
-        cardNum=request.POST.get("cardNum")
-        cardCvv=request.POST.get("cardCvv")
+        cardnum=request.POST.get("cardNum")
+        cardcvv=request.POST.get("cardCvv")
+        card_payment_template="card_payment.html"
         list_special="!~`#$%^&*()-_+=;:'\"*/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz"
-        if (len(cardNum)==16 and len(cardCvv)==3):
-            if any(num in list_special  for num in cardNum):
-                return render(request,'card_payment.html',{"msg":f"Invalid {card} card Number","total":total})
-            elif any(cvv in list_special  for cvv in cardCvv):
-                return render(request,'card_payment.html',{"msg":"Invalid CVV","total":total})
+        if (len(cardnum)==16 and len(cardcvv)==3):
+            if any(num in list_special  for num in cardnum):
+                return render(request,card_payment_template,{"msg":f"Invalid {card} card Number","total":total})
+            elif any(cvv in list_special  for cvv in cardcvv):
+                return render(request,card_payment_template,{"msg":"Invalid CVV","total":total})
             else:
                 return redirect('payprocess')
         else:
-            return render(request,"card_payment.html",{"msg":f"Please enter valid {card} card number or cvv"})
-    return render(request,'card_payment.html')
+            return render(request,card_payment_template,{"msg":f"Please enter valid {card} card number or cvv"})
+    return render(request,card_payment_template)
 
 @require_POST
 def upi(request):
     if request.method == 'POST':
-        upiNum=request.POST.get('upiNum')
-        list_match="^[0-9]{10}@[a-z]{3}"
-        if re.match(list_match,upiNum):
+        upinum=request.POST.get('upiNum')
+        list_match= r"^\d{10}@[a-z]{3}$"
+        if re.match(list_match,upinum):
             return redirect('payprocess')
         else:
             return render(request,'upi_payment.html',{"msg":"Error ! Please enter valid upi number"})
