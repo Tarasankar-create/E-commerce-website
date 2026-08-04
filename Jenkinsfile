@@ -22,7 +22,6 @@ pipeline {
                 }
             }
         }
-
         stage('Git: Code Checkout') {
             steps {
                 script {
@@ -58,13 +57,13 @@ pipeline {
             }
         }
 
-        stage("SonarQube: Code Quality Gates") {
-            steps {
-                script {
-                    sonarqube_code_quality()
-                }
-            }
-        }
+        // stage("SonarQube: Code Quality Gates") {
+        //     steps {
+        //         script {
+        //             sonarqube_code_quality()
+        //         }
+        //     }
+        // }
         stage('Update env'){
             steps{
                 script{

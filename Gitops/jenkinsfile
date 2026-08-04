@@ -1,3 +1,4 @@
+@Library('Shared') _
 pipeline {
     agent any
 
@@ -17,8 +18,10 @@ pipeline {
         stage('Git code checkout'){
             steps{
                 script{
-                    code_checkout("https://github.com/Tarasankar-create/webmart-web.git",
-                        "prod")
+                    code_checkout(
+                        "https://github.com/Tarasankar-create/webmart-web.git",
+                        "prod"
+                    )
                 }
             }
         }
@@ -34,19 +37,7 @@ pipeline {
         stage('Git push'){
             steps{
                 script{
-                    sh """
-                    echo "Checking git status"
-                    git status
-
-                    echo "Adding changes"
-                    git add .
-
-                    echo "Commit changes"
-                    git commit -m "Update docker tag in deployment"
-
-                    echo "Git push changes"
-                    git push https://github.com/Tarasankar-create/webmart-web.git prod
-                    """
+                   git_push("https://github.com/Tarasankar-create/webmart-web.git","prod")
                 }
             }
         }
