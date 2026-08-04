@@ -153,12 +153,12 @@ def process_payment(request):
 
 @require_POST
 def creditcard(request):
+    card_payment_template="card_payment.html"
     if request.method == "POST":
         total=request.session.get("total_amount",0)
         card=request.POST.get("card")
         cardnum=request.POST.get("cardNum")
         cardcvv=request.POST.get("cardCvv")
-        card_payment_template="card_payment.html"
         list_special="!~`#$%^&*()-_+=;:'\"*/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefhijklmnopqrstuvwxyz"
         if (len(cardnum)==16 and len(cardcvv)==3):
             if any(num in list_special  for num in cardnum):
