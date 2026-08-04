@@ -46,13 +46,9 @@
     margin: auto;
     margin-top:15px;
     box-shadow:1px 1px 6px gray;
-    width: 98%;
-    margin: auto;
-    margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
     gap: 15px;
-    box-shadow: 1px 1px 6px gray;
 }
 
 
