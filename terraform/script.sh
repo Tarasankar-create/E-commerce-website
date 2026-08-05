@@ -28,3 +28,7 @@ sudo apt-get install jenkins -y
 
 systemctl enable jenkins
 systemctl start jenkins
+
+# Create folder for backup
+mkdir -p /home/ubuntu/django-media
+mkdir -p  /home/ubuntu/mysql-data
