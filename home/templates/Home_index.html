@@ -281,25 +281,33 @@
     </div>
     <div class="cont3">
         <div class="cont3_box" style="width:35%">
-            <P style="height:5%;">Your Daily Dose of Beauty Care | Starts Here</P>
-            <div style="padding:56.25% 0 0 0;position:relative; margin-top: 20px;"><iframe src="https://player.vimeo.com/video/395646858?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="3 product full face makeup challenge"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            <p>Your Daily Dose of Beauty Care | Starts Here</p>
+            <div class="video-container" style="position:relative;">
+                <video width="100%" controls muted loop playsinline>
+
+                    <source src="{% static 'images/beauty-video-browser.mp4' %}" type="video/mp4">
+
+                    Your browser does not support the video.
+                </video>
+            </div>
         </div>
+
         <div class="cont3_box">
-            <p>Starting ₹199 | Start your Beauty journey</p>
+            <p>Up to 50% off | Beautycare, Cosmetics & more </p>
             <a href="{% url 'beauty' %}">
-                <img src="{% static 'images/beauty-product.jpg' %}">
+                <img src="{% static 'images/cont3_box/valeriia-miller-_42NKYROG7g-unsplash.jpg' %}">
             </a>
         </div>
         <div class="cont3_box">
             <p>Up to 75% off | Wall arts, painting, decor & more </p>
             <a href="{% url 'decor' %}">
-                <img src="{% static 'images/wall-art.jpg' %}">
+                <img src="{% static 'images/cont3_box/minh-pham-OtXADkUh3-I-unsplash.jpg' %}">
             </a>
         </div>
         <div class="cont3_box">
             <p>Up to 75% off | Party dresses</p>
             <a href="{% url 'womenFashion' %}">
-                <img src="{% static 'images/party-dress.jpg' %}">
+                <img src="{% static 'images/cont3_box/caitlyn-wilson-PuFAl8RA8eg-unsplash.jpg' %}">
             </a>
         </div>
     </div>
