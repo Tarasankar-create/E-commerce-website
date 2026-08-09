@@ -4,7 +4,7 @@ metadata:
   name: django-config
   namespace: ecommerce
 data:
-  DEBUG: "False"
+  DEBUG: "True"
   ALLOWED_HOST: "*"
   REDIS_URL: "redis://redis-service:6379/1"
   DB_HOST: "mysql-service"
