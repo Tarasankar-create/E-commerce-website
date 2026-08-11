@@ -2,10 +2,10 @@ from django.shortcuts import render,redirect
 from .models import signup
 from django.contrib.auth import logout
 import re
-from django.views.decorators.http import *
+from django.views.decorators.http import require_http_methods, require_GET, require_POST
 
 
-@require_POST
+@require_http_methods(["GET","POST"])
 def login(request):
     if request.method=='POST':
         key=request.POST['key']
@@ -23,7 +23,7 @@ def login(request):
             return render(request,'Login_index.html',{'msg':'Invalid email or password'})
     return render(request,'Login_index.html')
 
-@require_POST
+@require_http_methods(["GET","POST"])
 def register(request):
     if request.method=='POST':
         name=request.POST['name']
