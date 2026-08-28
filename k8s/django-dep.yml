@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: django-dep
-        image: tarasankar393/django-app:dev
+        image: tarasankar393/django-app:v2.2.6
         ports:
         - containerPort: 8000
         envFrom:
