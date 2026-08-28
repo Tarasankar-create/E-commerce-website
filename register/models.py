@@ -5,7 +5,7 @@ class signup(models.Model):
     id=models.AutoField(primary_key=True)
     name=models.CharField(max_length=20)
     country=models.CharField(max_length=10)
-    mob=models.IntegerField()
+    mob=models.CharField(max_length=15)
     pin=models.CharField(max_length=10, null=True, blank=True)
     email=models.EmailField()
     password=models.CharField(max_length=50)
